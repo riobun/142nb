@@ -10,6 +10,9 @@
     <Filter Include="src">
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Network">
+      <UniqueIdentifier>{c7066ed6-c0a5-4f31-ae6c-e3901281159d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -21,6 +24,60 @@
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Command.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CommandList.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MemoryBitStream.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\NetworkInit.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\NetworkManager.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\RandGen.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SocketAddress.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SocketAddressFactory.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SocketUtil.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\StringUtils.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TCPSocket.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Timing.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TurnData.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UDPSocket.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\WelcomeScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameObject.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameObjectRegistry.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -31,6 +88,72 @@
     </ClInclude>
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Command.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CommandList.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MemoryBitStream.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\NetworkHead.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\NetworkInit.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\NetworkManager.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\RandGen.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SocketAddress.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SocketAddressFactory.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SocketUtil.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StringUtils.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TCPSocket.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Timing.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TurnData.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UDPSocket.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\WeightedTimedMovingAverage.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Art.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BaseMap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\WelcomeScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameObjectRegistry.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameObject.h">
+      <Filter>Network</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

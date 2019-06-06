@@ -14,7 +14,7 @@
     <ProjectGuid>{76A39BB2-9B84-4C65-98A5-654D86B86F2A}</ProjectGuid>
     <RootNamespace>test_win32</RootNamespace>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -36,7 +36,7 @@
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0'">v140</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v140_xp</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
-    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v141_xp</PlatformToolset>
+    <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v141</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -76,7 +76,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(EngineRoot);$(EngineRoot)external;$(EngineRoot)cocos\audio\include;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\HonorOfKings\CrazyGame\142nb\zlib\include;$(EngineRoot);$(EngineRoot)external;$(EngineRoot)cocos\audio\include;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -150,12 +150,52 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\Command.cpp" />
+    <ClCompile Include="..\Classes\CommandList.cpp" />
+    <ClCompile Include="..\Classes\GameObject.cpp" />
+    <ClCompile Include="..\Classes\GameObjectRegistry.cpp" />
+    <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\MemoryBitStream.cpp" />
+    <ClCompile Include="..\Classes\NetworkInit.cpp" />
+    <ClCompile Include="..\Classes\NetworkManager.cpp" />
+    <ClCompile Include="..\Classes\RandGen.cpp" />
+    <ClCompile Include="..\Classes\SocketAddress.cpp" />
+    <ClCompile Include="..\Classes\SocketAddressFactory.cpp" />
+    <ClCompile Include="..\Classes\SocketUtil.cpp" />
+    <ClCompile Include="..\Classes\StringUtils.cpp" />
+    <ClCompile Include="..\Classes\TCPSocket.cpp" />
+    <ClCompile Include="..\Classes\Timing.cpp" />
+    <ClCompile Include="..\Classes\TurnData.cpp" />
+    <ClCompile Include="..\Classes\UDPSocket.cpp" />
+    <ClCompile Include="..\Classes\WelcomeScene.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\Art.h" />
+    <ClInclude Include="..\Classes\BaseMap.h" />
+    <ClInclude Include="..\Classes\Command.h" />
+    <ClInclude Include="..\Classes\CommandList.h" />
+    <ClInclude Include="..\Classes\GameObject.h" />
+    <ClInclude Include="..\Classes\GameObjectRegistry.h" />
+    <ClInclude Include="..\Classes\GameScene.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\MemoryBitStream.h" />
+    <ClInclude Include="..\Classes\NetworkHead.h" />
+    <ClInclude Include="..\Classes\NetworkInit.h" />
+    <ClInclude Include="..\Classes\NetworkManager.h" />
+    <ClInclude Include="..\Classes\RandGen.h" />
+    <ClInclude Include="..\Classes\SocketAddress.h" />
+    <ClInclude Include="..\Classes\SocketAddressFactory.h" />
+    <ClInclude Include="..\Classes\SocketUtil.h" />
+    <ClInclude Include="..\Classes\StringUtils.h" />
+    <ClInclude Include="..\Classes\TCPSocket.h" />
+    <ClInclude Include="..\Classes\Timing.h" />
+    <ClInclude Include="..\Classes\TurnData.h" />
+    <ClInclude Include="..\Classes\UDPSocket.h" />
+    <ClInclude Include="..\Classes\WeightedTimedMovingAverage.h" />
+    <ClInclude Include="..\Classes\WelcomeScene.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>
