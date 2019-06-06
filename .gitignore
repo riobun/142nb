@@ -1,4 +1,5 @@
 # Ignore thumbnails created by windows
+*.db
 Thumbs.db
 *.db
 

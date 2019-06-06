@@ -25,11 +25,17 @@
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
 
+
+
+
 USING_NS_CC;
 
 Scene* HelloWorld::createScene()
 {
-    return HelloWorld::create();
+	auto scene = Scene::create();
+	auto layer = HelloWorld::create();
+	scene->addChild(layer);
+	return scene;
 }
 
 // Print useful error message instead of segfaulting when files are not there.
@@ -42,9 +48,9 @@ static void problemLoading(const char* filename)
 // on "init" you need to initialize your instance
 bool HelloWorld::init()
 {
-    //////////////////////////////
+	//////////////////////////////
     // 1. super init first
-    if ( !Scene::init() )
+    if ( !Layer::init() )
     {
         return false;
     }
@@ -52,7 +58,16 @@ bool HelloWorld::init()
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-    /////////////////////////////
+	
+	//tiledMap
+	auto map = TMXTiledMap::create("Map/Map2.tmx");
+	map->setAnchorPoint(Vec2(-0.5,0.3));
+	map->setPosition(Vec2(0, 0));
+	map->setGlobalZOrder(-1);
+	addChild(map);//Ĭ����ӵ�λ�������½�
+	
+	
+	/////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
     //    you may modify it.
 
@@ -87,6 +102,7 @@ bool HelloWorld::init()
     // create and initialize a label
 
     auto label = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 24);
+	label->setTag(123);
     if (label == nullptr)
     {
         problemLoading("'fonts/Marker Felt.ttf'");
@@ -96,31 +112,34 @@ bool HelloWorld::init()
         // position the label on the center of the screen
         label->setPosition(Vec2(origin.x + visibleSize.width/2,
                                 origin.y + visibleSize.height - label->getContentSize().height));
+		label->setAnchorPoint(Vec2(1.0, 1.0));//����ӵĴ��룺���ġ�hello world����λ��
 
         // add the label as a child to this layer
         this->addChild(label, 1);
     }
 
-    // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("HelloWorld.png");
-    if (sprite == nullptr)
-    {
-        problemLoading("'HelloWorld.png'");
-    }
-    else
-    {
-        // position the sprite on the center of the screen
-        sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    
 
-        // add the sprite as a child to this layer
-        this->addChild(sprite, 0);
-    }
+	//this->scheduleUpdate();
+	//this->scheldue(schedule_selector(HelloWorld::update),1.0f/60);*/
+	
+
+	
+	
+
+
     return true;
 }
-
+void HelloWorld::update(float dt)
+{
+	auto label = this->getChildByTag(123);
+	label->setPosition(label->getPosition() + Vec2(2, -2));
+}
 
 void HelloWorld::menuCloseCallback(Ref* pSender)
 {
+	//ֹͣ����
+	unscheduleUpdate();
     //Close the cocos2d-x game scene and quit the application
     Director::getInstance()->end();
 
@@ -131,3 +150,49 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
 
 
 }
+
+
+Vec2 HelloWorld::toTileCoord(Vec2 position)
+
+{
+
+	auto mapSize = map->getMapSize();        // ��ȡ��tiles����Ϊ��λ�ĵ�ͼ�ߴ�
+
+	// ���㵱ǰ�����£�ÿ����Ƭ�ĳ���
+	auto tileWidth = map->getBoundingBox().size.width / map->getMapSize().width;
+	auto tileHeight = map->getBoundingBox().size.height / map->getMapSize().height;
+
+	// ��positionת��Ϊ��Ƭ���꣬ȷ���õ���������
+    int posx = mapSize.height - position.y / tileHeight + position.x / tileWidth - mapSize.width / 2;
+    int posy = mapSize.height - position.y / tileHeight - position.x / tileWidth + mapSize.width / 2;
+
+
+
+	return Vec2(posx, posy);
+
+}
+
+// convertToScreenCoord�����е���ѧ��ʽ��ʵ����convertTotileCoord��������ѧԭ���һ�����ƹ�ʽ
+
+Vec2 HelloWorld::toScreenCoord(Vec2 position)
+
+{
+	auto mapSize = map->getMapSize();
+	auto tileSize = map->getTileSize();
+	auto tileWidth = map->getBoundingBox().size.width / map->getMapSize().width;
+	auto tileHeight = map->getBoundingBox().size.height / map->getMapSize().height;
+
+	auto variable1 = (position.x + mapSize.width / 2 - mapSize.height) * tileWidth * tileHeight;
+	auto variable2 = (-position.y + mapSize.width / 2 + mapSize.height) * tileWidth * tileHeight;
+
+	int posx = (variable1 + variable2) / 2 / tileHeight;
+	int posy = (variable2 - variable1) / 2 / tileWidth;
+
+
+
+	return Point(posx, posy);
+
+}
+
+
+

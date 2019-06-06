@@ -25,10 +25,13 @@
 #ifndef __HELLOWORLD_SCENE_H__
 #define __HELLOWORLD_SCENE_H__
 
+
 #include "cocos2d.h"
 
-class HelloWorld : public cocos2d::Scene
+
+class HelloWorld : public cocos2d::Layer
 {
+	
 public:
     static cocos2d::Scene* createScene();
 
@@ -36,9 +39,27 @@ public:
     
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
-    
+	virtual void update(float dt);
+
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
+
+	
+	//����ת����opgl����ת��ΪTiled��ͼ���꣨ÿ��С��ͼ�����꣩
+	cocos2d::Vec2 toTileCoord(cocos2d::Vec2 position);
+	cocos2d::Vec2 toScreenCoord(cocos2d::Vec2 position);
+
+	void judgeCllide();  //�ж���ײ
+
+private:
+	cocos2d::Size visibleSize;
+	cocos2d::Sprite *sprite;
+	cocos2d::TMXTiledMap *map;
+	cocos2d::LabelTTF *label;
+
+
+
 };
+
 
 #endif // __HELLOWORLD_SCENE_H__
