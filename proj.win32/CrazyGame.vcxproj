@@ -152,10 +152,14 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\Command.cpp" />
     <ClCompile Include="..\Classes\CommandList.cpp" />
+    <ClCompile Include="..\Classes\Controller1.cpp" />
+    <ClCompile Include="..\Classes\Entity.cpp" />
     <ClCompile Include="..\Classes\GameObject.cpp" />
     <ClCompile Include="..\Classes\GameObjectRegistry.cpp" />
     <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\Hero.cpp" />
+    <ClCompile Include="..\Classes\HeroMoveController.cpp" />
     <ClCompile Include="..\Classes\MemoryBitStream.cpp" />
     <ClCompile Include="..\Classes\NetworkInit.cpp" />
     <ClCompile Include="..\Classes\NetworkManager.cpp" />
@@ -167,6 +171,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClCompile Include="..\Classes\StringUtils.cpp" />
     <ClCompile Include="..\Classes\TCPSocket.cpp" />
     <ClCompile Include="..\Classes\Timing.cpp" />
+    <ClCompile Include="..\Classes\TollgateScene.cpp" />
     <ClCompile Include="..\Classes\TurnData.cpp" />
     <ClCompile Include="..\Classes\UDPSocket.cpp" />
     <ClCompile Include="..\Classes\WelcomeScene.cpp" />
@@ -178,10 +183,16 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClInclude Include="..\Classes\BaseMap.h" />
     <ClInclude Include="..\Classes\Command.h" />
     <ClInclude Include="..\Classes\CommandList.h" />
+    <ClInclude Include="..\Classes\Controller1.h" />
+    <ClInclude Include="..\Classes\ControllerListener.h" />
+    <ClInclude Include="..\Classes\Entity.h" />
+    <ClInclude Include="..\Classes\GameHead.h" />
     <ClInclude Include="..\Classes\GameObject.h" />
     <ClInclude Include="..\Classes\GameObjectRegistry.h" />
     <ClInclude Include="..\Classes\GameScene.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\Hero.h" />
+    <ClInclude Include="..\Classes\HeroMoveController.h" />
     <ClInclude Include="..\Classes\MemoryBitStream.h" />
     <ClInclude Include="..\Classes\NetworkHead.h" />
     <ClInclude Include="..\Classes\NetworkInit.h" />
@@ -194,6 +205,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClInclude Include="..\Classes\StringUtils.h" />
     <ClInclude Include="..\Classes\TCPSocket.h" />
     <ClInclude Include="..\Classes\Timing.h" />
+    <ClInclude Include="..\Classes\TollgateScene.h" />
     <ClInclude Include="..\Classes\TurnData.h" />
     <ClInclude Include="..\Classes\UDPSocket.h" />
     <ClInclude Include="..\Classes\WeightedTimedMovingAverage.h" />

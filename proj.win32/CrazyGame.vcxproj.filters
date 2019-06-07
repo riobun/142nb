@@ -13,6 +13,21 @@
     <Filter Include="Network">
       <UniqueIdentifier>{c7066ed6-c0a5-4f31-ae6c-e3901281159d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="实体">
+      <UniqueIdentifier>{bc1856dc-6a3b-462a-95e7-bbf8479878b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景">
+      <UniqueIdentifier>{cdee3545-0ef5-4bf2-98bf-7fb9d4cff0f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="控制器">
+      <UniqueIdentifier>{2fda4336-f827-4c15-8903-862ed56e18da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="控制器\英雄移动控制器">
+      <UniqueIdentifier>{e7611d85-080b-4ae1-a4e6-9cbfcb7cdfd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="实体\英雄">
+      <UniqueIdentifier>{7f0daa9a-f4c1-45c4-87ab-0c29b942f6cc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
