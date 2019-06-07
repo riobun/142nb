@@ -12,5 +12,5 @@
 
 
 #define PRI_SPEED 30
-#define SPRITE_SIZE 0.3
+#define SPRITE_SIZE 0.2
 #define MOUSE_SIZE 0.5

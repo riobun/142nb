@@ -8,7 +8,6 @@ class Hero : public Entity {
 public:
 	CREATE_FUNC(Hero);
 	virtual bool init();
-    void run(Sprite* sprite);
 
 
 	

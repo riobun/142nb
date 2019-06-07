@@ -4,11 +4,14 @@ Scene* TollgateScene::createScene() {
 	auto scene = Scene::create();
 	auto layer = TollgateScene::create();
 	scene->addChild(layer);
+
+	
 	return scene;
 }
 
 void TollgateScene::addHero(Sprite* map) {
 	Size visibleSize = Director::getInstance()->getVisibleSize();
+	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
 	//创建精灵
 	Sprite* heroSprite = Sprite::create("Ashe1.png");
@@ -17,12 +20,12 @@ void TollgateScene::addHero(Sprite* map) {
 	 //把精灵绑定到英雄对象上
 	Hero* mHero = Hero::create();
 	mHero->bindSprite(heroSprite);
-	mHero->run(heroSprite);
 
 	//设置英雄出生点
-	mHero->setPosition(Point(50, visibleSize.height / 2));
+	mHero->setAnchorPoint(Vec2(0, 0));
+	mHero->setPosition(100, visibleSize.height/2 +50);
 
-	map->addChild(mHero);
+	this->addChild(mHero);
 
 	//创建英雄移动控制器
 	HeroMoveController* heroMoveController = HeroMoveController::create();
@@ -42,9 +45,13 @@ bool TollgateScene::init() {
 	}
 
 	//添加地图
-	auto map = Sprite::create("map.png");
-	this->addChild(map);//默认添加的位置是左下角
+	auto map = Sprite::create("Map.png");
+	map->setScale(1.586f);
+	map->setPosition(Point(0, 0));
+	map->setAnchorPoint(Vec2(0, 0));
+	this->addChild(map,-1);//默认添加的位置是左下角
 
 	addHero(map);
+	
 	return true;
 }
