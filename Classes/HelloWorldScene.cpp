@@ -64,7 +64,7 @@ bool HelloWorld::init()
 	map->setAnchorPoint(Vec2(-0.5,0.3));
 	map->setPosition(Vec2(0, 0));
 	map->setGlobalZOrder(-1);
-	addChild(map);//Ä¬ï¿½ï¿½ï¿½ï¿½Óµï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â½ï¿½
+	addChild(map);//Ä¬ÈÏÌí¼ÓµÄÎ»ÖÃÊÇ×óÏÂ½Ç
 	
 	
 	/////////////////////////////
@@ -112,7 +112,7 @@ bool HelloWorld::init()
         // position the label on the center of the screen
         label->setPosition(Vec2(origin.x + visibleSize.width/2,
                                 origin.y + visibleSize.height - label->getContentSize().height));
-		label->setAnchorPoint(Vec2(1.0, 1.0));//ï¿½ï¿½ï¿½ï¿½ÓµÄ´ï¿½ï¿½ë£ºï¿½ï¿½ï¿½Ä¡ï¿½hello worldï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
+		label->setAnchorPoint(Vec2(1.0, 1.0));//ÐÂÌí¼ÓµÄ´úÂë£º¸ü¸Ä¡°hello world¡±µÄÎ»ÖÃ
 
         // add the label as a child to this layer
         this->addChild(label, 1);
@@ -138,7 +138,7 @@ void HelloWorld::update(float dt)
 
 void HelloWorld::menuCloseCallback(Ref* pSender)
 {
-	//Í£Ö¹ï¿½ï¿½ï¿½ï¿½
+	//Í£Ö¹¸üÐÂ
 	unscheduleUpdate();
     //Close the cocos2d-x game scene and quit the application
     Director::getInstance()->end();
@@ -156,13 +156,13 @@ Vec2 HelloWorld::toTileCoord(Vec2 position)
 
 {
 
-	auto mapSize = map->getMapSize();        // ï¿½ï¿½È¡ï¿½ï¿½tilesï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Î»ï¿½Äµï¿½Í¼ï¿½ß´ï¿½
+	auto mapSize = map->getMapSize();        // »ñÈ¡ÒÔtilesÊýÁ¿Îªµ¥Î»µÄµØÍ¼³ß´ç
 
-	// ï¿½ï¿½ï¿½ãµ±Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Â£ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½Æ¬ï¿½Ä³ï¿½ï¿½ï¿½
+	// ¼ÆËãµ±Ç°Ëõ·ÅÏÂ£¬Ã¿¿éÍßÆ¬µÄ³¤¿í
 	auto tileWidth = map->getBoundingBox().size.width / map->getMapSize().width;
 	auto tileHeight = map->getBoundingBox().size.height / map->getMapSize().height;
 
-	// ï¿½ï¿½position×ªï¿½ï¿½Îªï¿½ï¿½Æ¬ï¿½ï¿½ï¿½ê£¬È·ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// °Ñposition×ª»»ÎªÍßÆ¬×ø±ê£¬È·±£µÃµ½µÄÊÇÕûÊý
     int posx = mapSize.height - position.y / tileHeight + position.x / tileWidth - mapSize.width / 2;
     int posy = mapSize.height - position.y / tileHeight - position.x / tileWidth + mapSize.width / 2;
 
@@ -172,7 +172,7 @@ Vec2 HelloWorld::toTileCoord(Vec2 position)
 
 }
 
-// convertToScreenCoordï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½Ñ§ï¿½ï¿½Ê½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½convertTotileCoordï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§Ô­ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Æ¹ï¿½Ê½
+// convertToScreenCoordº¯ÊýÖÐµÄÊýÑ§¹«Ê½ÆäÊµ¾ÍÊÇconvertTotileCoordº¯ÊýÖÐÊýÑ§Ô­ÀíµÄÒ»¸ö·´ÍÆ¹«Ê½
 
 Vec2 HelloWorld::toScreenCoord(Vec2 position)
 

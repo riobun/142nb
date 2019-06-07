@@ -78,6 +78,9 @@
     <ClCompile Include="..\Classes\GameObjectRegistry.cpp">
       <Filter>Network</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\SkillButton.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -154,6 +157,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameObject.h">
       <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SkillButton.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

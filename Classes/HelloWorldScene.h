@@ -45,11 +45,11 @@ public:
     CREATE_FUNC(HelloWorld);
 
 	
-	//ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½opglï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ÎªTiledï¿½ï¿½Í¼ï¿½ï¿½ï¿½ê£¨Ã¿ï¿½ï¿½Ð¡ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ê£©
+	//×ø±ê×ª»»£¬opgl×ø±ê×ª»»ÎªTiledµØÍ¼×ø±ê£¨Ã¿¿éÐ¡µØÍ¼µÄ×ø±ê£©
 	cocos2d::Vec2 toTileCoord(cocos2d::Vec2 position);
 	cocos2d::Vec2 toScreenCoord(cocos2d::Vec2 position);
 
-	void judgeCllide();  //ï¿½Ð¶ï¿½ï¿½ï¿½×²
+	void judgeCllide();  //ÅÐ¶ÏÅö×²
 
 private:
 	cocos2d::Size visibleSize;
