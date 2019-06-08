@@ -53,7 +53,7 @@ using std::unordered_set;
 using std::map;
 
 #include"cocos2d.h"
-//using namespace cocos2d; ������д��
+using namespace cocos2d; 
 
 #include<string.h>
 #include "NetworkHead.h"

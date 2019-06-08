@@ -8,9 +8,6 @@
 //  ¸ü¸Ä£º¶ÅÃµ£¬ 2019.06.04
 
 #include "GameHead.h"
-//#include "Entity.h"
-//class Entity;
-//class Hero;
 
 shared_ptr< Command > Command::StaticReadAndCreate( InputMemoryBitStream& inInputStream )
 {

@@ -13,7 +13,7 @@
 #include "WinSock2.h"
 #include "Ws2tcpip.h"
 typedef int socklen_t;
-//typedef char* receiveBufer_t;
+
 #else
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -66,9 +66,7 @@ public:
 };
 */
 
-//class Entity;
-//class Hero;
-//typedef std::shared_ptr< Entity > EntityPtr;
+#include "cocos2d.h"
 
 #include "StringUtils.h"
 #include "RandGen.h"
@@ -80,6 +78,8 @@ public:
 #include "UDPSocket.h"
 #include "TCPSocket.h"
 #include "SocketUtil.h"
+
+//#include "MemoryBitStream.h"
 
 #endif // _NETWORK_HEAD_H_
 
