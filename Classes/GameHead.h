@@ -58,6 +58,8 @@ using namespace cocos2d;
 #include<string.h>
 #include "NetworkHead.h"
 
+#include"MouseInput.h"
+
 #include"ControllerListener.h"
 #include"Controller1.h"
 #include"HeroMoveController.h"
@@ -80,6 +82,19 @@ using namespace cocos2d;
 #define PRI_SPEED 30
 #define SPRITE_SIZE 0.3
 #define MOUSE_SIZE 0.5
+
+typedef enum
+{
+	map_Tag = 99,
+	mHero_Tag = 100,
+	eHero_Tag = 101,
+	mSoldier_Tag = 200,
+	eSoldier_Tag = 201,
+	mTower_Tag = 300,
+	eTower_Tag = 301,
+	mDiamond_Tag = 400,
+	eDiamond_Tag = 401
+}SpriteTags;
 
 #endif //_GAME_HEAD_H
 
