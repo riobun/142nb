@@ -85,8 +85,7 @@ bool TollgateScene::init()
 	////////////////////////////
 	//添加技能图标与冷却
 	auto skillItem = CCDirector::sharedDirector()->getWinSize();
-	
-	auto menuSkillButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 2.f);  //(naomal,cool,time)
+	auto menuSkillButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 2.f);  //(normal,cool,time)
 	menuSkillButton->setPosition(skillItem.width / 2, skillItem.height / 2);
 	this->addChild(menuSkillButton);
 
