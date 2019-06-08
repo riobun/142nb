@@ -8,7 +8,7 @@ bool MouseInput::init() {
 	return true;
 }
 
-void MouseInput::registeMouseEvent() {
+void regieteMouseEvent() {
 
 	auto myMouseListener = EventListenerMouse::create();
 
@@ -24,10 +24,9 @@ void MouseInput::registeMouseEvent() {
 		EventMouse* eMouse = (EventMouse*)event;
 
 		auto target = eMouse->getCurrentTarget();
-		
-
-		m_controllerListener->stopAllActions();
-		
+		if (target == map_Tag) {
+			m_controllerListener->stopAllActions();
+		}
 	};
 
 	myMouseListener->onMouseUp = [=](Event * event) {
@@ -35,17 +34,18 @@ void MouseInput::registeMouseEvent() {
 		EventMouse* eMouse = (EventMouse*)event;
 
 		auto target = eMouse->getCurrentTarget();
-			
+		if (target == map_Tag) {
+			auto target = static_cast<Sprite*>(event->getCurrentTarget());
 			Vec2 cur_pos = m_controllerListener->getPosition();
-			double iTime = (cur_pos - Vec2(eMouse->getCursorX(), eMouse->getCursorY())).length() / PRI_SPEED;
+			double iTime = (cur_pos - Vec2(eMouse->getCursorX(), eMouse->getCursorY())).length() / Pri_Speed;
 			MoveTo* moveTo = MoveTo::create(iTime, Vec2(eMouse->getCursorX(), eMouse->getCursorY()));
 			m_controllerListener->runAction(moveTo);
 
-		
+		}
 
 	};
 
 	EventDispatcher* eventDispatcher = Director::getInstance()->getEventDispatcher();
-	eventDispatcher->addEventListenerWithSceneGraphPriority(myMouseListener, this->getChildByTag(mHero_Tag));
-	eventDispatcher->addEventListenerWithSceneGraphPriority(myMouseListener->clone(), this->getChildByTag(eHero_Tag));
+	eventDispatcher->addEventListenerWithSceneGraphPriority(myMouseListener, getChildByTag(mHero_Tag));
+	eventDispatcher->addEventListenerWithSceneGraphPriority(myMouseListener->clone(), getChildByTag(eHero_Tag));
 }

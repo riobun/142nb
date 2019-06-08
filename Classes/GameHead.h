@@ -58,13 +58,13 @@ using namespace cocos2d;
 #include<string.h>
 #include "NetworkHead.h"
 
-
+#include"MouseInput.h"
 
 #include"ControllerListener.h"
 #include"Controller1.h"
 #include"HeroMoveController.h"
 #include "MemoryBitStream.h"
-#include"MouseInput.h"
+
 #include"Entity.h"
 #include"Hero.h"
 
