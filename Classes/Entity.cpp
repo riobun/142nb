@@ -1,15 +1,18 @@
 #include"GameHead.h"
 
+using namespace cocos2d;
 
-Entity::Entity() {
-	m_sprite = NULL;
-	m_sName = " ";
-	m_iHP = 1;
-	m_iDefense = 1;
-	m_isDead = false;
-	m_iSpeed = 1;
-	m_iLevel = 1;
-
+Entity::Entity():
+    m_sprite(NULL),
+    m_sName(" "),
+    m_iHP(1),
+    m_iDefense(1),
+    m_isDead(false),
+    m_iSpeed(1),
+    m_iLevel(1),
+    mNetworkId(0),
+    mPlayerId(0)
+{
 }
 
 Entity::~Entity() {
@@ -65,7 +68,7 @@ bool Entity::isDead() {
 }
 
 void Entity::onDead() {
-
+    NetworkManager::sInstance->UnregisterGameObject(this);
 }
 
 void Entity::onBindSprite() {
@@ -90,4 +93,10 @@ void Entity::setTagPosition(int x, int y) {
 void Entity::setController(Controller1* controller) {
 	this->m_controller = controller;
 	m_controller->setControllerListener(this);
+}
+
+void Entity::SetNetworkId(uint32_t inNetworkId)
+{
+    //this doesn't put you in the map or remove you from it
+    mNetworkId = inNetworkId;
 }

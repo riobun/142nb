@@ -1,5 +1,7 @@
 #include"GameHead.h"
 
+using namespace cocos2d;
+
 Scene* TollgateScene::createScene() {
 	auto scene = Scene::create();
 	auto layer = TollgateScene::create();

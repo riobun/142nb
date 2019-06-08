@@ -2,6 +2,9 @@
 //  参考：Multiplayer game programming, Joshua Glazer, Sanjay Madhav
 //  更改：杜玫， 2019.06.05
 
+#ifndef _NETWORK_MANAGER_H_
+#define _NETWORK_MANAGER_H_
+
 class NetworkManager
 {
 public:
@@ -82,9 +85,9 @@ public:
 	bool	IsMasterPeer() const { return mIsMasterPeer; }
 	float	GetTimeToStart() const { return mTimeToStart; }
 	
-	GameObjectPtr	 GetGameObject( uint32_t inNetworkId ) const;   //从网络id得到游戏对象id
-	GameObjectPtr 	RegisterAndReturn( GameObject* inGameObject );  //注册新的游戏对象
-	void			UnregisterGameObject( GameObject* inGameObject );   //取消该游戏对象id
+	EntityPtr	 GetGameObject( uint32_t inNetworkId ) const;   //从网络id得到游戏对象id
+	EntityPtr 	RegisterAndReturn( Entity* inGameObject );  //注册新的游戏对象
+	void			UnregisterGameObject( Entity* inGameObject );   //取消该游戏对象id
 
 	NetworkManagerState GetState() const { return mState; }
 	int	    	GetPlayerCount() const { return mPlayerCount; }
@@ -94,9 +97,9 @@ public:
 
 private:
 
-	void	AddToNetworkIdToGameObjectMap( GameObjectPtr inGameObject );//添加至：用网络id找游戏对象id的map
-	void	RemoveFromNetworkIdToGameObjectMap( GameObjectPtr inGameObject );//移除：用网络id找游戏对象id的map
-	void	RegisterGameObject( GameObjectPtr inGameObject );
+	void	AddToNetworkIdToGameObjectMap( EntityPtr inGameObject );//添加至：用网络id找游戏对象id的map
+	void	RemoveFromNetworkIdToGameObjectMap( EntityPtr inGameObject );//移除：用网络id找游戏对象id的map
+	void	RegisterGameObject( EntityPtr inGameObject );
 	uint32_t GetNewNetworkId();
 
 	uint32_t ComputeGlobalCRC(); //循环冗余检验
@@ -134,7 +137,7 @@ private:
 	typedef map< uint32_t, SocketAddress > IntToSocketAddrMap;  
 	typedef map< uint32_t, string > IntToStrMap;
 	typedef map< uint32_t, TurnData > IntToTurnDataMap;
-	typedef map< uint32_t, GameObjectPtr > IntToGameObjectMap;
+	typedef map< uint32_t, EntityPtr > IntToGameObjectMap;
 
 	typedef unordered_map< SocketAddress, uint32_t > SocketAddrToIntMap;
 
@@ -178,3 +181,4 @@ private:
 	int				mSubTurnNumber;
 	bool			mIsMasterPeer;
 };
+#endif // !_NETWORK_MANAGER_H_

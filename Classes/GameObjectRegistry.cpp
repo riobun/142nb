@@ -2,8 +2,7 @@
 //  ²Î¿¼£ºMultiplayer game programming, Joshua Glazer, Sanjay Madhav
 //  ¸ü¸Ä£º¶ÅÃµ£¬ 2019.06.05
 
-#include "NetworkHead.h"
-
+#include "GameHead.h"
 
 std::unique_ptr< GameObjectRegistry >	GameObjectRegistry::sInstance = nullptr;
 
@@ -21,12 +20,12 @@ void GameObjectRegistry::RegisterCreationFunction( uint32_t inFourCCName, GameOb
 	mNameToGameObjectCreationFunctionMap[ inFourCCName ] = inCreationFunction;
 }
 
-GameObjectPtr GameObjectRegistry::CreateGameObject( uint32_t inFourCCName )
+EntityPtr GameObjectRegistry::CreateGameObject( uint32_t inFourCCName )
 {
 	//no error checking- if the name isn't there, exception!
 	GameObjectCreationFunc creationFunc = mNameToGameObjectCreationFunctionMap[ inFourCCName ];
 
-	GameObjectPtr gameObject = creationFunc();
+	EntityPtr gameObject = creationFunc();
 
 	//should the registry depend on the world? this might be a little weird
 	//perhaps you should ask the world to spawn things? for now it will be like this

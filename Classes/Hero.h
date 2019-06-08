@@ -1,19 +1,16 @@
 #ifndef _Hero_H_
 #define _Hero_H_
 
-#include"GameHead.h"
-using namespace cocos2d;
-
-class Hero : public Entity {
+class Hero : public Entity 
+{
 public:
+    CLASS_IDENTIFICATION('HERO', Hero);
 	CREATE_FUNC(Hero);
+
 	virtual bool init();
-    void run(Sprite* sprite);
+    virtual void WriteForCRC(OutputMemoryBitStream& inStream);
 
+    void run(cocos2d::Sprite* sprite);
 
-	
 };
-
-
-
 #endif
