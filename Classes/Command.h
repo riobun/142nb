@@ -15,7 +15,8 @@
 //  参考：Multiplayer game programming, Joshua Glazer, Sanjay Madhav
 //  更改：杜玫， 2019.06.04
 
-
+#ifndef _COMMAND_H_
+#define _COMMAND_H_
 class Command
 {
 public:
@@ -57,7 +58,7 @@ protected:
 
 typedef shared_ptr< Command >	CommandPtr;
 
-/* 例一：AttackCommand 
+
 class AttackCommand : public Command
 {
 public:
@@ -80,9 +81,8 @@ protected:
 };
 
 typedef shared_ptr< AttackCommand > AttackCommandPtr;
-*/
 
-/*例二：MoveCommand
+
 class MoveCommand : public Command
 {
 public:
@@ -91,9 +91,7 @@ public:
 		mCommandType = CM_MOVE;
 	}
 
-    // 该函数参数中 Vector3 是自定义类型
-    // 如果命令中有自定义类型（且需要通过网络传输），须重定义
-	static shared_ptr< MoveCommand > StaticCreate( uint32_t inNetworkId, const Vector3& inTarget );
+	static shared_ptr< MoveCommand > StaticCreate( uint32_t inNetworkId, const cocos2d::Vec2& inTarget );
 
 	virtual void Write( OutputMemoryBitStream& inOutputStream ) override;
 
@@ -103,8 +101,9 @@ protected:
 	virtual void Read( InputMemoryBitStream& inInputStream ) override;
 
     //移动目标
-	//Vector3 mTarget;
+	cocos2d::Vec2 mTarget;
 };
 
 typedef shared_ptr< MoveCommand > MoveCommandPtr;
-*/
+
+#endif //_COMMAND_H_

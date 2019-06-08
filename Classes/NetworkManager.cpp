@@ -2,7 +2,7 @@
 //  参考：Multiplayer game programming, Joshua Glazer, Sanjay Madhav
 //  更改：杜玫， 2019.06.05
 
-#include "NetworkHead.h"
+#include "GameHead.h"
 #include <zlib.h>
 
 unique_ptr< NetworkManager > NetworkManager::sInstance;
@@ -745,7 +745,7 @@ NetworkManager::ReceivedPacket::ReceivedPacket( float inReceivedTime, InputMemor
 }
 
 //可能的重写：游戏对象id
-GameObjectPtr NetworkManager::GetGameObject( uint32_t inNetworkId ) const
+EntityPtr NetworkManager::GetGameObject( uint32_t inNetworkId ) const
 {
 	auto gameObjectIt = mNetworkIdToGameObjectMap.find( inNetworkId );
 	if ( gameObjectIt != mNetworkIdToGameObjectMap.end() )
@@ -754,18 +754,18 @@ GameObjectPtr NetworkManager::GetGameObject( uint32_t inNetworkId ) const
 	}
 	else
 	{
-		return GameObjectPtr();
+		return EntityPtr();
 	}
 }
 
-GameObjectPtr NetworkManager::RegisterAndReturn( GameObject* inGameObject )
+EntityPtr NetworkManager::RegisterAndReturn( Entity* inGameObject )
 {
-	GameObjectPtr toRet( inGameObject );
+	EntityPtr toRet( inGameObject );
 	RegisterGameObject( toRet );
 	return toRet;
 }
 
-void NetworkManager::UnregisterGameObject( GameObject* inGameObject )
+void NetworkManager::UnregisterGameObject( Entity* inGameObject )
 {
 	int networkId = inGameObject->GetNetworkId();
 	auto iter = mNetworkIdToGameObjectMap.find( networkId );
@@ -776,17 +776,17 @@ void NetworkManager::UnregisterGameObject( GameObject* inGameObject )
 }
 
 
-void NetworkManager::AddToNetworkIdToGameObjectMap( GameObjectPtr inGameObject )
+void NetworkManager::AddToNetworkIdToGameObjectMap( EntityPtr inGameObject )
 {
 	mNetworkIdToGameObjectMap[ inGameObject->GetNetworkId() ] = inGameObject;
 }
 
-void NetworkManager::RemoveFromNetworkIdToGameObjectMap( GameObjectPtr inGameObject )
+void NetworkManager::RemoveFromNetworkIdToGameObjectMap( EntityPtr inGameObject )
 {
 	mNetworkIdToGameObjectMap.erase( inGameObject->GetNetworkId() );
 }
 
-void NetworkManager::RegisterGameObject( GameObjectPtr inGameObject )
+void NetworkManager::RegisterGameObject( EntityPtr inGameObject )
 {
 	//assign network id
 	int newNetworkId = GetNewNetworkId();

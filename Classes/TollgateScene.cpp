@@ -5,6 +5,8 @@
 
 USING_NS_CC;
 
+using namespace cocos2d;
+
 Scene* TollgateScene::createScene() {
 	auto scene = Scene::create();
 	auto layer = TollgateScene::create();

@@ -3,6 +3,9 @@
 //  更改：杜玫， 2019.06.05
 //  合并InputManager与CommandList，便于调用
 
+#ifndef _COMMAND_LIST_H
+#define _COMMAND_LIST_H
+
 class CommandList
 {
 public:
@@ -31,3 +34,4 @@ private:
     //	uint32_t		mSelectedNetId;
 };
 
+#endif // _COMMAND_LIST_H

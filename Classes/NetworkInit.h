@@ -13,6 +13,8 @@
     轮询器显示用户事件都已处理：发送网络包
     Network::sInstance->Update();
 */
+#ifndef _NET_WORK_INIT_H_
+#define _NET_WORK_INIT_H_
 
 class Network
 {
@@ -31,6 +33,8 @@ private:
     //int		DoRunLoop();
     bool	mShouldKeepRunning;
 };
+
+#endif // !_NET_WORK_INIT_H_
 
 /*调试可以直接调用的模拟延迟：
   *GetSimulatedLatency()
