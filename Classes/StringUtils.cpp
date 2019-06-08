@@ -12,7 +12,7 @@ void OutputDebugString( const char* inString )
 }
 #endif
 
-string StringUtils::GetCommandLineArg( int inIndex )
+string StringUtils_dm::GetCommandLineArg( int inIndex )
 {
 	if( inIndex < __argc )
 	{
@@ -23,7 +23,7 @@ string StringUtils::GetCommandLineArg( int inIndex )
 }
 
 
-string StringUtils::Sprintf( const char* inFormat, ... )
+string StringUtils_dm::Sprintf( const char* inFormat, ... )
 {
 	//not thread safe...
 	static char temp[ 4096 ];
@@ -45,7 +45,7 @@ string StringUtils::Sprintf( const char* inFormat, ... )
 // 	OutputDebugString( "\n" );
 // }
 
-void StringUtils::Log( const char* inFormat, ... )
+void StringUtils_dm::Log( const char* inFormat, ... )
 {
 	//not thread safe...
 	static char temp[ 4096 ];
