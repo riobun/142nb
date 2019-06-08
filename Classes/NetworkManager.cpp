@@ -755,6 +755,7 @@ EntityPtr NetworkManager::GetGameObject( uint32_t inNetworkId ) const
 	}
 	else
 	{
+        LOG_SU("create new game object in GetGameObject");
 		return EntityPtr();
 	}
 }
@@ -789,11 +790,11 @@ void NetworkManager::RemoveFromNetworkIdToGameObjectMap( EntityPtr inGameObject 
 
 void NetworkManager::RegisterGameObject( EntityPtr inGameObject )
 {
-	//assign network id
+	//给新实体分配新网络id
 	int newNetworkId = GetNewNetworkId();
 	inGameObject->SetNetworkId( newNetworkId );
 
-	//add mapping from network id to game object
+	//加入map
 	mNetworkIdToGameObjectMap[ newNetworkId ] = inGameObject;
 }
 

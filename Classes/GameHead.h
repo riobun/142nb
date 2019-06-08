@@ -66,7 +66,7 @@ using namespace cocos2d;
 #include"Entity.h"
 #include"Hero.h"
 
-#include "GameObjectRegistry.h"
+#include "EntityRegistry.h"
 #include "Command.h"
 #include "CommandList.h"
 

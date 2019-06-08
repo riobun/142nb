@@ -49,8 +49,8 @@ protected:
     cocos2d::Sprite* m_sprite;
 	Controller1* m_controller;
 	
-    uint32_t										mNetworkId;
-    uint32_t										mPlayerId;
+    uint32_t		mNetworkId; //每个实体都有唯一的网络id，在各玩家处都相同
+    uint32_t		mPlayerId;      //这个实体是属于哪个玩家的
 	
 	CC_SYNTHESIZE(int, m_ID, ID);              //实体ID
 	CC_SYNTHESIZE(int, m_iModelID, iModelID);//模型ID

@@ -154,7 +154,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClCompile Include="..\Classes\CommandList.cpp" />
     <ClCompile Include="..\Classes\Controller1.cpp" />
     <ClCompile Include="..\Classes\Entity.cpp" />
-    <ClCompile Include="..\Classes\GameObjectRegistry.cpp" />
+    <ClCompile Include="..\Classes\EntityRegistry.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\Hero.cpp" />
     <ClCompile Include="..\Classes\HeroMoveController.cpp" />
@@ -186,7 +186,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClInclude Include="..\Classes\ControllerListener.h" />
     <ClInclude Include="..\Classes\Entity.h" />
     <ClInclude Include="..\Classes\GameHead.h" />
-    <ClInclude Include="..\Classes\GameObjectRegistry.h" />
+    <ClInclude Include="..\Classes\EntityRegistry.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\Hero.h" />
     <ClInclude Include="..\Classes\HeroMoveController.h" />

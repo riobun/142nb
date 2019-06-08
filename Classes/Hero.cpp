@@ -45,4 +45,8 @@ void Hero::WriteForCRC(OutputMemoryBitStream& inStream)
 {
     inStream.Write(mPlayerId);
     inStream.Write(mNetworkId);
+    //inStream.Write(mLocation);
+    //inStream.Write(mHealth);
+    //inStream.Write(mState);
+    //inStream.Write(mTargetNetId);
 }

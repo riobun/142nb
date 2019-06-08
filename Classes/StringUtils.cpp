@@ -1,5 +1,5 @@
 //  参考：Multiplayer game programming, Joshua Glazer, Sanjay Madhav
-//  更改：杜玫， 2019.06.04
+//  更改：杜玫， 2019.06.08
 
 #include "NetworkHead.h"
 

@@ -13,7 +13,7 @@
   *CommandList::sInstance->AddCommand(cmd);
   */
 //  参考：Multiplayer game programming, Joshua Glazer, Sanjay Madhav
-//  更改：杜玫， 2019.06.04
+//  更改：杜玫， 2019.06.08
 
 #ifndef _COMMAND_H_
 #define _COMMAND_H_

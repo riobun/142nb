@@ -79,8 +79,8 @@ public:
 			const WeightedTimedMovingAverage& GetBytesSentPerSecond()		const	{ return mBytesSentPerSecond; }
 	void	SetDropPacketChance( float inChance )	{ mDropPacketChance = inChance; }
 	float	GetDropPacketChance() const				{ return mDropPacketChance; }
-	void	SetSimulatedLatency( float inLatency )	{ mSimulatedLatency = inLatency; }  //模拟延迟？
-	float	GetSimulatedLatency() const				{ return mSimulatedLatency; }               //模拟延迟？
+	void	SetSimulatedLatency( float inLatency )	{ mSimulatedLatency = inLatency; }  //模拟延迟
+	float	GetSimulatedLatency() const				{ return mSimulatedLatency; }               //模拟延迟
 
 	bool	IsMasterPeer() const { return mIsMasterPeer; }
 	float	GetTimeToStart() const { return mTimeToStart; }
@@ -145,10 +145,10 @@ private:
 
 	queue< ReceivedPacket, list< ReceivedPacket > >	mPacketQueue;
 
-	IntToGameObjectMap			mNetworkIdToGameObjectMap;          //网络id  --  游戏对象id
+	IntToGameObjectMap			mNetworkIdToGameObjectMap;          //网络id  --  实体id
 	IntToSocketAddrMap			mPlayerToSocketMap;                            //玩家id   --  socket地址
 	SocketAddrToIntMap			mSocketToPlayerMap;                            //socket地址   --  玩家id
-	IntToStrMap				        	mPlayerNameMap;                                 //所有玩家的名字
+	IntToStrMap				        	mPlayerNameMap;                                 //网络id -- 玩家名字
 
 	//this stores all of our turn information for every turn since game start
 	vector< IntToTurnDataMap >	mTurnData;
