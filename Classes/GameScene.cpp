@@ -22,8 +22,10 @@
  THE SOFTWARE.
  ****************************************************************************/
 
+#include "Art.h"
 #include "GameScene.h"
 #include "SimpleAudioEngine.h"
+
 
 
 
@@ -95,7 +97,21 @@ bool GameScene::init()
 		this->addChild(shieldLayer, 0);
 	}
 
-	////´Ë´¦Ó¦Ìí¼ÓÅö×²¼ì²â£ºÓ¢ÐÛºÍÆÁ±Î²ã
+	
+	
+	////////////////////////////
+	//´Ë´¦Ó¦Ìí¼ÓÅö×²¼ì²â£ºÓ¢ÐÛºÍÆÁ±Î²ã
+
+
+
+	
+	
+	////////////////////////////
+	//Ìí¼Ó¼¼ÄÜÍ¼±êÓëÀäÈ´
+	auto skillItem = CCDirector::sharedDirector()->getWinSize();
+	SkillButton* menuSkillButton = SkillButton::create("SkillPortait/Ashe.png", "click.png", 2.f);  //(naomal,cool,time)
+	menuSkillButton->setPosition(ccp(skillItem.width / 2, skillItem.height / 2));
+	addChild(menuSkillButton);
 
 
 
@@ -177,5 +193,3 @@ void GameScene::menuCloseCallback(Ref* pSender)
 
 
 }
-
-

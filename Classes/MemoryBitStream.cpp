@@ -3,6 +3,8 @@
 //  ¸ü¸Ä£º¶ÅÃµ£¬ 2019.06.04
 
 #include "NetworkHead.h"
+#include "cocos2d.h"
+#include "MemoryBitStream.h"
 
 void OutputMemoryBitStream::WriteBits( uint8_t inData,
 									   uint32_t inBitCount )
@@ -54,21 +56,20 @@ void OutputMemoryBitStream::WriteBits( const void* inData, uint32_t inBitCount )
 	}
 }
 
+
+void OutputMemoryBitStream::Write( const cocos2d::Vec2& inVector )
+{
+	Write( inVector.x );
+	Write( inVector.y );
+}
+
+void InputMemoryBitStream::Read( cocos2d::Vec2& outVector )
+{
+	Read( outVector.x );
+	Read( outVector.y );
+}
+
 /*
-void OutputMemoryBitStream::Write( const Vector3& inVector )
-{
-	Write( inVector.mX );
-	Write( inVector.mY );
-	Write( inVector.mZ );
-}
-
-void InputMemoryBitStream::Read( Vector3& outVector )
-{
-	Read( outVector.mX );
-	Read( outVector.mY );
-	Read( outVector.mZ );
-}
-
 void OutputMemoryBitStream::Write( const Quaternion& inQuat )
 {
 	float precision = ( 2.f / 65535.f );

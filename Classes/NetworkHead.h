@@ -65,6 +65,11 @@ public:
     float		mX, mY, mZ, mW;
 };
 */
+
+//class Entity;
+//class Hero;
+//typedef std::shared_ptr< Entity > EntityPtr;
+
 #include "StringUtils.h"
 #include "RandGen.h"
 #include "Timing.h"
@@ -75,18 +80,6 @@ public:
 #include "UDPSocket.h"
 #include "TCPSocket.h"
 #include "SocketUtil.h"
-
-#include "MemoryBitStream.h"
-//È«¾Ö
-#include "GameObject.h"
-#include "GameObjectRegistry.h"
-
-#include "Command.h"
-#include "CommandList.h"
-
-#include "TurnData.h"
-#include "NetworkInit.h"
-#include "NetworkManager.h"
 
 #endif // _NETWORK_HEAD_H_
 

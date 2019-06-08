@@ -2,7 +2,7 @@
 //  参考：Multiplayer game programming, Joshua Glazer, Sanjay Madhav
 //  更改：杜玫， 2019.06.05
 
-#include "NetworkHead.h"
+#include "GameHead.h"
 const std::string default_player_name = "无名";
 const uint16_t default_port = 45000;
 

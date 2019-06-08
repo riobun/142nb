@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.4" orientation="isometric" renderorder="right-down" width="5" height="10" tilewidth="100" tileheight="50" infinite="0" nextlayerid="6" nextobjectid="8">
+ <tileset firstgid="1" name="写实魔幻场景地图修图全套资源1G-da4ed80_爱给网_aigei_com" tilewidth="100" tileheight="50" tilecount="0" columns="10">
+  <image source="142/Resources/Map/写实魔幻场景地图修图全套资源1G-da4ed80_爱给网_aigei_com.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1" name="写实魔幻场景地图修图全套资源1G-da4ed80_爱给网_aigei_com" tilewidth="100" tileheight="50" tilecount="200" columns="10">
+  <image source="写实魔幻场景地图修图全套资源1G-da4ed80_爱给网_aigei_com.png" width="1024" height="1024"/>
+ </tileset>
+ <layer id="1" name="ground1" width="5" height="10">
+  <data encoding="base64" compression="zlib">
+   eJylyzECQlAAANB/iy9NhSlqKpmoJmJK3P8m3h0Mb3wxhJBwIOXIiTMZOQUXSiqu3Ig77p0HNU8aWjpevPnQM/BlZOLHzJ+FlQ0IWQmT
+  </data>
+ </layer>
+ <objectgroup id="2" name="Crystal1">
+  <object id="6" x="608.667" y="100.667"/>
+  <object id="7" name="CRYSTAL1" x="90.6667" y="56" width="58" height="43.3333"/>
+ </objectgroup>
+ <objectgroup id="3" name="Crystal2">
+  <object id="3" x="93.3333" y="285.333"/>
+  <object id="4" name="CRYSTAL2" x="90.6667" y="341.333" width="46" height="39.3333"/>
+ </objectgroup>
+ <objectgroup id="4" name="LaneTower1">
+  <object id="2" name="LANETOWER1" x="88" y="256" width="48" height="32"/>
+ </objectgroup>
+ <objectgroup id="5" name="LaneTower2">
+  <object id="1" name="LANETOWER2" x="80.6667" y="134.667" width="46" height="32.6667"/>
+ </objectgroup>
+</map>

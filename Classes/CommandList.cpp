@@ -2,7 +2,7 @@
 //  ²Î¿¼£ºMultiplayer game programming, Joshua Glazer, Sanjay Madhav
 //  ¸ü¸Ä£º¶ÅÃµ£¬ 2019.06.05
 
-#include "NetworkHead.h"
+#include "GameHead.h"
 
 unique_ptr< CommandList >	CommandList::sInstance;
 

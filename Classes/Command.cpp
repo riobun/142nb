@@ -7,7 +7,10 @@
 //  参考：Multiplayer game programming, Joshua Glazer, Sanjay Madhav
 //  更改：杜玫， 2019.06.04
 
-#include "NetworkHead.h"
+#include "GameHead.h"
+//#include "Entity.h"
+//class Entity;
+//class Hero;
 
 shared_ptr< Command > Command::StaticReadAndCreate( InputMemoryBitStream& inInputStream )
 {
@@ -22,14 +25,14 @@ shared_ptr< Command > Command::StaticReadAndCreate( InputMemoryBitStream& inInpu
 
 	switch ( type ) //根据命令类型，创建子类实例，调用子类Read()
 	{
-          /*
+
 	case CM_ATTACK:
 		retVal = std::make_shared< AttackCommand >();
 		retVal->mNetworkId = networkId;
 		retVal->mPlayerId = playerId;
 		retVal->Read( inInputStream );
 		break;
-      
+     /*
 	case CM_MOVE:
 		retVal = std::make_shared< MoveCommand >();
 		retVal->mNetworkId = networkId;
@@ -52,20 +55,20 @@ void Command::Write( OutputMemoryBitStream& inOutputStream )
 	inOutputStream.Write( mPlayerId );
 }
 
-/* 创建Attack命令，返回其指针
+
 AttackCommandPtr AttackCommand::StaticCreate( uint32_t inMyNetId, uint32_t inTargetNetId )
 {
 	AttackCommandPtr retVal;
-	GameObjectPtr me = NetworkManager::sInstance->GetGameObject( inMyNetId );
-	GameObjectPtr target = NetworkManager::sInstance->GetGameObject( inTargetNetId );
+	EntityPtr me = NetworkManager::sInstance->GetGameObject( inMyNetId );
+	EntityPtr target = NetworkManager::sInstance->GetGameObject( inTargetNetId );
 	uint32_t playerId = NetworkManager::sInstance->GetMyPlayerId();
 
     //是否可以攻击？条件判断
 	//can only issue commands to this unit if I own it, and it's a cat,
 	//and if the target is a cat that's on a different team
-	if ( me && me->GetClassId() == RoboCat::kClassId &&
+	if ( me && me->GetClassId() == Hero::kClassId &&
 		me->GetPlayerId() ==  playerId &&
-		target && target->GetClassId() == RoboCat::kClassId &&
+		target && target->GetClassId() == Hero::kClassId &&
 		target->GetPlayerId() != me->GetPlayerId() )
 	{ //可以攻击，创建命令并写进流
 		retVal = std::make_shared< AttackCommand >();
@@ -75,9 +78,9 @@ AttackCommandPtr AttackCommand::StaticCreate( uint32_t inMyNetId, uint32_t inTar
 	}
 	return retVal;
 }
-*/
 
-/*把命令写进流
+
+
 void AttackCommand::Write( OutputMemoryBitStream& inOutputStream )
 {
 	Command::Write( inOutputStream );
@@ -88,32 +91,32 @@ void AttackCommand::Write( OutputMemoryBitStream& inOutputStream )
 void AttackCommand::Read( InputMemoryBitStream& inInputStream )
 {
 	inInputStream.Read( mTargetNetId );
-}*/
+}
 
-/* 处理流中的攻击命令
+// 处理流中的攻击命令
 void AttackCommand::ProcessCommand()
 {
-	GameObjectPtr obj = NetworkManager::sInstance->GetGameObject( mNetworkId );
+	EntityPtr obj = NetworkManager::sInstance->GetGameObject( mNetworkId );
     // 
-	if ( obj && obj->GetClassId() == RoboCat::kClassId &&
+	if ( obj && obj->GetClassId() == Hero::kClassId &&
 		obj->GetPlayerId() == mPlayerId )
 	{
-		RoboCat* rc = obj->GetAsCat();
-		rc->EnterAttackState( mTargetNetId );
+		//RoboCat* rc = obj->GetAsCat();
+		//rc->EnterAttackState( mTargetNetId );
 	}
 }
-*/
 
-/*创建Move命令，返回该命令的指针
-MoveCommandPtr MoveCommand::StaticCreate( uint32_t inNetworkId, const Vector3& inTarget )
+
+//创建Move命令，返回该命令的指针
+MoveCommandPtr MoveCommand::StaticCreate( uint32_t inNetworkId, const cocos2d::Vec2& inTarget )
 {   //参数：发出命令的网络id和move的目标位置
 	MoveCommandPtr retVal;
-	GameObjectPtr go = NetworkManager::sInstance->GetGameObject( inNetworkId );
+	EntityPtr go = NetworkManager::sInstance->GetGameObject( inNetworkId );
 	uint32_t playerId = NetworkManager::sInstance->GetMyPlayerId();
 
     //验证：该网络id是可以行走的；并且该玩家id可以控制它
 	//can only issue commands to this unit if I own it, and it's a cat
-	if ( go && go->GetClassId() == RoboCat::kClassId && 
+	if ( go && go->GetClassId() == Hero::kClassId && 
 		go->GetPlayerId() == playerId )
 	{
 		retVal = std::make_shared< MoveCommand >();
@@ -133,13 +136,13 @@ void MoveCommand::Write( OutputMemoryBitStream& inOutputStream )
 //执行Move命令
 void MoveCommand::ProcessCommand()
 {
-	GameObjectPtr obj = NetworkManager::sInstance->GetGameObject( mNetworkId );
+	EntityPtr obj = NetworkManager::sInstance->GetGameObject( mNetworkId );
     //再次判断（是否重复？）
-	if ( obj && obj->GetClassId() == RoboCat::kClassId &&
+	if ( obj && obj->GetClassId() == Hero::kClassId &&
 		obj->GetPlayerId() == mPlayerId )
 	{
-		RoboCat* rc = obj->GetAsCat();
-		rc->EnterMovingState( mTarget );//行走的实现函数
+		//Hero* rc = obj->GetAsCat();
+		//rc->EnterMovingState( mTarget );//行走的实现函数
 	}
 }
 
@@ -148,4 +151,3 @@ void MoveCommand::Read( InputMemoryBitStream& inInputStream )
 {
 	inInputStream.Read( mTarget );
 }
-*/
