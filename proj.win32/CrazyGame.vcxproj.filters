@@ -105,6 +105,9 @@
     <ClCompile Include="..\Classes\Controller1.cpp">
       <Filter>控制器</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\HeroMoveController.cpp">
+      <Filter>控制器\英雄移动控制器</Filter>
+    </ClCompile>
     <ClCompile Include="..\Classes\Entity.cpp">
       <Filter>实体</Filter>
     </ClCompile>
@@ -196,6 +199,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ControllerListener.h">
       <Filter>控制器</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HeroMoveController.h">
+      <Filter>控制器\英雄移动控制器</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Entity.h">
       <Filter>实体</Filter>

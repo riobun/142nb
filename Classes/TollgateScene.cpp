@@ -164,7 +164,7 @@ void TollgateScene::menuCloseCallback(Ref* pSender)
 
 	//EventCustom customEndEvent("game_scene_close_event");
 	//_eventDispatcher->dispatchEvent(&customEndEvent);
-}
+
 
 
 void TollgateScene::addHero(Sprite* map) {
@@ -172,7 +172,7 @@ void TollgateScene::addHero(Sprite* map) {
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
 	Sprite* mHeroSprite = Sprite::create("AShe/Ashe1.png");//��������
-	Sprite* eHeroSprite = Sprite::create("AShe/Ashe1.png");
+	Sprite* eheroSprite = Sprite::create("AShe/Ashe1.png");
 	if (mHeroSprite == nullptr&&eHeroSprite == nullptr)
 	{
 		problemLoading("'fonts/Marker Felt.ttf'");
