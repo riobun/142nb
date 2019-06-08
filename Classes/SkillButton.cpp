@@ -4,6 +4,8 @@
 #define SCHEDULE_SKILL_UPDATE_TIME "SCHEDULE_SKILL_UPDATE_TIME"
 #define SKILL_UPDATE_INTERVAL 0.1
 
+USING_NS_CC;
+
 SkillButton::SkillButton()
 {
 	_pSkill = nullptr;
@@ -40,7 +42,7 @@ SkillButton::~SkillButton()
 
 SkillButton* SkillButton::create(const std::string normalImage, const std::string coolImage, float skillTime)
 {
-	SkillButton* skillBtn = new (std::nothrow) SkillButton();
+	SkillButton* skillBtn = new SkillButton();
 	if (skillBtn && skillBtn->init(normalImage, coolImage, skillTime)) {
 		return skillBtn;
 	}
@@ -67,7 +69,7 @@ bool SkillButton::init(const std::string normalImage, const std::string coolImag
 		setupNormalImage(normalImage);
 		setupCoolImage(coolImage);
 		 
-		addKeyListener();
+		//addKeyListener();
 		return true;
 	}
 	return false;

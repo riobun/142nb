@@ -3,6 +3,7 @@
 #include "SimpleAudioEngine.h"
 #include "3d/CCSprite3D.h"
 #include "GameScene.h"
+#include "TollgateScene.h"
 
 USING_NS_CC;
 
@@ -66,7 +67,7 @@ bool WelcomeScene::init()
 	auto startItem = MenuItemImage::create(
 		"Start1.png",
 		"Start2.png",
-		CC_CALLBACK_1(WelcomeScene::EnterGameScene, this));
+		CC_CALLBACK_1(WelcomeScene::EnterTollgateScene, this));
 
 	if (startItem == nullptr ||
 		startItem->getContentSize().width <= 0 ||
@@ -122,12 +123,12 @@ bool WelcomeScene::init()
 	return true;
 }
 
-void WelcomeScene::EnterGameScene(Ref* pSender)
+void WelcomeScene::EnterTollgateScene(Ref* pSender)
 {
 	MenuItem* startItem = (MenuItem*)pSender;
 	log("Touch startItem %p", startItem);
-	auto gameSceneCreate = GameScene::createScene();
+	auto tollgateSceneCreate = TollgateScene::createScene();
 
-	Director::getInstance()->pushScene(gameSceneCreate);
+	Director::getInstance()->pushScene(tollgateSceneCreate);
 
 }

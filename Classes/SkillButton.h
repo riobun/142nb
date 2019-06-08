@@ -5,7 +5,7 @@
 
 USING_NS_CC;
 
-class SkillButton :public Node
+class SkillButton :public cocos2d:: CCNode
 {
 public:
 	typedef std::function<void(float pressTime)> alSkillClickCallback;
@@ -15,7 +15,7 @@ public:
 
 
 public:
-	static SkillButton* create(const std::string normalImage, const std::string coolImage = "", float skillTime = 0);
+	static SkillButton* create(const std::string normalImage, const std::string coolImage , float skillTime );
 
 	SkillButton();
 	virtual ~SkillButton();
