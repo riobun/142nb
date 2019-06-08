@@ -4,7 +4,7 @@
 #define SCHEDULE_SKILL_UPDATE_TIME "SCHEDULE_SKILL_UPDATE_TIME"
 #define SKILL_UPDATE_INTERVAL 0.1
 
-USING_NS_CC;
+
 
 SkillButton::SkillButton()
 {
@@ -27,8 +27,7 @@ SkillButton::SkillButton()
 	_EPressedCallback = nullptr;
 	_TabPressedCallback = nullptr;
 	_PPressedCallback = nullptr;
-
- 	_skillCDEndCallback = nullptr;
+	_skillCDEndCallback = nullptr;
 
 
 	_deltaSum = 0;
@@ -69,7 +68,7 @@ bool SkillButton::init(const std::string normalImage, const std::string coolImag
 		setupNormalImage(normalImage);
 		setupCoolImage(coolImage);
 		 
-		//addKeyListener();
+		addKeyListener();
 		return true;
 	}
 	return false;
