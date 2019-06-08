@@ -3,6 +3,7 @@
 //  ¸ü¸Ä£º¶ÅÃµ£¬ 2019.06.04
 
 #include "NetworkHead.h"
+#include "MemoryBitStream.h"
 
 //TODO: check these, I have no idea if this is the best way to do it...
 //(definitely doesn't work from cross-platform standpoint)
@@ -26,7 +27,7 @@ string	SocketAddress::ToString() const
 	const sockaddr_in* s = GetAsSockAddrIn();
 	char destinationBuffer[ 128 ];
 	InetNtopA( s->sin_family, const_cast< in_addr* >( &s->sin_addr ), destinationBuffer, sizeof( destinationBuffer ) );
-	return StringUtils::Sprintf( "%s:%d",
+	return StringUtils_dm::Sprintf( "%s:%d",
 								destinationBuffer,
 								ntohs( s->sin_port ) );
 #else

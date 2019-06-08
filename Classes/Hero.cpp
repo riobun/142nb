@@ -9,16 +9,16 @@ void Hero::run(Sprite* sprite) {
 	
 	double iSpeed = PRI_SPEED;
 	//Sprite* mouse = Sprite::create("mouse.png");
-	//´´½¨ÊÂ¼ş¼àÌıÆ÷£¬¼àÌıÊó±êÊÂ¼ş
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
 	auto myMouseListener = EventListenerMouse::create();
-	//Êó±êÒÆ¶¯
+	//ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
 	myMouseListener->onMouseMove = [=](Event * event) {
 
 		EventMouse* eMouse = (EventMouse*)event;
 		//mouse->setPosition(eMouse->getCursorX(), eMouse->getCursorY());
 
 	};
-	//Êó±ê°´ÏÂ
+	//ï¿½ï¿½ê°´ï¿½ï¿½
 	myMouseListener->onMouseDown = [=](Event * event) {
 
 		EventMouse* eMouse = (EventMouse*)event;
@@ -26,7 +26,7 @@ void Hero::run(Sprite* sprite) {
 		sprite->stopAllActions();
 
 	};
-	//Êó±êµ¯Æğ
+	//ï¿½ï¿½êµ¯ï¿½ï¿½
 	myMouseListener->onMouseUp = [=](Event * event) {
 
 		EventMouse* eMouse = (EventMouse*)event;

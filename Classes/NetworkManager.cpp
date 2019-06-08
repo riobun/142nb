@@ -4,6 +4,7 @@
 
 #include "GameHead.h"
 #include <zlib.h>
+using namespace StringUtils;
 
 unique_ptr< NetworkManager > NetworkManager::sInstance;
 

@@ -27,6 +27,7 @@ void HeroMoveController::registeMouseEvent() {
 		EventMouse* eMouse = (EventMouse*)event;
 
 		m_controllerListener->stopAllActions();
+		
 
 	};
 
@@ -34,12 +35,15 @@ void HeroMoveController::registeMouseEvent() {
 
 		EventMouse* eMouse = (EventMouse*)event;
 		Vec2 cur_pos = m_controllerListener->getPosition();
+
 		double iTime = (cur_pos - Vec2(eMouse->getCursorX(), eMouse->getCursorY())).length() / HeroSpeed;
 		MoveTo* moveTo = MoveTo::create(iTime, Vec2(eMouse->getCursorX(), eMouse->getCursorY()));
 		m_controllerListener->runAction(moveTo);
+		
 
 	};
 
+	//将监听器与场景绑定
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(myMouseListener, this);
 
 }

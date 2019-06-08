@@ -53,7 +53,7 @@ using std::unordered_set;
 using std::map;
 
 #include"cocos2d.h"
-//using namespace cocos2d; 不可以写！
+using namespace cocos2d; 
 
 #include<string.h>
 #include "NetworkHead.h"
@@ -85,14 +85,14 @@ using std::map;
 
 /*
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-//音乐格式.aifc
+//锟斤拷锟街革拷式.aifc
 //#define bg_music_1   "sound/home_bg.aifc"
 
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_WP8)
-//音乐格式.wav
+//锟斤拷锟街革拷式.wav
 
 #else
-//音乐格式.mp3
+//锟斤拷锟街革拷式.mp3
 
 #endif
 */

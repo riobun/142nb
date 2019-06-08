@@ -70,7 +70,7 @@ bool GameScene::init()
 	auto map = Sprite::create("Map.png");
 	if (map == nullptr)
 	{
-		problemLoading("Map.png'");
+		problemLoading("Map.png");
 	}
 	else
 	{

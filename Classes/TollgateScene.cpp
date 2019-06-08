@@ -11,6 +11,8 @@ Scene* TollgateScene::createScene() {
 	auto scene = Scene::create();
 	auto layer = TollgateScene::create();
 	scene->addChild(layer);
+
+	
 	return scene;
 }
 
@@ -60,7 +62,7 @@ bool TollgateScene::init()
 		this->addChild(map, -1);
 	}
 
-	auto shieldLayer = Sprite::create("shieldLayer.png");  // shieldLayerÎªÆÁ±Î²ã
+	auto shieldLayer = Sprite::create("shieldLayer.png");  // shieldLayerÎªï¿½ï¿½ï¿½Î²ï¿½
 	if (shieldLayer == nullptr)
 	{
 		problemLoading("shieldLayer.png'");
@@ -78,12 +80,12 @@ bool TollgateScene::init()
 
 
 
-	//Ìí¼ÓÓ¢ÐÛ
+	//ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½ï¿½
 	addHero(map);
 
 
 	////////////////////////////
-	//Ìí¼Ó¼¼ÄÜÍ¼±êÓëÀäÈ´
+	//ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È´
 	auto skillItem = CCDirector::sharedDirector()->getWinSize();
 	auto menuSkillButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 2.f);  //(normal,cool,time)
 	menuSkillButton->setPosition(skillItem.width / 2, skillItem.height / 2);
@@ -131,7 +133,7 @@ bool TollgateScene::init()
 		// position the label on the center of the screen
 		label->setPosition(Vec2(origin.x + visibleSize.width / 2,
 			origin.y + visibleSize.height - label->getContentSize().height));
-		label->setAnchorPoint(Vec2(1.0, 1.0));//ÐÂÌí¼ÓµÄ´úÂë£º¸ü¸Ä¡°hello world¡±µÄÎ»ÖÃ
+		label->setAnchorPoint(Vec2(1.0, 1.0));//ï¿½ï¿½ï¿½ï¿½ï¿½ÓµÄ´ï¿½ï¿½ë£ºï¿½ï¿½ï¿½Ä¡ï¿½hello worldï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
 
 		// add the label as a child to this layer
 		this->addChild(label, 1);
@@ -153,7 +155,7 @@ void TollgateScene::update(float dt)
 
 void TollgateScene::menuCloseCallback(Ref* pSender)
 {
-	//Í£Ö¹¸üÐÂ
+	//Í£Ö¹ï¿½ï¿½ï¿½ï¿½
 	unscheduleUpdate();
 	//Close the cocos2d-x game scene and quit the application
 	Director::getInstance()->end();
@@ -175,7 +177,7 @@ void TollgateScene::addHero(Sprite* map) {
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	Sprite* heroSprite = Sprite::create("AShe/Ashe1.png");//´´½¨¾«Áé
+	Sprite* heroSprite = Sprite::create("AShe/Ashe1.png");//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (heroSprite == nullptr)
 	{
 		problemLoading("'fonts/Marker Felt.ttf'");
@@ -184,23 +186,23 @@ void TollgateScene::addHero(Sprite* map) {
 	{
 		heroSprite->setScale(SPRITE_SIZE);
 
-		//°Ñ¾«Áé°ó¶¨µ½Ó¢ÐÛ¶ÔÏóÉÏ
+		//ï¿½Ñ¾ï¿½ï¿½ï¿½ó¶¨µï¿½Ó¢ï¿½Û¶ï¿½ï¿½ï¿½ï¿½ï¿½
 		Hero* mHero = Hero::create();
 		mHero->bindSprite(heroSprite);
 		//mHero->run(heroSprite);
 
-		//ÉèÖÃÓ¢ÐÛ³öÉúµã
+		//ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½Û³ï¿½ï¿½ï¿½ï¿½ï¿½
 		mHero->setPosition(Point(100, visibleSize.height / 2 + 50));
 
 		this->addChild(mHero, 1);
 
-		//´´½¨Ó¢ÐÛÒÆ¶¯¿ØÖÆÆ÷
+		//ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		HeroMoveController* heroMoveController = HeroMoveController::create();
 
-		//°Ñ¿ØÖÆÆ÷Ìí¼Óµ½³¡¾°ÖÐ
+		//ï¿½Ñ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		this->addChild(heroMoveController);
 
-		//ÉèÖÃ¿ØÖÆÆ÷µ½Ó¢ÐÛÉíÉÏ
+		//ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		mHero->setController(heroMoveController);
 
 		
