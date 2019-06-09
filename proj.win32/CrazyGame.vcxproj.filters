@@ -120,6 +120,12 @@
     <ClCompile Include="..\Classes\MouseInput.cpp">
       <Filter>输入管理器</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\ShopScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AloneOrOnline.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -217,6 +223,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\MouseInput.h">
       <Filter>输入管理器</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ShopScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AloneOrOnline.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -149,6 +149,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Classes\AloneOrOnline.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\Command.cpp" />
     <ClCompile Include="..\Classes\CommandList.cpp" />
@@ -163,6 +164,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClCompile Include="..\Classes\NetworkInit.cpp" />
     <ClCompile Include="..\Classes\NetworkManager.cpp" />
     <ClCompile Include="..\Classes\RandGen.cpp" />
+    <ClCompile Include="..\Classes\ShopScene.cpp" />
     <ClCompile Include="..\Classes\SkillButton.cpp" />
     <ClCompile Include="..\Classes\SocketAddress.cpp" />
     <ClCompile Include="..\Classes\SocketAddressFactory.cpp" />
@@ -177,6 +179,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Classes\AloneOrOnline.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\Art.h" />
     <ClInclude Include="..\Classes\BaseMap.h" />
@@ -196,6 +199,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClInclude Include="..\Classes\NetworkInit.h" />
     <ClInclude Include="..\Classes\NetworkManager.h" />
     <ClInclude Include="..\Classes\RandGen.h" />
+    <ClInclude Include="..\Classes\ShopScene.h" />
     <ClInclude Include="..\Classes\SkillButton.h" />
     <ClInclude Include="..\Classes\SocketAddress.h" />
     <ClInclude Include="..\Classes\SocketAddressFactory.h" />
