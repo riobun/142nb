@@ -3,9 +3,9 @@
 #ifndef _TollgateScene_H_
 #define _TollgateScene_H_
 
+#include"GameHead.h"
 
-#include "GameHead.h"
-USING_NS_CC;
+using namespace cocos2d;
 
 
 
@@ -20,10 +20,6 @@ public:
 	void menuCloseCallback(cocos2d::Ref* pSender);
 	virtual void update(float dt);
     void searchFinish();//在网络搜索完毕后调用
-	
-	// a selector callback
-	void EnterShop(cocos2d::Ref* pSender);
-
 	// implement the "static create()" method manually
 	CREATE_FUNC(TollgateScene);
 	
@@ -38,7 +34,6 @@ private:
 	cocos2d::Sprite *sprite;
 	cocos2d::TMXTiledMap *map;
 	cocos2d::LabelTTF *label;
-	std::map<cocos2d::EventKeyboard::KeyCode, bool> keys;
 
     cocos2d::Sprite* m_map;
 

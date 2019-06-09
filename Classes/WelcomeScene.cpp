@@ -1,7 +1,9 @@
-#include "AloneOrOnline.h"
+#include "HelloWorldScene.h"
 #include "WelcomeScene.h"
+#include "SimpleAudioEngine.h"
+#include "3d/CCSprite3D.h"
+#include "GameScene.h"
 #include "TollgateScene.h"
-
 
 USING_NS_CC;
 
@@ -25,8 +27,14 @@ bool WelcomeScene::init()
 	/*if (!Layer::init())
 	{
 		return false;
-	}*/
+	}
 
+	Size visibleSize = Director::getInstance()->getVisibleSize();
+	Vec2 origin = Director::getInstance()->getVisibleOrigin();
+
+	_tileMap = TMXTiledMap::create("Map/Map.tmx");
+	addChild(tileMap, 0, 100);
+	*/
 	auto visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
@@ -48,7 +56,7 @@ bool WelcomeScene::init()
 	auto Logo = Sprite::create("Logo.png");
 	Logo->setScale(0.8f);
 	Logo->setPosition(visibleSize.width / 2, visibleSize.height * 3/ 5);
-	addChild(Logo, 0);
+	addChild(Logo, 1);
 
 
 	/////////////////////////////
@@ -59,7 +67,7 @@ bool WelcomeScene::init()
 	auto startItem = MenuItemImage::create(
 		"Start1.png",
 		"Start2.png",
-		CC_CALLBACK_1(WelcomeScene::EnterTollgate, this));
+		CC_CALLBACK_1(WelcomeScene::EnterTollgateScene, this));
 
 	if (startItem == nullptr ||
 		startItem->getContentSize().width <= 0 ||
@@ -115,22 +123,12 @@ bool WelcomeScene::init()
 	return true;
 }
 
-/*void WelcomeScene::EnterAOO(Ref* pSender)
+void WelcomeScene::EnterTollgateScene(Ref* pSender)
 {
 	MenuItem* startItem = (MenuItem*)pSender;
 	log("Touch startItem %p", startItem);
-	auto AOOSceneCreate = AOO::createScene();
+	auto tollgateSceneCreate = TollgateScene::createScene();
 
-	Director::getInstance()->pushScene(AOOSceneCreate);
-
-}*/
-
-void WelcomeScene::EnterTollgate(Ref* pSender)
-{
-	MenuItem* startItem = (MenuItem*)pSender;
-	log("Touch startItem %p", startItem);
-	auto TollgateSceneCreate = TollgateScene::createScene();
-
-	Director::getInstance()->pushScene(TollgateSceneCreate);
+	Director::getInstance()->pushScene(tollgateSceneCreate);
 
 }
