@@ -163,6 +163,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClCompile Include="..\Classes\NetworkInit.cpp" />
     <ClCompile Include="..\Classes\NetworkManager.cpp" />
     <ClCompile Include="..\Classes\RandGen.cpp" />
+    <ClCompile Include="..\Classes\SingleProxy.cpp" />
     <ClCompile Include="..\Classes\SkillButton.cpp" />
     <ClCompile Include="..\Classes\SocketAddress.cpp" />
     <ClCompile Include="..\Classes\SocketAddressFactory.cpp" />
@@ -196,6 +197,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClInclude Include="..\Classes\NetworkInit.h" />
     <ClInclude Include="..\Classes\NetworkManager.h" />
     <ClInclude Include="..\Classes\RandGen.h" />
+    <ClInclude Include="..\Classes\SingleProxy.h" />
     <ClInclude Include="..\Classes\SkillButton.h" />
     <ClInclude Include="..\Classes\SocketAddress.h" />
     <ClInclude Include="..\Classes\SocketAddressFactory.h" />

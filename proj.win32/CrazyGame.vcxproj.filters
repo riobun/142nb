@@ -40,6 +40,9 @@
     <Filter Include="输入管理器">
       <UniqueIdentifier>{f912d9e0-116f-4453-acf0-d2ef2d605e28}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Network\SingleProxy">
+      <UniqueIdentifier>{319ff7d5-e701-4861-afbd-729587a5178f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -119,6 +122,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\EntityRegistry.cpp">
       <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SingleProxy.cpp">
+      <Filter>Network\SingleProxy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -217,6 +223,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\NetworkHead.h">
       <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SingleProxy.h">
+      <Filter>Network\SingleProxy</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
