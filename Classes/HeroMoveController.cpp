@@ -3,7 +3,7 @@ using namespace cocos2d;
 
 bool HeroMoveController::init() {
 
-	HeroSpeed = 30;
+	
 	
 	registeMouseEvent();
 
@@ -27,7 +27,6 @@ void HeroMoveController::registeMouseEvent() {
 		EventMouse* eMouse = (EventMouse*)event;
 
 		m_controllerListener->stopAllActions();
-		
 
 	};
 
@@ -35,15 +34,12 @@ void HeroMoveController::registeMouseEvent() {
 
 		EventMouse* eMouse = (EventMouse*)event;
 		Vec2 cur_pos = m_controllerListener->getPosition();
-
-		double iTime = (cur_pos - Vec2(eMouse->getCursorX(), eMouse->getCursorY())).length() / HeroSpeed;
+		double iTime = (cur_pos - Vec2(eMouse->getCursorX(), eMouse->getCursorY())).length() /PRI_SPEED;
 		MoveTo* moveTo = MoveTo::create(iTime, Vec2(eMouse->getCursorX(), eMouse->getCursorY()));
 		m_controllerListener->runAction(moveTo);
-		
 
 	};
 
-	//将监听器与场景绑定
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(myMouseListener, this);
-
+	//_eventDispatcher->addEventListenerWithSceneGraphPriority(myMouseListener->clone(), getChildByTag(eHero_Tag));
 }

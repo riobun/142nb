@@ -11,8 +11,6 @@ Scene* TollgateScene::createScene() {
 	auto scene = Scene::create();
 	auto layer = TollgateScene::create();
 	scene->addChild(layer);
-
-	
 	return scene;
 }
 
@@ -59,10 +57,10 @@ bool TollgateScene::init()
 		map->setPosition(Point(0, 0));
 		map->setAnchorPoint(Vec2(0, 0));
 		// add the sprite as a child to this layer
-		this->addChild(map, -1,map_Tag);
+		this->addChild(map, -1);
 	}
 
-	auto shieldLayer = Sprite::create("shieldLayer.png");  // shieldLayerÎªï¿½ï¿½ï¿½Î²ï¿½
+	auto shieldLayer = Sprite::create("shieldLayer.png");  // shieldLayerÎªÆÁ±Î²ã
 	if (shieldLayer == nullptr)
 	{
 		problemLoading("shieldLayer.png'");
@@ -77,15 +75,13 @@ bool TollgateScene::init()
 		this->addChild(shieldLayer, 0);
 	}
 
-
-
-
-	//ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½ï¿½
+	//Ìí¼ÓÓ¢ÐÛ
 	addHero(map);
-
+	addTower(map);
+	
 
 	////////////////////////////
-	//ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È´
+	//Ìí¼Ó¼¼ÄÜÍ¼±êÓëÀäÈ´
 	auto skillItem = CCDirector::sharedDirector()->getWinSize();
 	auto menuSkillButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 2.f);  //(normal,cool,time)
 	menuSkillButton->setPosition(skillItem.width / 2, skillItem.height / 2);
@@ -133,7 +129,7 @@ bool TollgateScene::init()
 		// position the label on the center of the screen
 		label->setPosition(Vec2(origin.x + visibleSize.width / 2,
 			origin.y + visibleSize.height - label->getContentSize().height));
-		label->setAnchorPoint(Vec2(1.0, 1.0));//ï¿½ï¿½ï¿½ï¿½ï¿½ÓµÄ´ï¿½ï¿½ë£ºï¿½ï¿½ï¿½Ä¡ï¿½hello worldï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
+		label->setAnchorPoint(Vec2(1.0, 1.0));//ÐÂÌí¼ÓµÄ´úÂë£º¸ü¸Ä¡°hello world¡±µÄÎ»ÖÃ
 
 		// add the label as a child to this layer
 		this->addChild(label, 1);
@@ -155,7 +151,7 @@ void TollgateScene::update(float dt)
 
 void TollgateScene::menuCloseCallback(Ref* pSender)
 {
-	//Í£Ö¹ï¿½ï¿½ï¿½ï¿½
+	//Í£Ö¹¸üÐÂ
 	unscheduleUpdate();
 	//Close the cocos2d-x game scene and quit the application
 	Director::getInstance()->end();
@@ -171,40 +167,58 @@ void TollgateScene::addHero(Sprite* map) {
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	Sprite* mHeroSprite = Sprite::create("AShe/Ashe1.png");//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	Sprite* eHeroSprite = Sprite::create("AShe/Ashe1.png");
-	if (mHeroSprite == nullptr&&eHeroSprite == nullptr)
+
+	Sprite* mHeroSprite = Sprite::create("AShe/Ashe1.png");
+	//Sprite* eHeroSprite = Sprite::create("AShe/Ashe1.png");
+	if (mHeroSprite == nullptr)
 	{
 		problemLoading("'fonts/Marker Felt.ttf'");
 	}
 	else
 	{
+
 		mHeroSprite->setScale(SPRITE_SIZE);
-		eHeroSprite->setScale(SPRITE_SIZE);
-		//ï¿½Ñ¾ï¿½ï¿½ï¿½ó¶¨µï¿½Ó¢ï¿½Û¶ï¿½ï¿½ï¿½ï¿½ï¿½
+		//eHeroSprite->setScale(SPRITE_SIZE);
+
+		//°Ñ¾«Áé°ó¶¨µ½Ó¢ÐÛ¶ÔÏóÉÏ
+
 		Hero* mHero = Hero::create();
 		mHero->bindSprite(mHeroSprite);
-		Hero* eHero = Hero::create();
-		eHero->bindSprite(eHeroSprite);
+		//Hero* eHero = Hero::create();
+		//eHero->bindSprite(eHeroSprite);
 
-		//ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½Û³ï¿½ï¿½ï¿½ï¿½ï¿½
+		//ÉèÖÃÓ¢ÐÛ³öÉúµã
 		mHero->setPosition(Point(100, visibleSize.height / 2 + 50));
-		eHero->setPosition(Point(visibleSize.width - 100, visibleSize.height / 2 + 50));
+		//eHero->setPosition(Point(visibleSize.width - 100, visibleSize.height / 2 + 50));
 
-		this->addChild(mHero, 1, mHero_Tag);
-		this->addChild(eHero, 1, eHero_Tag);
-		//ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		MouseInput* mHeroMoveController = MouseInput::create();
-		MouseInput* eHeroMoveController = MouseInput::create();
-		//ï¿½Ñ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+		this->addChild(mHero, 1);
+		//this->addChild(eHero, 1, eHero_Tag);
+		
+		HeroMoveController* mHeroMoveController = HeroMoveController::create();
+		//HeroMoveController* eHeroMoveController = HeroMoveController::create();
+		
 		this->addChild(mHeroMoveController);
-		this->addChild(eHeroMoveController);
-		//ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		//this->addChild(eHeroMoveController);
+		
 		mHero->setController(mHeroMoveController);
-		eHero->setController(eHeroMoveController);
+		//eHero->setController(eHeroMoveController);
+
 		
 	}
 
 	
+}
+
+void TollgateScene::addTower(Sprite* map) { 
+	Size visibleSize = Director::getInstance()->getVisibleSize();
+	Vec2 origin = Director::getInstance()->getVisibleOrigin();
+
+	Sprite* mLaneTowerSprite = Sprite::create("tower.png");
+	LaneTower* mLaneTower = LaneTower::create();
+	mLaneTower->bindSprite(mLaneTowerSprite);
+	mLaneTower->setPosition(Point(visibleSize.width * 3 / 4 - 60, visibleSize.height / 2 + 15));
+	this->addChild(mLaneTower, 1);
+
 }
 

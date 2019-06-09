@@ -53,7 +53,7 @@ using std::unordered_set;
 using std::map;
 
 #include"cocos2d.h"
-//using namespace cocos2d; ≤ªø…“‘–¥£°
+//using namespace cocos2d;
 
 #include<string.h>
 #include "NetworkHead.h"
@@ -66,14 +66,15 @@ using std::map;
 #include "MemoryBitStream.h"
 #include"Entity.h"
 #include"Hero.h"
+#include"LaneTower.h"
 
 #include "GameObjectRegistry.h"
-//#include "Command.h"
+#include "Command.h"
 #include "CommandList.h"
 
 #include "TurnData.h"
 #include "NetworkInit.h"
-//#include "NetworkManager.h"
+#include "NetworkManager.h"
 
 #include"TollgateScene.h"
 #include"HelloWorldScene.h"
@@ -81,6 +82,8 @@ using std::map;
 #define PRI_SPEED 30
 #define SPRITE_SIZE 0.3
 #define MOUSE_SIZE 0.5
+#define Cystal_SIZE 0.6
+
 
 typedef enum
 {

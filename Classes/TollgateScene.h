@@ -27,6 +27,7 @@ public:
 	cocos2d::Vec2 toScreenCoord(cocos2d::Vec2 position);
 
 	void addHero(Sprite* map);
+	void addTower(Sprite* map);
 private:
 	cocos2d::Size visibleSize;
 	cocos2d::Sprite *sprite;

@@ -4,9 +4,6 @@
 //  删除与本项目无关的函数
 //  自定义类型读写需要添加
 
-#ifndef _MEMORY_BIT_STREAM_H_
-#define _MEMORY_BIT_STREAM_H_
-
 #include <cstdint>
 #include <cstdlib>
 #include <string>
@@ -163,4 +160,3 @@ private:
 
 };
 
-#endif _MEMORY_BIT_STREAM_H_

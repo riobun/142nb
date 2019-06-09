@@ -10,7 +10,7 @@ public:
 	virtual bool init();
     virtual void WriteForCRC(OutputMemoryBitStream& inStream);
 
-    void run(cocos2d::Sprite* sprite);
+ 
 
 };
 #endif

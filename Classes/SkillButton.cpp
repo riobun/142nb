@@ -96,7 +96,7 @@ void SkillButton::addKeyListener()
 		this->isKeyPressed(keyCode);
 	};
 	
-	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+	//_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
 
