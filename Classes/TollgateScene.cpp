@@ -85,13 +85,13 @@ bool TollgateScene::init()
 		this->addChild(shieldLayer, 0);
 	}
 
-    Network::StaticInit(default_name);
-    EntityRegistry::StaticInit();
-    EntityRegistry::sInstance->RegisterCreationFunction('HERO', Hero::StaticCreate);
+    //Network::StaticInit(default_name);
+    //EntityRegistry::StaticInit();
+    //EntityRegistry::sInstance->RegisterCreationFunction('HERO', Hero::StaticCreate);
 
 	//����Ӣ��
     //在网络接收到两方初始化信息后再加英雄,searchFinish()
-	//addHero(map, NetworkManager::sInstance->GetMyPlayerId());
+	addHero(map, 1);
 
 
 	////////////////////////////
@@ -150,7 +150,7 @@ bool TollgateScene::init()
 	}*/
 
 
-    scheduleUpdate();
+    //scheduleUpdate();
 	//this->scheduleUpdate();
 	//this->scheldue(schedule_selector(HelloWorld::update),1.0f/60);
 
@@ -161,7 +161,7 @@ void TollgateScene::update(float dt)
 {
 	//auto label = this->getChildByTag(123);
 	//label->setPosition(label->getPosition() + Vec2(2, -2));
-    Network::sInstance->Update();
+    //Network::sInstance->Update();
 }
 
 void TollgateScene::menuCloseCallback(Ref* pSender)
