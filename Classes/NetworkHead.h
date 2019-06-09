@@ -56,17 +56,9 @@ using std::string;
 using std::unordered_set;
 using std::map;
 
-
 constexpr uint16_t default_port = 45000;
 constexpr char* default_addr = "127.0.0.1:45000";
 constexpr char* default_name = "King";
-
-
-
-
-//class Entity;
-//class Hero;
-//typedef std::shared_ptr< Entity > EntityPtr;
 
 #include "StringUtils.h"
 #include "RandGen.h"
@@ -80,18 +72,3 @@ constexpr char* default_name = "King";
 #include "SocketUtil.h"
 
 #endif // _NETWORK_HEAD_H_
-
-
-/*
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-//音乐格式.aifc
-//#define bg_music_1   "sound/home_bg.aifc"
-
-#elif (CC_TARGET_PLATFORM == CC_PLATFORM_WP8)
-//音乐格式.wav
-
-#else
-//音乐格式.mp3
-
-#endif
-*/

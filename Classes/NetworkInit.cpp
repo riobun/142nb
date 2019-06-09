@@ -6,6 +6,14 @@
 
 unique_ptr< Network > Network::sInstance;
 
+namespace NetVar
+{
+    uint16_t my_port = 45000;
+    std::string my_addr = "127.0.0.1:45000";
+    std::string my_name = "King";
+    bool wantbe_master = false;
+}
+
 Network::Network()
 {
 
