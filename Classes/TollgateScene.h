@@ -7,8 +7,6 @@
 
 using namespace cocos2d;
 
-
-
 class TollgateScene :public cocos2d::Layer {
 public:
     TollgateScene();

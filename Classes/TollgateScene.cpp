@@ -67,7 +67,7 @@ bool TollgateScene::init()
 		map->setPosition(Point(0, 0));
 		map->setAnchorPoint(Vec2(0, 0));
 		// add the sprite as a child to this layer
-		this->addChild(map, -1,map_Tag);
+		this->addChild(map, -1);
 	}
 
 	auto shieldLayer = Sprite::create("shieldLayer.png");  // shieldLayerΪ���β�
@@ -175,6 +175,8 @@ void TollgateScene::menuCloseCallback(Ref* pSender)
 
 	//EventCustom customEndEvent("game_scene_close_event");
 	//_eventDispatcher->dispatchEvent(&customEndEvent);
+
+
 }
 
 
@@ -186,42 +188,48 @@ void TollgateScene::addHero(Sprite* map, uint32_t side) {
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	Sprite* mHeroSprite = Sprite::create("AShe/Ashe1.png");//��������
-	Sprite* eHeroSprite = Sprite::create("AShe/Ashe1.png");
-	if (mHeroSprite == nullptr&&eHeroSprite == nullptr)
+	Sprite* heroSprite = Sprite::create("AShe/Ashe1.png");//��������
+	if (heroSprite == nullptr)
 	{
 		problemLoading("'fonts/Marker Felt.ttf'");
 	}
 	else
 	{
-		mHeroSprite->setScale(SPRITE_SIZE);
-		eHeroSprite->setScale(SPRITE_SIZE);
+		heroSprite->setScale(SPRITE_SIZE);
+
 		//�Ѿ���󶨵�Ӣ�۶�����
 		Hero* mHero = Hero::create();
-		mHero->bindSprite(mHeroSprite);
-		Hero* eHero = Hero::create();
-		eHero->bindSprite(eHeroSprite);
+		mHero->bindSprite(heroSprite);
+		//mHero->run(heroSprite);
 
 		//����Ӣ�۳�����
+<<<<<<< HEAD
         //根据是哪边的加英雄
         if (side == 1)
             mHero->setPosition(Point(100, visibleSize.height / 2 + 50));
         else
             mHero->setPosition(Point(visibleSize.width - 100, visibleSize.height / 2 + 50));
+=======
+		mHero->setPosition(Point(100, visibleSize.height / 2 + 50));
+>>>>>>> parent of 2073d1d... Merge branch 'master' of https://github.com/riobun/142nb
 
-		this->addChild(mHero, 1, mHero_Tag);
-		this->addChild(eHero, 1, eHero_Tag);
+		this->addChild(mHero, 1);
+
 		//����Ӣ���ƶ�������
-		MouseInput* mHeroMoveController = MouseInput::create();
-		MouseInput* eHeroMoveController = MouseInput::create();
+		HeroMoveController* heroMoveController = HeroMoveController::create();
+
 		//�ѿ��������ӵ�������
-		this->addChild(mHeroMoveController);
-		this->addChild(eHeroMoveController);
+		this->addChild(heroMoveController);
+
 		//���ÿ�������Ӣ������
 		mHero->setController(heroMoveController);
+<<<<<<< HEAD
         NetworkManager::sInstance->RegisterAndReturn(mHero);
 		
 	}
+=======
+
+>>>>>>> parent of 2073d1d... Merge branch 'master' of https://github.com/riobun/142nb
 
 	
 }
