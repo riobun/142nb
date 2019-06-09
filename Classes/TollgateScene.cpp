@@ -1,7 +1,9 @@
 #include "GameHead.h"
 #include "Art.h"
-#include "GameScene.h"
 #include "SimpleAudioEngine.h"
+#include "ShopScene.h"
+#include "TollgateScene.h"
+#include "HelloWorldScene.h"
 
 USING_NS_CC;
 
@@ -46,8 +48,7 @@ bool TollgateScene::init()
 
 	auto visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
-
-
+  
 	/////////////////////////////
 	// 2. add a menu item with "X" image, which is clicked to quit the program
 	//    you may modify it.
@@ -94,60 +95,47 @@ bool TollgateScene::init()
 	//addHero(map, NetworkManager::sInstance->GetMyPlayerId());
 
 
+	/**
+	添加商店按键
+
+
+	*/
+	auto shopItem = MenuItemImage::create(
+		"shopButton1.png",
+		"shopButton2.png",
+		CC_CALLBACK_1(TollgateScene::EnterShop, this));
+
+	if (shopItem == nullptr ||
+		shopItem->getContentSize().width <= 0 ||
+		shopItem->getContentSize().height <= 0)
+	{
+		problemLoading("'shopButton1.png' and 'shopButton2.png'");
+	}
+	else
+	{
+		shopItem->setScale(0.4f);
+		shopItem->setAnchorPoint(Vec2(1,1));
+		shopItem->setPosition(visibleSize.width,visibleSize.height);
+
+		
+	}	
+	// create menu, it's an autorelease object
+	auto shopMenu = Menu::create(shopItem, NULL);
+	shopMenu->setPosition(Vec2::ZERO);
+   	this->addChild(shopMenu, 2);
+
+
+
+
 	////////////////////////////
-	//���Ӽ���ͼ������ȴ
+	//addskillItem
 	auto skillItem = CCDirector::sharedDirector()->getWinSize();
-	auto menuSkillButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 2.f);  //(normal,cool,time)
-	menuSkillButton->setPosition(skillItem.width / 2, skillItem.height / 2);
+	auto menuSkillButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 10.f);  //(normal,cool,time)
+	menuSkillButton->setPosition(Vec2(0, 0));
+	menuSkillButton->setAnchorPoint(Point(0, 0));
 	this->addChild(menuSkillButton);
 
 
-
-	/*auto closeItem = MenuItemImage::create(
-		"CloseNormal.png",
-		"CloseSelected.png",
-		CC_CALLBACK_1(GameScene::menuCloseCallback, this));
-
-	if (closeItem == nullptr ||
-		closeItem->getContentSize().width <= 0 ||
-		closeItem->getContentSize().height <= 0)
-	{
-		problemLoading("'CloseNormal.png' and 'CloseSelected.png'");
-	}
-	else
-	{
-		float x = origin.x + visibleSize.width - closeItem->getContentSize().width / 2;
-		float y = origin.y + closeItem->getContentSize().height / 2;
-		closeItem->setPosition(Vec2(x, y));
-	}
-
-	// create menu, it's an autorelease object
-	auto menu = Menu::create(closeItem, NULL);
-	menu->setPosition(Vec2::ZERO);
-	this->addChild(menu, 1);
-
-	/////////////////////////////
-	// 3. add your codes below...
-
-	// add a label shows "Hello World"
-	// create and initialize a label
-
-	auto label = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 24);
-	label->setTag(123);
-	if (label == nullptr)
-	{
-		problemLoading("'fonts/Marker Felt.ttf'");
-	}
-	else
-	{
-		// position the label on the center of the screen
-		label->setPosition(Vec2(origin.x + visibleSize.width / 2,
-			origin.y + visibleSize.height - label->getContentSize().height));
-		label->setAnchorPoint(Vec2(1.0, 1.0));//�����ӵĴ��룺���ġ�hello world����λ��
-
-		// add the label as a child to this layer
-		this->addChild(label, 1);
-	}*/
 
 
     scheduleUpdate();
@@ -223,7 +211,7 @@ void TollgateScene::addHero(Sprite* map, uint32_t side) {
 		
 	}
 
-	
+	}
 }
 
 void TollgateScene::searchFinish()
@@ -233,4 +221,13 @@ void TollgateScene::searchFinish()
         addHero(m_map, iter.first);
     }
     
+}
+void TollgateScene::EnterShop(Ref* pSender)
+{
+	MenuItem* shopItem = (MenuItem*)pSender;
+	log("Touch startItem %p", shopItem);
+	auto shopSceneCreate = ShopScene::createScene();
+
+	Director::getInstance()->pushScene(shopSceneCreate);
+
 }

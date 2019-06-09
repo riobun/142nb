@@ -116,6 +116,11 @@
     </ClCompile>
     <ClCompile Include="..\Classes\EntityRegistry.cpp">
       <Filter>Network</Filter>
+    <ClCompile Include="..\Classes\ShopScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AloneOrOnline.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -211,6 +216,11 @@
     </ClInclude>
     <ClInclude Include="..\Classes\NetworkHead.h">
       <Filter>Network</Filter>
+    <ClInclude Include="..\Classes\ShopScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AloneOrOnline.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
