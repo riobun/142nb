@@ -182,9 +182,6 @@
     <ClInclude Include="..\Classes\TurnData.h">
       <Filter>Network\收发管理</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\NetworkHead.h">
-      <Filter>Network\工具</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\MemoryBitStream.h">
       <Filter>Network\工具</Filter>
     </ClInclude>
@@ -216,6 +213,9 @@
       <Filter>Network\收发管理</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\EntityRegistry.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\NetworkHead.h">
       <Filter>Network</Filter>
     </ClInclude>
   </ItemGroup>

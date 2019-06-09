@@ -56,15 +56,13 @@ using std::string;
 using std::unordered_set;
 using std::map;
 
-//class RoboCat;
-//class GameObject;//待定义
-/* 自定义类示范
-class Quaternion
-{
-public:
-    float		mX, mY, mZ, mW;
-};
-*/
+
+constexpr uint16_t default_port = 45000;
+constexpr char* default_addr = "127.0.0.1:45000";
+constexpr char* default_name = "King";
+
+
+
 
 #include "cocos2d.h"
 

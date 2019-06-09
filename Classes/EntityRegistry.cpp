@@ -9,6 +9,7 @@ std::unique_ptr< EntityRegistry >	EntityRegistry::sInstance = nullptr;
 void EntityRegistry::StaticInit()
 {
 	sInstance.reset( new EntityRegistry() );
+
 }
 
 EntityRegistry::EntityRegistry()

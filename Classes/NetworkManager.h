@@ -145,11 +145,12 @@ private:
 
 	queue< ReceivedPacket, list< ReceivedPacket > >	mPacketQueue;
 
-	IntToGameObjectMap			mNetworkIdToGameObjectMap;          //网络id  --  实体id
+	IntToGameObjectMap			mNetworkIdToGameObjectMap;          //网络id  --  实体指针
 	IntToSocketAddrMap			mPlayerToSocketMap;                            //玩家id   --  socket地址
 	SocketAddrToIntMap			mSocketToPlayerMap;                            //socket地址   --  玩家id
-	IntToStrMap				        	mPlayerNameMap;                                 //网络id -- 玩家名字
-
+public:
+    IntToStrMap				        	mPlayerNameMap;                                 //网络id -- 玩家名字，改为publlic
+private:
 	//this stores all of our turn information for every turn since game start
 	vector< IntToTurnDataMap >	mTurnData;
 
@@ -170,6 +171,7 @@ private:
 	float			mTimeToStart;
 
 	int				mPlayerCount;
+    int                 mIntroCount;
 	//we track the highest player id seen in the event
 	//the master peer d/cs and we need a new master peer
 	//who can assign ids

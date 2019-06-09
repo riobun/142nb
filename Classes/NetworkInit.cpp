@@ -3,8 +3,6 @@
 //  更改：杜玫， 2019.06.05
 
 #include "GameHead.h"
-const std::string default_player_name = "无名";
-const uint16_t default_port = 45000;
 
 unique_ptr< Network > Network::sInstance;
 
@@ -13,27 +11,21 @@ Network::Network()
 
 }
 
-bool Network::StaticInit(std::string& name)//NetworkManager?
+bool Network::StaticInit(std::string name, bool tobe_master_peer, uint16_t inPort, std::string addr)
 {
     RandGen::StaticInit();
     SocketUtil::StaticInit();
-
-    //WindowManager::StaticInit()
-    //GraphicsDriver::StaticInit( WindowManager::sInstance->GetMainWindow() )
-
     CommandList::StaticInit();
     sInstance.reset(new Network());//唯一实例
-
-    //assume no colon implies this is just the port, which implies that this is the master peer
-    //重写：自动设置端口，设置玩家名字
-    /*
-    if (destination.find_first_of(':') == string::npos)
+    //EntityRegistry::StaticInit();
+    //EntityRegistry::sInstance->RegisterCreationFunction('HERO', Hero::StaticCreate);
+    if (tobe_master_peer)
     {
-        NetworkManager::StaticInitAsMasterPeer(stoi(destination), name);
+        NetworkManager::StaticInitAsMasterPeer(stoi(addr), name);
     }
     else
     {
-        SocketAddressPtr targetAddress = SocketAddressFactory::CreateIPv4FromString(destination);
+        SocketAddressPtr targetAddress = SocketAddressFactory::CreateIPv4FromString(addr);
         if (!targetAddress)
         {
             LOG_SU("ERROR: Unable to create target address from destination.");
@@ -41,7 +33,7 @@ bool Network::StaticInit(std::string& name)//NetworkManager?
         }
         NetworkManager::StaticInitAsPeer(*targetAddress, name);
     }
-    */
+
     return true;
 }
 
@@ -68,24 +60,3 @@ void Network::Update()
     }
 
 }
-
-
-
-/*
-void Engine::HandleEvent( SDL_Event* inEvent )
-{
-    switch( inEvent->type )
-    {
-    case SDL_KEYDOWN:
-        InputManager::sInstance->HandleInput( EIA_Pressed, inEvent->key.keysym.sym );
-        break;
-    case SDL_KEYUP:
-        InputManager::sInstance->HandleInput( EIA_Released, inEvent->key.keysym.sym );
-        break;
-    case SDL_MOUSEBUTTONDOWN:
-        InputManager::sInstance->HandleMouseClick( inEvent->button.x, inEvent->button.y, inEvent->button.button );
-        break;
-    default:
-        break;
-    }
-}*/

@@ -7,16 +7,23 @@ USING_NS_CC;
 
 using namespace cocos2d;
 
+TollgateScene* TollgateScene::slayer;
+
 Scene* TollgateScene::createScene() {
 	auto scene = Scene::create();
-	auto layer = TollgateScene::create();
-	scene->addChild(layer);
-
-	
+	slayer = TollgateScene::create();
+	scene->addChild(slayer);
 	return scene;
 }
 
+TollgateScene::TollgateScene()
+{
 
+}
+TollgateScene::~TollgateScene()
+{
+
+}
 
 
 
@@ -48,6 +55,7 @@ bool TollgateScene::init()
 	// add a "close" icon to exit the progress. it's an autorelease object
 
 	auto map = Sprite::create("Map.png");
+    m_map = map;
 	if (map == nullptr)
 	{
 		problemLoading("Map.png'");
@@ -77,11 +85,13 @@ bool TollgateScene::init()
 		this->addChild(shieldLayer, 0);
 	}
 
-
-
+    Network::StaticInit(default_name);
+    EntityRegistry::StaticInit();
+    EntityRegistry::sInstance->RegisterCreationFunction('HERO', Hero::StaticCreate);
 
 	//����Ӣ��
-	addHero(map);
+    //在网络接收到两方初始化信息后再加英雄,searchFinish()
+	//addHero(map, NetworkManager::sInstance->GetMyPlayerId());
 
 
 	////////////////////////////
@@ -141,7 +151,7 @@ bool TollgateScene::init()
 	}*/
 
 
-
+    scheduleUpdate();
 	//this->scheduleUpdate();
 	//this->scheldue(schedule_selector(HelloWorld::update),1.0f/60);
 
@@ -150,8 +160,9 @@ bool TollgateScene::init()
 }
 void TollgateScene::update(float dt)
 {
-	auto label = this->getChildByTag(123);
-	label->setPosition(label->getPosition() + Vec2(2, -2));
+	//auto label = this->getChildByTag(123);
+	//label->setPosition(label->getPosition() + Vec2(2, -2));
+    Network::sInstance->Update();
 }
 
 void TollgateScene::menuCloseCallback(Ref* pSender)
@@ -174,7 +185,7 @@ void TollgateScene::menuCloseCallback(Ref* pSender)
 
 
 
-void TollgateScene::addHero(Sprite* map) {
+void TollgateScene::addHero(Sprite* map, uint32_t side) {
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
@@ -193,7 +204,11 @@ void TollgateScene::addHero(Sprite* map) {
 		//mHero->run(heroSprite);
 
 		//����Ӣ�۳�����
-		mHero->setPosition(Point(100, visibleSize.height / 2 + 50));
+        //根据是哪边的加英雄
+        if (side == 1)
+            mHero->setPosition(Point(100, visibleSize.height / 2 + 50));
+        else
+            mHero->setPosition(Point(visibleSize.width - 100, visibleSize.height / 2 + 50));
 
 		this->addChild(mHero, 1);
 
@@ -205,10 +220,18 @@ void TollgateScene::addHero(Sprite* map) {
 
 		//���ÿ�������Ӣ������
 		mHero->setController(heroMoveController);
-
+        NetworkManager::sInstance->RegisterAndReturn(mHero);
 		
 	}
 
 	
 }
 
+void TollgateScene::searchFinish()
+{
+    for (auto &iter : NetworkManager::sInstance->mPlayerNameMap)
+    {
+        addHero(m_map, iter.first);
+    }
+    
+}

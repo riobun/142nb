@@ -5,6 +5,10 @@ bool Hero::init() {
 	return true;
 }
 
+EntityPtr Hero::StaticCreate() { 
+    return NetworkManager::sInstance->RegisterAndReturn(new Hero()); 
+}
+
 void Hero::run(Sprite* sprite) {
 	
 	double iSpeed = PRI_SPEED;

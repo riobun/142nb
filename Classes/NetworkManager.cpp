@@ -13,7 +13,7 @@ namespace
 	const float kTimeBetweenHellos = 1.f;
 	const float kStartDelay = 3.0f;
 	const int	kSubTurnsPerTurn = 3; //子轮数
-	const int	kMaxPlayerCount = 4; //最多玩家
+	const int	kMaxPlayerCount = 2; //最多玩家
 }
 
 //初始化为主机是否成功
@@ -481,6 +481,12 @@ void NetworkManager::HandleIntroPacket( InputMemoryBitStream& inInputStream, con
 		mSocketToPlayerMap.emplace( inFromAddress, playerId );
 		mPlayerNameMap.emplace( playerId, name );
 	}
+    else
+    {
+        ++mIntroCount;
+        if (mIntroCount == kMaxPlayerCount - 1)
+            EnterPlayingState();
+    }
 }
 
 void NetworkManager::HandleStartPacket( InputMemoryBitStream& inInputStream, const SocketAddress& inFromAddress )
@@ -662,6 +668,7 @@ void NetworkManager::UpdateHighestPlayerId( uint32_t inId )
 void NetworkManager::EnterPlayingState()
 {
 	mState = NMS_Playing;
+    TollgateScene::slayer->searchFinish();
 	//const float kCatOffset = 1.0f;
 }
 

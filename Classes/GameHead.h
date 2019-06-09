@@ -64,9 +64,9 @@ using namespace cocos2d;
 #include "MemoryBitStream.h"
 
 #include"Entity.h"
+#include "EntityRegistry.h"
 #include"Hero.h"
 
-#include "EntityRegistry.h"
 #include "Command.h"
 #include "CommandList.h"
 
