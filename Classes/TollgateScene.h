@@ -7,6 +7,8 @@
 #include "GameHead.h"
 USING_NS_CC;
 
+
+
 class TollgateScene :public cocos2d::Layer {
 public:
 	static cocos2d::Scene* createScene();
