@@ -67,7 +67,7 @@ bool TollgateScene::init()
 		map->setPosition(Point(0, 0));
 		map->setAnchorPoint(Vec2(0, 0));
 		// add the sprite as a child to this layer
-		this->addChild(map, -1);
+		this->addChild(map, -1,map_Tag);
 	}
 
 	auto shieldLayer = Sprite::create("shieldLayer.png");  // shieldLayerΪ���β�
@@ -97,8 +97,7 @@ bool TollgateScene::init()
 	////////////////////////////
 	//���Ӽ���ͼ������ȴ
 	auto skillItem = CCDirector::sharedDirector()->getWinSize();
-	
-	auto menuSkillButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 2.f);  //(naomal,cool,time)
+	auto menuSkillButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 2.f);  //(normal,cool,time)
 	menuSkillButton->setPosition(skillItem.width / 2, skillItem.height / 2);
 	this->addChild(menuSkillButton);
 
@@ -176,8 +175,6 @@ void TollgateScene::menuCloseCallback(Ref* pSender)
 
 	//EventCustom customEndEvent("game_scene_close_event");
 	//_eventDispatcher->dispatchEvent(&customEndEvent);
-
-
 }
 
 
@@ -189,19 +186,21 @@ void TollgateScene::addHero(Sprite* map, uint32_t side) {
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	Sprite* heroSprite = Sprite::create("AShe/Ashe1.png");//��������
-	if (heroSprite == nullptr)
+	Sprite* mHeroSprite = Sprite::create("AShe/Ashe1.png");//��������
+	Sprite* eHeroSprite = Sprite::create("AShe/Ashe1.png");
+	if (mHeroSprite == nullptr&&eHeroSprite == nullptr)
 	{
 		problemLoading("'fonts/Marker Felt.ttf'");
 	}
 	else
 	{
-		heroSprite->setScale(SPRITE_SIZE);
-
+		mHeroSprite->setScale(SPRITE_SIZE);
+		eHeroSprite->setScale(SPRITE_SIZE);
 		//�Ѿ���󶨵�Ӣ�۶�����
 		Hero* mHero = Hero::create();
-		mHero->bindSprite(heroSprite);
-		//mHero->run(heroSprite);
+		mHero->bindSprite(mHeroSprite);
+		Hero* eHero = Hero::create();
+		eHero->bindSprite(eHeroSprite);
 
 		//����Ӣ�۳�����
         //根据是哪边的加英雄
@@ -210,14 +209,14 @@ void TollgateScene::addHero(Sprite* map, uint32_t side) {
         else
             mHero->setPosition(Point(visibleSize.width - 100, visibleSize.height / 2 + 50));
 
-		this->addChild(mHero, 1);
-
+		this->addChild(mHero, 1, mHero_Tag);
+		this->addChild(eHero, 1, eHero_Tag);
 		//����Ӣ���ƶ�������
-		HeroMoveController* heroMoveController = HeroMoveController::create();
-
+		MouseInput* mHeroMoveController = MouseInput::create();
+		MouseInput* eHeroMoveController = MouseInput::create();
 		//�ѿ��������ӵ�������
-		this->addChild(heroMoveController);
-
+		this->addChild(mHeroMoveController);
+		this->addChild(eHeroMoveController);
 		//���ÿ�������Ӣ������
 		mHero->setController(heroMoveController);
         NetworkManager::sInstance->RegisterAndReturn(mHero);
