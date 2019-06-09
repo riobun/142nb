@@ -7,7 +7,7 @@
 #include <cstdint>
 #include <cstdlib>
 #include <string>
-
+#include "cocos2d.h"
 
 inline uint32_t ConvertToFixed( float inNumber, float inMin, float inPrecision )
 {

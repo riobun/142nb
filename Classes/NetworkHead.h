@@ -56,6 +56,7 @@ using std::string;
 using std::unordered_set;
 using std::map;
 
+<<<<<<< Updated upstream
 //class RoboCat;
 //class GameObject;//待定义
 /* 自定义类示范
@@ -65,6 +66,13 @@ public:
     float		mX, mY, mZ, mW;
 };
 */
+=======
+constexpr uint16_t default_port = 45000;
+constexpr char* default_addr = "127.0.0.1:45000";
+constexpr char* default_name = "King";
+
+
+>>>>>>> Stashed changes
 #include "StringUtils.h"
 #include "RandGen.h"
 #include "Timing.h"
@@ -89,18 +97,3 @@ public:
 #include "NetworkManager.h"
 
 #endif // _NETWORK_HEAD_H_
-
-
-/*
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-//音乐格式.aifc
-//#define bg_music_1   "sound/home_bg.aifc"
-
-#elif (CC_TARGET_PLATFORM == CC_PLATFORM_WP8)
-//音乐格式.wav
-
-#else
-//音乐格式.mp3
-
-#endif
-*/
