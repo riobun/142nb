@@ -53,7 +53,7 @@ using std::unordered_set;
 using std::map;
 
 #include"cocos2d.h"
-using namespace cocos2d; 
+//using namespace cocos2d; 不可以写！
 
 #include<string.h>
 #include "NetworkHead.h"
@@ -64,17 +64,16 @@ using namespace cocos2d;
 #include"Controller1.h"
 #include"HeroMoveController.h"
 #include "MemoryBitStream.h"
-#include"MouseInput.h"
 #include"Entity.h"
 #include"Hero.h"
 
 #include "GameObjectRegistry.h"
-#include "Command.h"
+//#include "Command.h"
 #include "CommandList.h"
 
 #include "TurnData.h"
 #include "NetworkInit.h"
-#include "NetworkManager.h"
+//#include "NetworkManager.h"
 
 #include"TollgateScene.h"
 #include"HelloWorldScene.h"
@@ -100,14 +99,14 @@ typedef enum
 
 /*
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-//锟斤拷锟街革拷式.aifc
+//音乐格式.aifc
 //#define bg_music_1   "sound/home_bg.aifc"
 
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_WP8)
-//锟斤拷锟街革拷式.wav
+//音乐格式.wav
 
 #else
-//锟斤拷锟街革拷式.mp3
+//音乐格式.mp3
 
 #endif
 */
