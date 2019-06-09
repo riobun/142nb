@@ -98,7 +98,7 @@ void SkillButton::addKeyListener()
 	
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 
-	//Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
+	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
 
 }
 
