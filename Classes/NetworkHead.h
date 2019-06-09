@@ -13,7 +13,7 @@
 #include "WinSock2.h"
 #include "Ws2tcpip.h"
 typedef int socklen_t;
-
+//typedef char* receiveBufer_t;
 #else
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -64,7 +64,9 @@ constexpr char* default_name = "King";
 
 
 
-#include "cocos2d.h"
+//class Entity;
+//class Hero;
+//typedef std::shared_ptr< Entity > EntityPtr;
 
 #include "StringUtils.h"
 #include "RandGen.h"
@@ -76,8 +78,6 @@ constexpr char* default_name = "King";
 #include "UDPSocket.h"
 #include "TCPSocket.h"
 #include "SocketUtil.h"
-
-//#include "MemoryBitStream.h"
 
 #endif // _NETWORK_HEAD_H_
 

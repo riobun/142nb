@@ -203,15 +203,13 @@ void TollgateScene::addHero(Sprite* map, uint32_t side) {
 		//mHero->run(heroSprite);
 
 		//����Ӣ�۳�����
-<<<<<<< HEAD
+
         //根据是哪边的加英雄
         if (side == 1)
             mHero->setPosition(Point(100, visibleSize.height / 2 + 50));
         else
             mHero->setPosition(Point(visibleSize.width - 100, visibleSize.height / 2 + 50));
-=======
-		mHero->setPosition(Point(100, visibleSize.height / 2 + 50));
->>>>>>> parent of 2073d1d... Merge branch 'master' of https://github.com/riobun/142nb
+
 
 		this->addChild(mHero, 1);
 
@@ -223,13 +221,13 @@ void TollgateScene::addHero(Sprite* map, uint32_t side) {
 
 		//���ÿ�������Ӣ������
 		mHero->setController(heroMoveController);
-<<<<<<< HEAD
-        NetworkManager::sInstance->RegisterAndReturn(mHero);
+
+        //NetworkManager::sInstance->RegisterAndReturn(mHero);
 		
 	}
-=======
 
->>>>>>> parent of 2073d1d... Merge branch 'master' of https://github.com/riobun/142nb
+
+
 
 	
 }
