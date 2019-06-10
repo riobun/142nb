@@ -1,9 +1,8 @@
 #include "GameHead.h"
 #include "Art.h"
+#include "GameScene.h"
 #include "SimpleAudioEngine.h"
 #include "ShopScene.h"
-#include "TollgateScene.h"
-#include "HelloWorldScene.h"
 
 USING_NS_CC;
 
@@ -13,8 +12,6 @@ Scene* TollgateScene::createScene() {
 	auto scene = Scene::create();
 	auto layer = TollgateScene::create();
 	scene->addChild(layer);
-
-	
 	return scene;
 }
 
@@ -41,7 +38,8 @@ bool TollgateScene::init()
 
 	auto visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
-  
+
+	
 	/////////////////////////////
 	// 2. add a menu item with "X" image, which is clicked to quit the program
 	//    you may modify it.
@@ -60,10 +58,10 @@ bool TollgateScene::init()
 		map->setPosition(Point(0, 0));
 		map->setAnchorPoint(Vec2(0, 0));
 		// add the sprite as a child to this layer
-		this->addChild(map, -1,map_Tag);
+		this->addChild(map, -1);
 	}
 
-	auto shieldLayer = Sprite::create("shieldLayer.png");  // shieldLayerÎªï¿½ï¿½ï¿½Î²ï¿½
+	auto shieldLayer = Sprite::create("shieldLayer.png");  // shieldLayerÎªÆÁ±Î²ã
 	if (shieldLayer == nullptr)
 	{
 		problemLoading("shieldLayer.png'");
@@ -78,54 +76,43 @@ bool TollgateScene::init()
 		this->addChild(shieldLayer, 0);
 	}
 
-
-
-
-	//ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½ï¿½
+	//Ìí¼ÓÓ¢ÐÛ
 	addHero(map);
+	addTower(map);
+	
+
+	////////////////////////////
+	//Ìí¼Ó¼¼ÄÜÍ¼±êÓëÀäÈ´
+	auto skillItem = CCDirector::sharedDirector()->getWinSize();
+	auto menuSkillButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 10.f);  //(normal,cool,time)
+	menuSkillButton->setPosition(skillItem.width / 2, skillItem.height / 2);
+	this->addChild(menuSkillButton);
 
 
-	/**
-	æ·»åŠ å•†åº—æŒ‰é”®
 
-
-	*/
-	auto shopItem = MenuItemImage::create(
+	auto shop = MenuItemImage::create(
 		"shopButton1.png",
 		"shopButton2.png",
-		CC_CALLBACK_1(TollgateScene::EnterShop, this));
+		CC_CALLBACK_1(TollgateScene::shop, this));
 
-	if (shopItem == nullptr ||
-		shopItem->getContentSize().width <= 0 ||
-		shopItem->getContentSize().height <= 0)
+	if (shop == nullptr ||
+		shop->getContentSize().width <= 0 ||
+		shop->getContentSize().height <= 0)
 	{
 		problemLoading("'shopButton1.png' and 'shopButton2.png'");
 	}
 	else
 	{
-		shopItem->setScale(0.4f);
-		shopItem->setAnchorPoint(Vec2(1,1));
-		shopItem->setPosition(visibleSize.width,visibleSize.height);
+		shop->setScale(0.2f);
+		shop->setAnchorPoint(Vec2(0, 0));
+		shop->setPosition(visibleSize.width / 10, visibleSize.height / 7 - 10);
 
-		
-	}	
+
+	}
 	// create menu, it's an autorelease object
-	auto shopMenu = Menu::create(shopItem, NULL);
+	auto shopMenu = Menu::create(shop, NULL);
 	shopMenu->setPosition(Vec2::ZERO);
-   	this->addChild(shopMenu, 2);
-
-
-
-
-	////////////////////////////
-	//addskillItem
-	auto skillItem = CCDirector::sharedDirector()->getWinSize();
-	auto menuSkillButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 10.f);  //(normal,cool,time)
-	menuSkillButton->setPosition(Vec2(0, 0));
-	menuSkillButton->setAnchorPoint(Point(0, 0));
-	this->addChild(menuSkillButton);
-
-
+	this->addChild(shopMenu, 2);
 
 
 
@@ -145,7 +132,7 @@ void TollgateScene::update(float dt)
 
 void TollgateScene::menuCloseCallback(Ref* pSender)
 {
-	//Í£Ö¹ï¿½ï¿½ï¿½ï¿½
+	//Í£Ö¹¸üÐÂ
 	unscheduleUpdate();
 	//Close the cocos2d-x game scene and quit the application
 	Director::getInstance()->end();
@@ -156,54 +143,73 @@ void TollgateScene::menuCloseCallback(Ref* pSender)
 	//_eventDispatcher->dispatchEvent(&customEndEvent);
 }
 
-void TollgateScene::addHero(Sprite* map)
-{
+
+void TollgateScene::addHero(Sprite* map) {
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	Sprite* mHeroSprite = Sprite::create("AShe/Ashe1.png");//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	Sprite* eHeroSprite = Sprite::create("AShe/Ashe1.png");
-	if (mHeroSprite == nullptr&&eHeroSprite == nullptr)
+
+	Sprite* mHeroSprite = Sprite::create("AShe/Ashe1.png");
+	//Sprite* eHeroSprite = Sprite::create("AShe/Ashe1.png");
+	if (mHeroSprite == nullptr)
 	{
 		problemLoading("'fonts/Marker Felt.ttf'");
 	}
 	else
 	{
+
 		mHeroSprite->setScale(SPRITE_SIZE);
-		eHeroSprite->setScale(SPRITE_SIZE);
-		//ï¿½Ñ¾ï¿½ï¿½ï¿½ó¶¨µï¿½Ó¢ï¿½Û¶ï¿½ï¿½ï¿½ï¿½ï¿½
+		//eHeroSprite->setScale(SPRITE_SIZE);
+
+		//°Ñ¾«Áé°ó¶¨µ½Ó¢ÐÛ¶ÔÏóÉÏ
+
 		Hero* mHero = Hero::create();
 		mHero->bindSprite(mHeroSprite);
-		Hero* eHero = Hero::create();
-		eHero->bindSprite(eHeroSprite);
+		//Hero* eHero = Hero::create();
+		//eHero->bindSprite(eHeroSprite);
 
-		//ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½Û³ï¿½ï¿½ï¿½ï¿½ï¿½
+		//ÉèÖÃÓ¢ÐÛ³öÉúµã
 		mHero->setPosition(Point(100, visibleSize.height / 2 + 50));
-		eHero->setPosition(Point(visibleSize.width - 100, visibleSize.height / 2 + 50));
+		//eHero->setPosition(Point(visibleSize.width - 100, visibleSize.height / 2 + 50));
 
-		this->addChild(mHero, 1, mHero_Tag);
-		this->addChild(eHero, 1, eHero_Tag);
-		//ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		MouseInput* mHeroMoveController = MouseInput::create();
-		MouseInput* eHeroMoveController = MouseInput::create();
-		//ï¿½Ñ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+		this->addChild(mHero, 1);
+		//this->addChild(eHero, 1, eHero_Tag);
+		
+		HeroMoveController* mHeroMoveController = HeroMoveController::create();
+		//HeroMoveController* eHeroMoveController = HeroMoveController::create();
+		
 		this->addChild(mHeroMoveController);
-		this->addChild(eHeroMoveController);
-		//ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		//this->addChild(eHeroMoveController);
+		
 		mHero->setController(mHeroMoveController);
-		eHero->setController(eHeroMoveController);
+		//eHero->setController(eHeroMoveController);
+
 		
 	}
 
-	}
+	
 }
 
-void TollgateScene::EnterShop(Ref* pSender)
-{
-	MenuItem* shopItem = (MenuItem*)pSender;
-	log("Touch startItem %p", shopItem);
-	auto shopSceneCreate = ShopScene::createScene();
+void TollgateScene::addTower(Sprite* map) { 
+	Size visibleSize = Director::getInstance()->getVisibleSize();
+	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	Director::getInstance()->pushScene(shopSceneCreate);
+	Sprite* mLaneTowerSprite = Sprite::create("tower.png");
+	LaneTower* mLaneTower = LaneTower::create();
+	mLaneTower->bindSprite(mLaneTowerSprite);
+	mLaneTower->setPosition(Point(visibleSize.width * 3 / 4 - 60, visibleSize.height / 2 + 15));
+	this->addChild(mLaneTower, 1);
+
+}
+
+
+void TollgateScene::shop(Ref* pSender)
+{
+	MenuItem* shop = (MenuItem*)pSender;
+	log("Touch backGame %p", shop);
+	auto toShopScene = ShopScene::createScene();
+
+	Director::getInstance()->pushScene(toShopScene);
 
 }

@@ -37,19 +37,10 @@
     <Filter Include="Network\收发管理">
       <UniqueIdentifier>{1894c4ab-292b-4c1c-a775-0eb07eddd7ee}</UniqueIdentifier>
     </Filter>
-    <Filter Include="输入管理器">
-      <UniqueIdentifier>{f912d9e0-116f-4453-acf0-d2ef2d605e28}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\AppDelegate.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
-      <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Command.cpp">
       <Filter>Network</Filter>
@@ -63,14 +54,8 @@
     <ClCompile Include="..\Classes\NetworkManager.cpp">
       <Filter>Network</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\WelcomeScene.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\GameObjectRegistry.cpp">
       <Filter>Network</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SkillButton.cpp">
-      <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\SocketAddress.cpp">
       <Filter>Network\底层</Filter>
@@ -102,37 +87,58 @@
     <ClCompile Include="..\Classes\MemoryBitStream.cpp">
       <Filter>Network\工具</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\BaseMap.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="..\Classes\Controller1.cpp">
-      <Filter>控制器</Filter>
+      <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Entity.cpp">
-      <Filter>实体</Filter>
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CsvData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HeroMoveController.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LaneTower.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+      <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Hero.cpp">
-      <Filter>实体\英雄</Filter>
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SkillButton.cpp">
+      <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\TollgateScene.cpp">
-      <Filter>场景</Filter>
+      <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\MouseInput.cpp">
-      <Filter>输入管理器</Filter>
+    <ClCompile Include="..\Classes\WelcomeScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AloneOrOnline.cpp">
+      <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\ShopScene.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\AloneOrOnline.cpp">
+    <ClCompile Include="..\Classes\Equipment.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>win32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
-      <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Command.h">
       <Filter>Network</Filter>
@@ -146,20 +152,8 @@
     <ClInclude Include="..\Classes\NetworkManager.h">
       <Filter>Network</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Art.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\BaseMap.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\WelcomeScene.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\GameObjectRegistry.h">
       <Filter>Network</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SkillButton.h">
-      <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\SocketAddress.h">
       <Filter>Network\底层</Filter>
@@ -197,31 +191,61 @@
     <ClInclude Include="..\Classes\MemoryBitStream.h">
       <Filter>Network\工具</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Art.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BaseMap.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="..\Classes\Controller1.h">
-      <Filter>控制器</Filter>
+      <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\ControllerListener.h">
-      <Filter>控制器</Filter>
+      <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Entity.h">
-      <Filter>实体</Filter>
+      <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameHead.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\CsvData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HeroMoveController.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LaneTower.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HelloWorldScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="..\Classes\Hero.h">
-      <Filter>实体\英雄</Filter>
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SkillButton.h">
+      <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\TollgateScene.h">
-      <Filter>场景</Filter>
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\MouseInput.h">
-      <Filter>输入管理器</Filter>
+    <ClInclude Include="..\Classes\WelcomeScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AloneOrOnline.h">
+      <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\ShopScene.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\AloneOrOnline.h">
+    <ClInclude Include="..\Classes\Equipment.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

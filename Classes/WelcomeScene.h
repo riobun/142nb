@@ -12,12 +12,10 @@ public:
 	virtual bool init();
 
 	// a selector callback
-	
-	void EnterAOO(cocos2d::Ref* pSender);	
-	void EnterTollgate(cocos2d::Ref* pSender);
+	void EnterTollgateScene(cocos2d::Ref* pSender);
 
+	// implement the "static create()" method manually
 	CREATE_FUNC(WelcomeScene);
-
 };
 
 #endif // __HELLOWORLD_SCENE_H__
