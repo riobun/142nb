@@ -2,16 +2,16 @@
 
 using namespace cocos2d;
 
-Entity::Entity():
-    m_sprite(NULL),
-    m_sName(" "),
-    m_iHP(1),
-    m_iDefense(1),
-    m_isDead(false),
-    m_iSpeed(1),
-    m_iLevel(1),
-    mNetworkId(0),
-    mPlayerId(0)
+Entity::Entity() :
+	m_sprite(NULL),
+		m_sName(" "),
+		m_iHP(1),
+		m_iDefense(1),
+		m_isDead(false),
+		m_iSpeed(PRI_SPEED),
+		m_iLevel(1),
+		mNetworkId(0),
+		mPlayerId(0)
 {
 }
 
@@ -49,11 +49,11 @@ void Entity::hurtMe(int iHurtValue) {
 
 	int iCurHP = getiHP();
 	int iAfterHP = iCurHP - iHurtValue;
+		setiHP(iAfterHP);
 
 
 
 	if (iAfterHP > 0) {
-		setiHP(iAfterHP);
 	}
 	else {
 		m_isDead = true;
@@ -68,7 +68,8 @@ bool Entity::isDead() {
 }
 
 void Entity::onDead() {
-    NetworkManager::sInstance->UnregisterGameObject(this);
+	this->removeFromParent();
+	NetworkManager::sInstance->UnregisterGameObject(this);
 }
 
 void Entity::onBindSprite() {

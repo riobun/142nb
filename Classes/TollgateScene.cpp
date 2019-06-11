@@ -7,6 +7,9 @@ USING_NS_CC;
 
 using namespace cocos2d;
 
+vector<Entity*> mETT_ptr;
+vector<Entity*> eETT_ptr;
+
 Scene* TollgateScene::createScene() {
 	auto scene = Scene::create();
 	auto layer = TollgateScene::create();
@@ -38,7 +41,7 @@ bool TollgateScene::init()
 	auto visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-
+	
 	/////////////////////////////
 	// 2. add a menu item with "X" image, which is clicked to quit the program
 	//    you may modify it.
@@ -46,6 +49,7 @@ bool TollgateScene::init()
 	// add a "close" icon to exit the progress. it's an autorelease object
 
 	auto map = Sprite::create("Map.png");
+	
 	if (map == nullptr)
 	{
 		problemLoading("Map.png'");
@@ -169,8 +173,9 @@ void TollgateScene::addHero(Sprite* map) {
 
 
 	Sprite* mHeroSprite = Sprite::create("AShe/Ashe1.png");
-	//Sprite* eHeroSprite = Sprite::create("AShe/Ashe1.png");
-	if (mHeroSprite == nullptr)
+	Sprite* eHeroSprite = Sprite::create("AShe/Ashe1.png");
+	
+	if (mHeroSprite == nullptr && eHeroSprite == nullptr)
 	{
 		problemLoading("'fonts/Marker Felt.ttf'");
 	}
@@ -178,22 +183,24 @@ void TollgateScene::addHero(Sprite* map) {
 	{
 
 		mHeroSprite->setScale(SPRITE_SIZE);
-		//eHeroSprite->setScale(SPRITE_SIZE);
+		eHeroSprite->setScale(SPRITE_SIZE);
 
 		//把精灵绑定到英雄对象上
 
 		Hero* mHero = Hero::create();
 		mHero->bindSprite(mHeroSprite);
-		//Hero* eHero = Hero::create();
-		//eHero->bindSprite(eHeroSprite);
+		Hero* eHero = Hero::create();
+		eHero->bindSprite(eHeroSprite);
+		eETT_ptr.push_back(eHero);
 
 		//设置英雄出生点
 		mHero->setPosition(Point(100, visibleSize.height / 2 + 50));
-		//eHero->setPosition(Point(visibleSize.width - 100, visibleSize.height / 2 + 50));
+		eHero->setPosition(Point(visibleSize.width - 100, visibleSize.height / 2 + 50));
 
 
 		this->addChild(mHero, 1);
-		//this->addChild(eHero, 1, eHero_Tag);
+		this->addChild(eHero, 1);
+		
 		
 		HeroMoveController* mHeroMoveController = HeroMoveController::create();
 		//HeroMoveController* eHeroMoveController = HeroMoveController::create();
@@ -214,11 +221,41 @@ void TollgateScene::addTower(Sprite* map) {
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
+	//build my tower
 	Sprite* mLaneTowerSprite = Sprite::create("tower.png");
 	LaneTower* mLaneTower = LaneTower::create();
 	mLaneTower->bindSprite(mLaneTowerSprite);
-	mLaneTower->setPosition(Point(visibleSize.width * 3 / 4 - 60, visibleSize.height / 2 + 15));
+	mLaneTower->setPosition(Point(visibleSize.width / 4 + 60, visibleSize.height / 2 + 15));
 	this->addChild(mLaneTower, 1);
+	mETT_ptr.push_back(mLaneTower);
+
+	//build enemy's tower
+	Sprite* eLaneTowerSprite = Sprite::create("tower.png");
+	LaneTower* eLaneTower = LaneTower::create();
+	eLaneTower->bindSprite(eLaneTowerSprite);
+	eLaneTower->setPosition(Point(visibleSize.width * 3 / 4 - 60, visibleSize.height / 2 + 15));
+	this->addChild(eLaneTower, 1);
+	eETT_ptr.push_back(eLaneTower);
+	
+	//build my cystal
+	Sprite* mCystalSprite = Sprite::create("crystal.png");
+	mCystalSprite->setScale(Cystal_SIZE);
+	LaneTower* mCystal = LaneTower::create();
+	mCystal->bindSprite(mCystalSprite);
+	mCystal->setPosition(Point(visibleSize.width  / 5 - 15, visibleSize.height / 2 + 30));
+	this->addChild(mCystal, 1, 1);
+	mETT_ptr.push_back(mCystal);
+
+	//build enemy's cystal
+	Sprite* eCystalSprite = Sprite::create("crystal.png");
+	eCystalSprite->setScale(Cystal_SIZE);
+	LaneTower* eCystal = LaneTower::create();
+	eCystal->bindSprite(eCystalSprite);
+	eCystal->setPosition(Point(visibleSize.width  * 4 / 5 + 15, visibleSize.height / 2 + 30));
+	this->addChild(eCystal, 1);
+	eETT_ptr.push_back(eCystal);
+
+
 
 }
 
