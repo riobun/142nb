@@ -10,6 +10,9 @@ using namespace cocos2d;
 vector<Entity*> mETT_ptr;
 vector<Entity*> eETT_ptr;
 
+int goldenCoin = 0;
+int power = 0;
+
 Scene* TollgateScene::createScene() {
 	auto scene = Scene::create();
 	auto layer = TollgateScene::create();
@@ -151,6 +154,11 @@ void TollgateScene::update(float dt)
 {
 	auto label = this->getChildByTag(123);
 	label->setPosition(label->getPosition() + Vec2(2, -2));
+
+	goldenCoin += 1;
+	power += 1;
+
+
 }
 
 void TollgateScene::menuCloseCallback(Ref* pSender)
@@ -228,6 +236,7 @@ void TollgateScene::addTower(Sprite* map) {
 	mLaneTower->setPosition(Point(visibleSize.width / 4 + 60, visibleSize.height / 2 + 15));
 	this->addChild(mLaneTower, 1);
 	mETT_ptr.push_back(mLaneTower);
+	m_laneTower = mLaneTower;
 
 	//build enemy's tower
 	Sprite* eLaneTowerSprite = Sprite::create("tower.png");
@@ -245,6 +254,7 @@ void TollgateScene::addTower(Sprite* map) {
 	mCrystal->setPosition(Point(visibleSize.width  / 5 - 15, visibleSize.height / 2 + 30));
 	this->addChild(mCrystal, 1, 1);
 	mETT_ptr.push_back(mCrystal);
+	m_crystal = mCrystal;
 
 	//build enemy's cystal
 	Sprite* eCrystalSprite = Sprite::create("crystal.png");

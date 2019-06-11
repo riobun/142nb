@@ -34,8 +34,9 @@ private:
 	cocos2d::Sprite *sprite;
 	cocos2d::TMXTiledMap *map;
 	cocos2d::LabelTTF *label;
-	
-
+	Hero* m_hero;
+	LaneTower* m_laneTower;
+	Crystal* m_crystal;
 
 };
 

@@ -69,6 +69,10 @@ bool Entity::isDead() {
 
 void Entity::onDead(int i) {
 	
+	extern int goldenCoin;
+	extern int power;
+	goldenCoin += 60;
+	power += 60;
 	extern vector<Entity*> eETT_ptr;
 	eETT_ptr.erase(eETT_ptr.begin() + i);
 	this->removeFromParent();
