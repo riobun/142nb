@@ -48,6 +48,9 @@
     <ClCompile Include="..\Classes\LaneTower.cpp">
       <Filter>实体</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Crystal.cpp">
+      <Filter>实体</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -103,6 +106,9 @@
       <Filter>Csv文件读取</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\LaneTower.h">
+      <Filter>实体</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Crystal.h">
       <Filter>实体</Filter>
     </ClInclude>
   </ItemGroup>

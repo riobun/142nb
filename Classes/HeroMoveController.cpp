@@ -37,29 +37,29 @@ void HeroMoveController::registeMouseEvent() {
 		EventMouse* eMouse = (EventMouse*)event;
 		Vec2 cur_pos = m_controllerListener->getPosition();
 		extern vector<Entity*> eETT_ptr;
-		for (auto i = 0; i <eETT_ptr.size(); i++) {
+		if (eETT_ptr.size()) {
+			for (auto i = 0; i < eETT_ptr.size(); i++) {
 
-			//if (eETT_ptr[i]!= NULL) {
-				float distance = (eETT_ptr[i]->getPosition() - cur_pos).length();
-				float isClick = 30;
-				if ((Vec2(eMouse->getCursorX(), eMouse->getCursorY()) - eETT_ptr[i]->getPosition()).length() <= isClick) {
+				if (eETT_ptr[i] != NULL) {
+					float distance = (eETT_ptr[i]->getPosition() - cur_pos).length();
+					float isClick = 30;
+					if ((Vec2(eMouse->getCursorX(), eMouse->getCursorY()) - eETT_ptr[i]->getPosition()).length() <= isClick) {
 
-					if (distance <= attackScale) {
-						CCLOG("hurt!");
-						eETT_ptr[i]->hurtMe(Ashe_attackValue);
-						break;
+						if (distance <= attackScale) {
+							eETT_ptr[i]->hurtMe(i, Ashe_attackValue);
+							break;
+						}
 					}
 				}
-			//}
 
-			if (i == eETT_ptr.size()-1) {
-				double iTime = (cur_pos - Vec2(eMouse->getCursorX(), eMouse->getCursorY())).length() / PRI_SPEED;
-				MoveTo* moveTo = MoveTo::create(iTime, Vec2(eMouse->getCursorX(), eMouse->getCursorY()));
-				m_controllerListener->runAction(moveTo);
+				if (i == eETT_ptr.size() - 1) {
+					double iTime = (cur_pos - Vec2(eMouse->getCursorX(), eMouse->getCursorY())).length() / PRI_SPEED;
+					MoveTo* moveTo = MoveTo::create(iTime, Vec2(eMouse->getCursorX(), eMouse->getCursorY()));
+					m_controllerListener->runAction(moveTo);
 
+				}
 			}
 		}
-		
 	};
 
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(myMouseListener, this);

@@ -67,6 +67,7 @@ using std::map;
 #include"Entity.h"
 #include"Hero.h"
 #include"LaneTower.h"
+#include"Crystal.h"
 
 #include "GameObjectRegistry.h"
 #include "Command.h"
@@ -82,14 +83,16 @@ using std::map;
 #define PRI_SPEED 30
 #define SPRITE_SIZE 0.3
 #define MOUSE_SIZE 0.5
-#define Cystal_SIZE 0.6
+#define Crystal_SIZE 0.6
 #define Ashe_attackValue 20
 #define attackScale 200
-#define Ashe_ID 66;
-#define Tower_ID 55;
-#define Ashe_iHP 60;
-#define Ashe_iDenfense 10;
-#define Tower_iHP 100;
+#define Crystal_ID 77
+#define Ashe_ID 66
+#define Tower_ID 55
+#define Ashe_iHP 60
+#define Ashe_iDenfense 10
+#define Tower_iHP 100
+#define Crystal_iHP 150
 
 /*typedef enum
 {

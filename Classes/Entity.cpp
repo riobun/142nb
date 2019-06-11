@@ -37,7 +37,7 @@ Sprite* Entity::getSprite() {
 	return this->m_sprite;
 }
 
-void Entity::hurtMe(int iHurtValue) {
+void Entity::hurtMe(int i,int iHurtValue) {
 	if (m_isDead) {
 		return;
 	}
@@ -58,7 +58,7 @@ void Entity::hurtMe(int iHurtValue) {
 	else {
 		m_isDead = true;
 		//ËÀÍö
-		onDead();
+		onDead(i);
 
 	}
 }
@@ -67,9 +67,13 @@ bool Entity::isDead() {
 	return this->m_isDead;
 }
 
-void Entity::onDead() {
+void Entity::onDead(int i) {
+	
+	extern vector<Entity*> eETT_ptr;
+	eETT_ptr.erase(eETT_ptr.begin() + i);
 	this->removeFromParent();
-	NetworkManager::sInstance->UnregisterGameObject(this);
+
+	//NetworkManager::sInstance->UnregisterGameObject(this);
 }
 
 void Entity::onBindSprite() {

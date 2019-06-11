@@ -238,22 +238,22 @@ void TollgateScene::addTower(Sprite* map) {
 	eETT_ptr.push_back(eLaneTower);
 	
 	//build my cystal
-	Sprite* mCystalSprite = Sprite::create("crystal.png");
-	mCystalSprite->setScale(Cystal_SIZE);
-	LaneTower* mCystal = LaneTower::create();
-	mCystal->bindSprite(mCystalSprite);
-	mCystal->setPosition(Point(visibleSize.width  / 5 - 15, visibleSize.height / 2 + 30));
-	this->addChild(mCystal, 1, 1);
-	mETT_ptr.push_back(mCystal);
+	Sprite* mCrystalSprite = Sprite::create("crystal.png");
+	mCrystalSprite->setScale(Crystal_SIZE);
+	Crystal* mCrystal = Crystal::create();
+	mCrystal->bindSprite(mCrystalSprite);
+	mCrystal->setPosition(Point(visibleSize.width  / 5 - 15, visibleSize.height / 2 + 30));
+	this->addChild(mCrystal, 1, 1);
+	mETT_ptr.push_back(mCrystal);
 
 	//build enemy's cystal
-	Sprite* eCystalSprite = Sprite::create("crystal.png");
-	eCystalSprite->setScale(Cystal_SIZE);
-	LaneTower* eCystal = LaneTower::create();
-	eCystal->bindSprite(eCystalSprite);
-	eCystal->setPosition(Point(visibleSize.width  * 4 / 5 + 15, visibleSize.height / 2 + 30));
-	this->addChild(eCystal, 1);
-	eETT_ptr.push_back(eCystal);
+	Sprite* eCrystalSprite = Sprite::create("crystal.png");
+	eCrystalSprite->setScale(Crystal_SIZE);
+	Crystal* eCrystal = Crystal::create();
+	eCrystal->bindSprite(eCrystalSprite);
+	eCrystal->setPosition(Point(visibleSize.width  * 4 / 5 + 15, visibleSize.height / 2 + 30));
+	this->addChild(eCrystal, 1);
+	eETT_ptr.push_back(eCrystal);
 
 
 
