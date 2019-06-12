@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+<<<<<<< HEAD
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\BaseMap.cpp" />
     <ClCompile Include="..\Classes\Equipment.cpp" />
@@ -31,6 +32,63 @@
     </ClCompile>
     <ClCompile Include="..\Classes\StringUtil.cpp">
       <Filter>Csv文件读取</Filter>
+=======
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network">
+      <UniqueIdentifier>{c7066ed6-c0a5-4f31-ae6c-e3901281159d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="实体">
+      <UniqueIdentifier>{bc1856dc-6a3b-462a-95e7-bbf8479878b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景">
+      <UniqueIdentifier>{cdee3545-0ef5-4bf2-98bf-7fb9d4cff0f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="控制器">
+      <UniqueIdentifier>{2fda4336-f827-4c15-8903-862ed56e18da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="控制器\英雄移动控制器">
+      <UniqueIdentifier>{e7611d85-080b-4ae1-a4e6-9cbfcb7cdfd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="实体\英雄">
+      <UniqueIdentifier>{7f0daa9a-f4c1-45c4-87ab-0c29b942f6cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\底层">
+      <UniqueIdentifier>{7be405a8-d22e-4cd3-b4ce-0b9a8e954261}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\工具">
+      <UniqueIdentifier>{3c5e4015-5713-4a88-8842-75ffefe39b9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\收发管理">
+      <UniqueIdentifier>{1894c4ab-292b-4c1c-a775-0eb07eddd7ee}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Command.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CommandList.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\NetworkInit.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\NetworkManager.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameObjectRegistry.cpp">
+      <Filter>Network</Filter>
+>>>>>>> parent of d82c000... Merge branch 'master' of https://github.com/riobun/142nb
     </ClCompile>
     <ClCompile Include="..\Classes\LaneTower.cpp">
       <Filter>实体</Filter>
@@ -65,12 +123,24 @@
     <ClCompile Include="..\Classes\LaneTower.cpp">
       <Filter>实体</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="..\Classes\Hero.cpp">
       <Filter>实体</Filter>
+=======
+    <ClCompile Include="..\Classes\RandGen.cpp">
+      <Filter>Network\工具</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Timing.cpp">
+      <Filter>Network\工具</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\StringUtils.cpp">
+      <Filter>Network\工具</Filter>
+>>>>>>> parent of d82c000... Merge branch 'master' of https://github.com/riobun/142nb
     </ClCompile>
     <ClCompile Include="..\Classes\Controller1.cpp">
       <Filter>控制器</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="..\Classes\TollgateScene.cpp">
       <Filter>场景</Filter>
     </ClCompile>
@@ -123,10 +193,83 @@
     <ClInclude Include="..\Classes\SocketAddress.h" />
     <ClInclude Include="..\Classes\CsvData.h">
       <Filter>Csv文件读取</Filter>
+=======
+    <ClCompile Include="..\Classes\MemoryBitStream.cpp">
+      <Filter>Network\工具</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BaseMap.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Controller1.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entity.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CsvData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HeroMoveController.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LaneTower.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Hero.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SkillButton.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TollgateScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\WelcomeScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AloneOrOnline.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ShopScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Equipment.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Command.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CommandList.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\NetworkInit.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\NetworkManager.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameObjectRegistry.h">
+      <Filter>Network</Filter>
+>>>>>>> parent of d82c000... Merge branch 'master' of https://github.com/riobun/142nb
     </ClInclude>
     <ClInclude Include="..\Classes\CsvUtil.h">
       <Filter>Csv文件读取</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="..\Classes\StringUtil.h">
       <Filter>Csv文件读取</Filter>
     </ClInclude>
@@ -135,6 +278,97 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Crystal.h">
       <Filter>实体</Filter>
+=======
+    <ClInclude Include="..\Classes\SocketAddressFactory.h">
+      <Filter>Network\底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SocketUtil.h">
+      <Filter>Network\底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TCPSocket.h">
+      <Filter>Network\底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UDPSocket.h">
+      <Filter>Network\底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\RandGen.h">
+      <Filter>Network\工具</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StringUtils.h">
+      <Filter>Network\工具</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Timing.h">
+      <Filter>Network\工具</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\WeightedTimedMovingAverage.h">
+      <Filter>Network\工具</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TurnData.h">
+      <Filter>Network\收发管理</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\NetworkHead.h">
+      <Filter>Network\工具</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MemoryBitStream.h">
+      <Filter>Network\工具</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Art.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BaseMap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Controller1.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ControllerListener.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entity.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameHead.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CsvData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HeroMoveController.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LaneTower.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HelloWorldScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Hero.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SkillButton.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TollgateScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\WelcomeScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AloneOrOnline.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ShopScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Equipment.h">
+      <Filter>src</Filter>
+>>>>>>> parent of d82c000... Merge branch 'master' of https://github.com/riobun/142nb
     </ClInclude>
     <ClInclude Include="..\Classes\EntityRegistry.h" />
     <ClInclude Include="..\Classes\Equipment.h" />
@@ -143,6 +377,7 @@
     <ClInclude Include="..\Classes\ShopScene.h" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <ResourceCompile Include="game.rc" />
   </ItemGroup>
   <ItemGroup>
@@ -158,5 +393,10 @@
     <Filter Include="Csv文件读取">
       <UniqueIdentifier>{a3b1e052-7d32-4c10-a187-edc93304f51c}</UniqueIdentifier>
     </Filter>
+=======
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+>>>>>>> parent of d82c000... Merge branch 'master' of https://github.com/riobun/142nb
   </ItemGroup>
 </Project>
