@@ -3,44 +3,20 @@
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\BaseMap.cpp" />
+    <ClCompile Include="..\Classes\Command.cpp" />
+    <ClCompile Include="..\Classes\CommandList.cpp" />
+    <ClCompile Include="..\Classes\Controller1.cpp" />
+    <ClCompile Include="..\Classes\CsvData.cpp" />
+    <ClCompile Include="..\Classes\CsvUtil.cpp" />
+    <ClCompile Include="..\Classes\Crystal.cpp" />
+    <ClCompile Include="..\Classes\Entity.cpp" />
+    <ClCompile Include="..\Classes\EntityRegistry.cpp" />
     <ClCompile Include="..\Classes\Equipment.cpp" />
     <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
-    <ClCompile Include="..\Classes\WelcomeScene.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="..\Classes\Entity.cpp">
-      <Filter>实体</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Hero.cpp">
-      <Filter>实体</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Controller1.cpp">
-      <Filter>控制器</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\HeroMoveController.cpp">
-      <Filter>控制器</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Command.cpp" />
-    <ClCompile Include="..\Classes\NetworkManager.cpp" />
-    <ClCompile Include="..\Classes\SocketAddress.cpp" />
-    <ClCompile Include="..\Classes\CsvData.cpp">
-      <Filter>Csv文件读取</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CsvUtil.cpp">
-      <Filter>Csv文件读取</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\StringUtil.cpp">
-      <Filter>Csv文件读取</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\LaneTower.cpp">
-      <Filter>实体</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Crystal.cpp">
-      <Filter>实体</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Command.cpp" />
-    <ClCompile Include="..\Classes\CommandList.cpp" />
-    <ClCompile Include="..\Classes\EntityRegistry.cpp" />
+    <ClCompile Include="..\Classes\Hero.cpp" />
+    <ClCompile Include="..\Classes\HeroMoveController.cpp" />
+    <ClCompile Include="..\Classes\LaneTower.cpp" />
     <ClCompile Include="..\Classes\MemoryBitStream.cpp" />
     <ClCompile Include="..\Classes\NetworkInit.cpp" />
     <ClCompile Include="..\Classes\NetworkManager.cpp" />
@@ -51,112 +27,65 @@
     <ClCompile Include="..\Classes\SocketAddress.cpp" />
     <ClCompile Include="..\Classes\SocketAddressFactory.cpp" />
     <ClCompile Include="..\Classes\SocketUtil.cpp" />
+    <ClCompile Include="..\Classes\StringUtil.cpp" />
     <ClCompile Include="..\Classes\StringUtils.cpp" />
     <ClCompile Include="..\Classes\TCPSocket.cpp" />
     <ClCompile Include="..\Classes\Timing.cpp" />
+    <ClCompile Include="..\Classes\TollgateScene.cpp" />
     <ClCompile Include="..\Classes\TurnData.cpp" />
     <ClCompile Include="..\Classes\UDPSocket.cpp" />
-    <ClCompile Include="..\Classes\HeroMoveController.cpp">
-      <Filter>控制器</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Entity.cpp">
-      <Filter>实体</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\LaneTower.cpp">
-      <Filter>实体</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Hero.cpp">
-      <Filter>实体</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Controller1.cpp">
-      <Filter>控制器</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\TollgateScene.cpp">
-      <Filter>场景</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CsvData.cpp">
-      <Filter>Csv文件读取</Filter>
-    </ClCompile>
+    <ClCompile Include="..\Classes\WelcomeScene.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="TollgateDataLayer.cpp" />
+    <ClCompile Include="ShowNumberNode.cpp" />
+    <ClCompile Include="NumberSprite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\Art.h" />
     <ClInclude Include="..\Classes\BaseMap.h" />
+    <ClInclude Include="..\Classes\Command.h" />
     <ClInclude Include="..\Classes\CommandList.h" />
+    <ClInclude Include="..\Classes\Controller1.h" />
+    <ClInclude Include="..\Classes\ControllerListener.h" />
+    <ClInclude Include="..\Classes\CsvData.h" />
+    <ClInclude Include="..\Classes\CsvUtil.h" />
+    <ClInclude Include="..\Classes\Crystal.h" />
+    <ClInclude Include="..\Classes\Entity.h" />
+    <ClInclude Include="..\Classes\EntityRegistry.h" />
+    <ClInclude Include="..\Classes\Equipment.h" />
     <ClInclude Include="..\Classes\GameHead.h" />
+    <ClInclude Include="..\Classes\GameScene.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\Hero.h" />
+    <ClInclude Include="..\Classes\HeroMoveController.h" />
+    <ClInclude Include="..\Classes\LaneTower.h" />
     <ClInclude Include="..\Classes\MemoryBitStream.h" />
     <ClInclude Include="..\Classes\NetworkHead.h" />
     <ClInclude Include="..\Classes\NetworkInit.h" />
+    <ClInclude Include="..\Classes\NetworkManager.h" />
     <ClInclude Include="..\Classes\RandGen.h" />
+    <ClInclude Include="..\Classes\ShopScene.h" />
+    <ClInclude Include="..\Classes\SingleProxy.h" />
     <ClInclude Include="..\Classes\SkillButton.h" />
+    <ClInclude Include="..\Classes\SocketAddress.h" />
     <ClInclude Include="..\Classes\SocketAddressFactory.h" />
     <ClInclude Include="..\Classes\SocketUtil.h" />
+    <ClInclude Include="..\Classes\StringUtil.h" />
     <ClInclude Include="..\Classes\StringUtils.h" />
     <ClInclude Include="..\Classes\TCPSocket.h" />
     <ClInclude Include="..\Classes\Timing.h" />
+    <ClInclude Include="..\Classes\TollgateScene.h" />
     <ClInclude Include="..\Classes\TurnData.h" />
     <ClInclude Include="..\Classes\UDPSocket.h" />
     <ClInclude Include="..\Classes\WeightedTimedMovingAverage.h" />
     <ClInclude Include="..\Classes\WelcomeScene.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="..\Classes\TollgateScene.h">
-      <Filter>场景</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Entity.h">
-      <Filter>实体</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Hero.h">
-      <Filter>实体</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Controller1.h">
-      <Filter>控制器</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\ControllerListener.h">
-      <Filter>控制器</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\HeroMoveController.h">
-      <Filter>控制器</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Command.h" />
-    <ClInclude Include="..\Classes\NetworkManager.h" />
-    <ClInclude Include="..\Classes\SocketAddress.h" />
-    <ClInclude Include="..\Classes\CsvData.h">
-      <Filter>Csv文件读取</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CsvUtil.h">
-      <Filter>Csv文件读取</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\StringUtil.h">
-      <Filter>Csv文件读取</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\LaneTower.h">
-      <Filter>实体</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Crystal.h">
-      <Filter>实体</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\EntityRegistry.h" />
-    <ClInclude Include="..\Classes\Equipment.h" />
-    <ClInclude Include="..\Classes\GameScene.h" />
-    <ClInclude Include="..\Classes\SingleProxy.h" />
-    <ClInclude Include="..\Classes\ShopScene.h" />
+    <ClInclude Include="TollgateDataLayer.h" />
+    <ClInclude Include="ShowNumberNode.h" />
+    <ClInclude Include="NumberSprite.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="场景">
-      <UniqueIdentifier>{7c28d037-33af-44f2-986d-92a1b4d01c91}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="实体">
-      <UniqueIdentifier>{3206e6b6-32fd-4732-bbcf-6ebb56d687ed}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="控制器">
-      <UniqueIdentifier>{40bd93aa-3bdb-45b3-a3a2-3b6421cc63d0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Csv文件读取">
-      <UniqueIdentifier>{a3b1e052-7d32-4c10-a187-edc93304f51c}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
 </Project>

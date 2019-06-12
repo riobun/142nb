@@ -78,6 +78,8 @@ using std::map;
 
 #include"TollgateScene.h"
 #include"HelloWorldScene.h"
+#include"NumberSprite.h"
+#include "ShowNumberNode.h"
 
 #define PRI_SPEED  30
 #define SPRITE_SIZE 0.3
@@ -106,6 +108,9 @@ using std::map;
 	eDiamond_Tag = 401
 }SpriteTags;*/
 
+
+
+#define NOTIFY cocos2d::NotificationCenter::getInstance();
 
 
 #endif //_GAME_HEAD_H

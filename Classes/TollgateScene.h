@@ -2,6 +2,7 @@
 
 #ifndef _TollgateScene_H_
 #define _TollgateScene_H_
+#define TAG_DATA_LAYER 2
 
 #include"GameHead.h"
 
@@ -26,10 +27,17 @@ public:
 	cocos2d::Vec2 toTileCoord(cocos2d::Vec2 position);
 	cocos2d::Vec2 toScreenCoord(cocos2d::Vec2 position);
 
+
 	Hero* m_hero;
 	void addHero(Sprite* map);
 	void addTower(Sprite* map);
 	void TollgateScene::shop(Ref* pSender);
+
+	void addHero(Sprite* map, uint32_t side);
+	void addNumberNode();
+	void logic(float dt);
+    static TollgateScene* slayer;
+
 private:
 	cocos2d::Size visibleSize;
 	cocos2d::Sprite *sprite;

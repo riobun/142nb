@@ -3,6 +3,8 @@
 #include "GameScene.h"
 #include "SimpleAudioEngine.h"
 #include "ShopScene.h"
+#include "TollgateDataLayer.h"
+#include "CCNotificationCenter.h"
 
 USING_NS_CC;
 
@@ -18,6 +20,27 @@ Scene* TollgateScene::createScene() {
 	auto scene = Scene::create();
 	auto layer = TollgateScene::create();
 	scene->addChild(layer);
+TollgateScene* TollgateScene::slayer;
+int testnum = 233;
+
+Scene* TollgateScene::createScene() {
+	auto scene = Scene::create();
+	slayer = TollgateScene::create();
+	//TollgateDataLayer* dataLayer = TollgateDataLayer::create();
+
+	scene->addChild(slayer);
+	//scene->addChild(dataLayer, 5, TAG_DATA_LAYER);
+		/*
+	//初始化金钱，击杀和死亡数
+		int iMoney = 0;
+		int iKill = 0;
+		int iDeath = 0;
+
+		NOTIFY->postNotification("MoneyChange", (Ref*)iMoney);
+		NOTIFY->postNotification("KillChange", (Ref*)iKill);
+		NOTIFY->postNotification("DeathChange", (Ref*)iDeath);
+		*/
+
 	return scene;
 }
 
@@ -104,6 +127,30 @@ bool TollgateScene::init()
 	auto menuSkillEButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 10.f);  //(normal,cool,time)
 	menuSkillEButton->setPosition(skillEItem.width / 2, skillEItem.height / 2);
 	this->addChild(menuSkillEButton);
+
+
+    //在网络接收到两方初始化信息后再加英雄,searchFinish()
+	addHero(map, 1);
+	////////////////////////////
+	//���Ӽ���ͼ������ȴ
+	auto skillItem = CCDirector::sharedDirector()->getWinSize();
+	auto menuSkillButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 2.f);  //(normal,cool,time)
+	menuSkillButton->setPosition(skillItem.width / 2, skillItem.height / 2);
+	this->addChild(menuSkillButton);
+	
+	int score = 0;
+	auto scoreLb = Label::createWithSystemFont(StringUtils::format("money %d",score), "", 32);//    
+	scoreLb->setAnchorPoint(Vec2::ZERO);
+	scoreLb->setColor(Color3B::YELLOW);
+	scoreLb->setPosition(0,Director::getInstance()->getWinSize().height-36);
+	scoreLb->setTag(123);
+	this->addChild(scoreLb,2);
+	addNumberNode();
+	/*ShowNumberNode * snn = ShowNumberNode::CreateShowNumberNode("score_num.png", 923, 22, 30);
+	snn->f_ShowNumber(60);
+	snn->setPosition(ccp(200, 200));
+	this->addChild(snn, 0, 0);
+	*/
 
 
 
@@ -267,6 +314,25 @@ void TollgateScene::addTower(Sprite* map) {
 }
 
 void TollgateScene::shop(Ref* pSender)
+
+
+void TollgateScene::addNumberNode()
+{
+	ShowNumberNode * snn = ShowNumberNode::CreateShowNumberNode("score_num.png", 923, 28, 33);
+	snn->f_ShowNumber(testnum);
+	snn->setPosition(ccp(100, 100));
+	this->addChild(snn, 0, 0);
+	schedule(schedule_selector(TollgateScene::logic), 2.0f);
+
+}
+
+void TollgateScene::logic(float dt)
+{
+	ShowNumberNode*snn = (ShowNumberNode *)this->getChildByTag(0);
+	snn->f_ShowNumber(testnum);
+	testnum = testnum + 10;
+}
+void TollgateScene::searchFinish()
 {
 	MenuItem* shop = (MenuItem*)pSender;
 	log("Touch backGame %p", shop);
