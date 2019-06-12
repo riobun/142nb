@@ -1,10 +1,11 @@
 #include "SkillButton.h"
-
+#include "TollgateScene.h"
+#include "Hero.h"
 
 #define SCHEDULE_SKILL_UPDATE_TIME "SCHEDULE_SKILL_UPDATE_TIME"
 #define SKILL_UPDATE_INTERVAL 0.1
 
-
+extern Hero* m_hero;
 
 SkillButton::SkillButton()
 {
@@ -159,24 +160,92 @@ bool SkillButton::keyQPressed()
 
 	// 开始读冷却
 	this->startSkillCDAction();
+
 	_isSkillTouchEnd = true;
+	return false;
 
 }
 
 bool SkillButton::keyWPressed()
 {
+	if (_skillEnable && !_isSkillCD)
+	{
+		// 开始回调
+		if (_WPressedCallback)
+		{
+			_WPressedCallback(0);
+
+
+			_isSkillTouchEnd = false;
+			return true;
+		}
+	}
+
+	// 开始读冷却
+	this->startSkillCDAction();
+	_isSkillTouchEnd = true;
 	return false;
 }
 bool SkillButton::keyEPressed()
 {
+	if (_skillEnable && !_isSkillCD)
+	{
+		// 开始回调
+		if (_EPressedCallback)
+		{
+			_EPressedCallback(0);
+
+
+			_isSkillTouchEnd = false;
+			return true;
+		}
+	}
+
+	// 开始读冷却
+	this->startSkillCDAction();
+	_isSkillTouchEnd = true;
 	return false;
 }
 bool SkillButton::keyTabPressed()
 {
+	if (_skillEnable && !_isSkillCD)
+	{
+		// 开始回调
+		if (_TabPressedCallback)
+		{
+			_TabPressedCallback(0);
+
+
+			_isSkillTouchEnd = false;
+			return true;
+		}
+	}
+
+	// 开始读冷却
+	this->startSkillCDAction();
+	_isSkillTouchEnd = true;
 	return false;
 }
 bool SkillButton::keyPPressed()
 {
+	if (_skillEnable && !_isSkillCD)
+	{
+		// 开始回调
+		if (_PPressedCallback)
+		{
+			_PPressedCallback(0);
+
+
+			_isSkillTouchEnd = false;
+			return true;
+		}
+	}
+
+	// 开始读冷却
+	this->startSkillCDAction();
+
+
+	_isSkillTouchEnd = true;
 	return false;
 }
 
@@ -325,6 +394,22 @@ void SkillButton::setupCoolImage(const std::string coolImage)
 
 void SkillButton::addQPressedCallback(const SkillButton::alSkillTouchCallback &callback)
 {
+	Animation *skillQ = Animation::create();
+	for (int i = 1; i < 7; i++)
+	{
+		__String *frameName = __String::createWithFormat("greenHero%d.png", i);
+		log("frameName=%s", frameName->getCString());
+		SpriteFrame *spriteFrame = SpriteFrameCache::getInstance()->
+			getSpriteFrameByName(frameName->getCString());
+		skillQ->addSpriteFrame(spriteFrame);
+	}
+
+	skillQ->setDelayPerUnit(0.15f);
+	skillQ->setRestoreOriginalFrame(true);
+	Animate*action = Animate::create(skillQ);
+    m_hero->runAction(action);
+
+
 	_QPressedCallback = callback;
 }
 
