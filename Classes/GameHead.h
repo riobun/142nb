@@ -88,10 +88,10 @@ using std::map;
 #define Crystal_ID 77
 #define Ashe_ID 66
 #define Tower_ID 55
-#define Ashe_iHP 60
+#define Ashe_iHP 100
 #define Ashe_iDenfense 10
-#define Tower_iHP 100
-#define Crystal_iHP 150
+#define Tower_iHP 150
+#define Crystal_iHP 200
 
 /*typedef enum
 {

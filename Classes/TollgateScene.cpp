@@ -184,6 +184,7 @@ void TollgateScene::addHero(Sprite* map) {
 		Hero* eHero = Hero::create();
 		eHero->bindSprite(eHeroSprite);
 		eETT_ptr.push_back(eHero);
+		m_hero = mHero;
 
 		//����Ӣ�۳�����
 		mHero->setPosition(Point(100, visibleSize.height / 2 + 50));
@@ -252,4 +253,15 @@ void TollgateScene::addTower(Sprite* map) {
 
 
 }
+
+void TollgateScene::shop(Ref* pSender)
+{
+	MenuItem* shop = (MenuItem*)pSender;
+	log("Touch backGame %p", shop);
+	auto toShopScene = ShopScene::createScene();
+
+	Director::getInstance()->pushScene(toShopScene);
+
+}
+
 
