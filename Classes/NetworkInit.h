@@ -19,13 +19,13 @@
 class Network
 {
 public:
-    static bool StaticInit(std::string& name);
+    static bool StaticInit(std::string name, bool tobe_master_peer = false, uint16_t inPort = default_port, std::string addr = default_addr);
     virtual ~Network();
     static std::unique_ptr< Network>	sInstance;
 
     void        Update();
     void			SetShouldKeepRunning(bool inShouldKeepRunning) { mShouldKeepRunning = inShouldKeepRunning; }
-
+    //bool      wantbe_master_peer;
 protected:
     Network();
 

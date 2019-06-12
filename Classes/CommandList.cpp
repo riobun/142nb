@@ -27,6 +27,12 @@ void CommandList::ProcessCommands( uint32_t inExpectedPlayerId )
 	}
 }
 
+void CommandList::ProcessCommands()
+{
+    for (CommandPtr p : mCommands)
+        p->ProcessCommand();
+}
+
 void CommandList::Write( OutputMemoryBitStream& inOutputStream )
 {
 	inOutputStream.Write( GetCount() );

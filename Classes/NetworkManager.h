@@ -79,14 +79,15 @@ public:
 			const WeightedTimedMovingAverage& GetBytesSentPerSecond()		const	{ return mBytesSentPerSecond; }
 	void	SetDropPacketChance( float inChance )	{ mDropPacketChance = inChance; }
 	float	GetDropPacketChance() const				{ return mDropPacketChance; }
-	void	SetSimulatedLatency( float inLatency )	{ mSimulatedLatency = inLatency; }  //模拟延迟？
-	float	GetSimulatedLatency() const				{ return mSimulatedLatency; }               //模拟延迟？
+	void	SetSimulatedLatency( float inLatency )	{ mSimulatedLatency = inLatency; }  //模拟延迟
+	float	GetSimulatedLatency() const				{ return mSimulatedLatency; }               //模拟延迟
 
 	bool	IsMasterPeer() const { return mIsMasterPeer; }
 	float	GetTimeToStart() const { return mTimeToStart; }
 	
 	EntityPtr	 GetGameObject( uint32_t inNetworkId ) const;   //从网络id得到游戏对象id
 	EntityPtr 	RegisterAndReturn( Entity* inGameObject );  //注册新的游戏对象
+    void	RegisterGameObject(EntityPtr inGameObject);
 	void			UnregisterGameObject( Entity* inGameObject );   //取消该游戏对象id
 
 	NetworkManagerState GetState() const { return mState; }
@@ -99,7 +100,6 @@ private:
 
 	void	AddToNetworkIdToGameObjectMap( EntityPtr inGameObject );//添加至：用网络id找游戏对象id的map
 	void	RemoveFromNetworkIdToGameObjectMap( EntityPtr inGameObject );//移除：用网络id找游戏对象id的map
-	void	RegisterGameObject( EntityPtr inGameObject );
 	uint32_t GetNewNetworkId();
 
 	uint32_t ComputeGlobalCRC(); //循环冗余检验
@@ -145,11 +145,12 @@ private:
 
 	queue< ReceivedPacket, list< ReceivedPacket > >	mPacketQueue;
 
-	IntToGameObjectMap			mNetworkIdToGameObjectMap;          //网络id  --  游戏对象id
+	IntToGameObjectMap			mNetworkIdToGameObjectMap;          //网络id  --  实体指针
 	IntToSocketAddrMap			mPlayerToSocketMap;                            //玩家id   --  socket地址
 	SocketAddrToIntMap			mSocketToPlayerMap;                            //socket地址   --  玩家id
-	IntToStrMap				        	mPlayerNameMap;                                 //所有玩家的名字
-
+public:
+    IntToStrMap				        	mPlayerNameMap;                                 //网络id -- 玩家名字，改为publlic
+private:
 	//this stores all of our turn information for every turn since game start
 	vector< IntToTurnDataMap >	mTurnData;
 
@@ -170,6 +171,7 @@ private:
 	float			mTimeToStart;
 
 	int				mPlayerCount;
+    int                 mIntroCount;
 	//we track the highest player id seen in the event
 	//the master peer d/cs and we need a new master peer
 	//who can assign ids

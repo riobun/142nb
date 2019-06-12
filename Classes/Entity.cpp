@@ -68,7 +68,7 @@ bool Entity::isDead() {
 }
 
 void Entity::onDead() {
-    NetworkManager::sInstance->UnregisterGameObject(this);
+
 }
 
 void Entity::onBindSprite() {

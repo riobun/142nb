@@ -76,7 +76,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>C:\Users\40120\Desktop\cocos2d-x-3.17.1\external\Box2D\prebuilt\win32\debug;C:\Users\17124\Desktop\142nb\zlib\include;C:\Users\40120\Documents\GitHub\142nb\zlib\include;D:\HonorOfKings\CrazyGame\142nb\zlib\include;$(EngineRoot);$(EngineRoot)external;$(EngineRoot)cocos\audio\include;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\40120\Documents\GitHub\142nb\zlib\include;D:\HonorOfKings\CrazyGame\142nb\zlib\include;$(EngineRoot);$(EngineRoot)external;$(EngineRoot)cocos\audio\include;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -149,16 +149,16 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Classes\AloneOrOnline.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\BaseMap.cpp" />
     <ClCompile Include="..\Classes\Command.cpp" />
     <ClCompile Include="..\Classes\CommandList.cpp" />
     <ClCompile Include="..\Classes\Controller1.cpp" />
     <ClCompile Include="..\Classes\CsvData.cpp" />
+    <ClCompile Include="..\Classes\CsvUtil.cpp" />
     <ClCompile Include="..\Classes\Entity.cpp" />
+    <ClCompile Include="..\Classes\EntityRegistry.cpp" />
     <ClCompile Include="..\Classes\Equipment.cpp" />
-    <ClCompile Include="..\Classes\GameObjectRegistry.cpp" />
     <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\Hero.cpp" />
@@ -169,10 +169,12 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClCompile Include="..\Classes\NetworkManager.cpp" />
     <ClCompile Include="..\Classes\RandGen.cpp" />
     <ClCompile Include="..\Classes\ShopScene.cpp" />
+    <ClCompile Include="..\Classes\SingleProxy.cpp" />
     <ClCompile Include="..\Classes\SkillButton.cpp" />
     <ClCompile Include="..\Classes\SocketAddress.cpp" />
     <ClCompile Include="..\Classes\SocketAddressFactory.cpp" />
     <ClCompile Include="..\Classes\SocketUtil.cpp" />
+    <ClCompile Include="..\Classes\StringUtil.cpp" />
     <ClCompile Include="..\Classes\StringUtils.cpp" />
     <ClCompile Include="..\Classes\TCPSocket.cpp" />
     <ClCompile Include="..\Classes\Timing.cpp" />
@@ -183,7 +185,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Classes\AloneOrOnline.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\Art.h" />
     <ClInclude Include="..\Classes\BaseMap.h" />
@@ -192,10 +193,11 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClInclude Include="..\Classes\Controller1.h" />
     <ClInclude Include="..\Classes\ControllerListener.h" />
     <ClInclude Include="..\Classes\CsvData.h" />
+    <ClInclude Include="..\Classes\CsvUtil.h" />
     <ClInclude Include="..\Classes\Entity.h" />
+    <ClInclude Include="..\Classes\EntityRegistry.h" />
     <ClInclude Include="..\Classes\Equipment.h" />
     <ClInclude Include="..\Classes\GameHead.h" />
-    <ClInclude Include="..\Classes\GameObjectRegistry.h" />
     <ClInclude Include="..\Classes\GameScene.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\Hero.h" />
@@ -206,11 +208,12 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClInclude Include="..\Classes\NetworkInit.h" />
     <ClInclude Include="..\Classes\NetworkManager.h" />
     <ClInclude Include="..\Classes\RandGen.h" />
-    <ClInclude Include="..\Classes\ShopScene.h" />
+    <ClInclude Include="..\Classes\SingleProxy.h" />
     <ClInclude Include="..\Classes\SkillButton.h" />
     <ClInclude Include="..\Classes\SocketAddress.h" />
     <ClInclude Include="..\Classes\SocketAddressFactory.h" />
     <ClInclude Include="..\Classes\SocketUtil.h" />
+    <ClInclude Include="..\Classes\StringUtil.h" />
     <ClInclude Include="..\Classes\StringUtils.h" />
     <ClInclude Include="..\Classes\TCPSocket.h" />
     <ClInclude Include="..\Classes\Timing.h" />
