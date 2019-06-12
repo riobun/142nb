@@ -87,6 +87,7 @@ public:
 	
 	EntityPtr	 GetGameObject( uint32_t inNetworkId ) const;   //从网络id得到游戏对象id
 	EntityPtr 	RegisterAndReturn( Entity* inGameObject );  //注册新的游戏对象
+    void	RegisterGameObject(EntityPtr inGameObject);
 	void			UnregisterGameObject( Entity* inGameObject );   //取消该游戏对象id
 
 	NetworkManagerState GetState() const { return mState; }
@@ -99,7 +100,6 @@ private:
 
 	void	AddToNetworkIdToGameObjectMap( EntityPtr inGameObject );//添加至：用网络id找游戏对象id的map
 	void	RemoveFromNetworkIdToGameObjectMap( EntityPtr inGameObject );//移除：用网络id找游戏对象id的map
-	void	RegisterGameObject( EntityPtr inGameObject );
 	uint32_t GetNewNetworkId();
 
 	uint32_t ComputeGlobalCRC(); //循环冗余检验

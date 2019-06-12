@@ -8,26 +8,17 @@ USING_NS_CC;
 
 using namespace cocos2d;
 
-TollgateScene* TollgateScene::slayer;
-
 Scene* TollgateScene::createScene() {
 	auto scene = Scene::create();
-	slayer = TollgateScene::create();
-	scene->addChild(slayer);
 	auto layer = TollgateScene::create();
 	scene->addChild(layer);
 	return scene;
 }
 
-TollgateScene::TollgateScene()
-{
 
-}
 
-TollgateScene::~TollgateScene()
-{
 
-}
+
 
 static void problemLoading(const char* filename)
 {
@@ -35,9 +26,11 @@ static void problemLoading(const char* filename)
 	printf("Depending on how you compiled you might have to add 'Resources/' in front of filenames in HelloWorldScene.cpp\n");
 }
 
-
+// on "init" you need to initialize your instance
 bool TollgateScene::init()
 {
+	//////////////////////////////
+	// 1. super init first
 	if (!Layer::init())
 	{
 		return false;
@@ -54,7 +47,6 @@ bool TollgateScene::init()
 	// add a "close" icon to exit the progress. it's an autorelease object
 
 	auto map = Sprite::create("Map.png");
-    m_map = map;
 	if (map == nullptr)
 	{
 		problemLoading("Map.png'");
@@ -69,7 +61,7 @@ bool TollgateScene::init()
 		this->addChild(map, -1);
 	}
 
-	auto shieldLayer = Sprite::create("shieldLayer.png");  // shieldLayerÎªï¿½ï¿½ï¿½Î²ï¿½
+	auto shieldLayer = Sprite::create("shieldLayer.png");  // shieldLayerÎªÆÁ±Î²ã
 	if (shieldLayer == nullptr)
 	{
 		problemLoading("shieldLayer.png'");
@@ -84,23 +76,13 @@ bool TollgateScene::init()
 		this->addChild(shieldLayer, 0);
 	}
 
-    Network::StaticInit(default_name);
-    EntityRegistry::StaticInit();
-    EntityRegistry::sInstance->RegisterCreationFunction('HERO', Hero::StaticCreate);
-
-    //åœ¨ç½‘ç»œæŽ¥æ”¶åˆ°ä¸¤æ–¹åˆå§‹åŒ–ä¿¡æ¯åŽå†åŠ è‹±é›„,searchFinish()
-
-	auto skillItem = CCDirector::sharedDirector()->getWinSize();
-	auto menuSkillButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 2.f);  //(normal,cool,time)
-	menuSkillButton->setPosition(skillItem.width / 2, skillItem.height / 2);
-	this->addChild(menuSkillButton);
-	//ï¿½ï¿½ï¿½Ó¢ï¿½ï¿½
+	//Ìí¼ÓÓ¢ÐÛ
 	addHero(map);
 	addTower(map);
 	
 
 	////////////////////////////
-	//ï¿½ï¿½Ó¼ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È´
+	//Ìí¼Ó¼¼ÄÜÍ¼±êÓëÀäÈ´
 	auto skillItem = CCDirector::sharedDirector()->getWinSize();
 	auto menuSkillButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 10.f);  //(normal,cool,time)
 	menuSkillButton->setPosition(skillItem.width / 2, skillItem.height / 2);
@@ -145,17 +127,23 @@ bool TollgateScene::init()
 
 	return true;
 }
-
 void TollgateScene::update(float dt)
 {
-    Network::sInstance->Update();
+	auto label = this->getChildByTag(123);
+	label->setPosition(label->getPosition() + Vec2(2, -2));
 }
 
 void TollgateScene::menuCloseCallback(Ref* pSender)
 {
-	//Í£Ö¹ï¿½ï¿½ï¿½ï¿½
+	//Í£Ö¹¸üÐÂ
 	unscheduleUpdate();
+	//Close the cocos2d-x game scene and quit the application
 	Director::getInstance()->end();
+
+	/*To navigate back to native iOS screen(if present) without quitting the application  ,do not use Director::getInstance()->end() as given above,instead trigger a custom event created in RootViewController.mm as below*/
+
+	//EventCustom customEndEvent("game_scene_close_event");
+	//_eventDispatcher->dispatchEvent(&customEndEvent);
 }
 
 
@@ -176,14 +164,14 @@ void TollgateScene::addHero(Sprite* map) {
 		mHeroSprite->setScale(SPRITE_SIZE);
 		//eHeroSprite->setScale(SPRITE_SIZE);
 
-		//ï¿½Ñ¾ï¿½ï¿½ï¿½ó¶¨µï¿½Ó¢ï¿½Û¶ï¿½ï¿½ï¿½ï¿½ï¿½
+		//°Ñ¾«Áé°ó¶¨µ½Ó¢ÐÛ¶ÔÏóÉÏ
 
 		Hero* mHero = Hero::create();
 		mHero->bindSprite(mHeroSprite);
 		//Hero* eHero = Hero::create();
 		//eHero->bindSprite(eHeroSprite);
 
-		//ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½Û³ï¿½ï¿½ï¿½ï¿½ï¿½
+		//ÉèÖÃÓ¢ÐÛ³öÉúµã
 		mHero->setPosition(Point(100, visibleSize.height / 2 + 50));
 		//eHero->setPosition(Point(visibleSize.width - 100, visibleSize.height / 2 + 50));
 
@@ -227,16 +215,4 @@ void TollgateScene::shop(Ref* pSender)
 
 	Director::getInstance()->pushScene(toShopScene);
 
-        NetworkManager::sInstance->RegisterAndReturn(mHero);
-		
-	}
-}
-
-void TollgateScene::searchFinish()
-{
-    for (auto &iter : NetworkManager::sInstance->mPlayerNameMap)
-    {
-        addHero(m_map, iter.first);
-    }
-    
 }

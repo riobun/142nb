@@ -36,6 +36,13 @@ shared_ptr< Command > Command::StaticReadAndCreate( InputMemoryBitStream& inInpu
 		retVal->mPlayerId = playerId;
 		retVal->Read( inInputStream );
 		break;
+
+    case CM_CHOOSE:
+        retVal = std::make_shared< ChooseHeroCommand >();
+        retVal->mNetworkId = networkId;
+        retVal->mPlayerId = playerId;
+        retVal->Read(inInputStream);
+        break;
         
 	default:
 		LOG_SU( "Read in an unknown command type??" );
@@ -151,4 +158,40 @@ void MoveCommand::ProcessCommand()
 void MoveCommand::Read( InputMemoryBitStream& inInputStream )
 {
 	inInputStream.Read( mTarget );
+}
+
+ChooseHeroCommandPtr ChooseHeroCommand::StaticCreate(EntityPtr inHero)
+{
+    ChooseHeroCommandPtr retVal;
+    uint32_t playerId = NetworkManager::sInstance->GetMyPlayerId();
+
+    //?????????????????????
+    if (inHero->GetClassId() == Hero::kClassId &&
+        inHero->GetPlayerId() == playerId)
+    {
+        retVal = std::make_shared< ChooseHeroCommand >();
+        retVal->mPlayerId = playerId;
+        retVal->heroClassId = Hero::kClassId;//????????????
+    }
+    return retVal;
+}
+
+void ChooseHeroCommand::Write(OutputMemoryBitStream& inOutputStream)
+{
+    Command::Write(inOutputStream);
+    inOutputStream.Write(heroClassId);
+}
+
+
+void ChooseHeroCommand::ProcessCommand()
+{
+    if (heroClassId == Hero::kClassId)
+    {
+        NetworkManager::sInstance->RegisterGameObject(EntityRegistry::sInstance->CreateEntity(heroClassId));
+    }
+}
+
+void ChooseHeroCommand::Read(InputMemoryBitStream& inInputStream)
+{
+    inInputStream.Read(heroClassId);
 }

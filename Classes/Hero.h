@@ -1,7 +1,6 @@
 #ifndef _Hero_H_
 #define _Hero_H_
 
-
 class Hero : public Entity 
 {
 public:
@@ -10,7 +9,6 @@ public:
 
 	virtual bool init();
     virtual void WriteForCRC(OutputMemoryBitStream& inStream);
-    static	EntityPtr StaticCreate();
 
  
 

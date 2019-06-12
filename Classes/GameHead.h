@@ -73,6 +73,7 @@ using std::map;
 #include "TurnData.h"
 #include "NetworkInit.h"
 #include "NetworkManager.h"
+#include "SingleProxy.h"
 
 #include"TollgateScene.h"
 #include"HelloWorldScene.h"

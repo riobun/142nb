@@ -155,9 +155,10 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClCompile Include="..\Classes\CommandList.cpp" />
     <ClCompile Include="..\Classes\Controller1.cpp" />
     <ClCompile Include="..\Classes\CsvData.cpp" />
+    <ClCompile Include="..\Classes\CsvUtil.cpp" />
     <ClCompile Include="..\Classes\Entity.cpp" />
+    <ClCompile Include="..\Classes\EntityRegistry.cpp" />
     <ClCompile Include="..\Classes\Equipment.cpp" />
-    <ClCompile Include="..\Classes\GameObjectRegistry.cpp" />
     <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\Hero.cpp" />
@@ -167,11 +168,13 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClCompile Include="..\Classes\NetworkInit.cpp" />
     <ClCompile Include="..\Classes\NetworkManager.cpp" />
     <ClCompile Include="..\Classes\RandGen.cpp" />
+    <ClCompile Include="..\Classes\ShopScene.cpp" />
     <ClCompile Include="..\Classes\SingleProxy.cpp" />
     <ClCompile Include="..\Classes\SkillButton.cpp" />
     <ClCompile Include="..\Classes\SocketAddress.cpp" />
     <ClCompile Include="..\Classes\SocketAddressFactory.cpp" />
     <ClCompile Include="..\Classes\SocketUtil.cpp" />
+    <ClCompile Include="..\Classes\StringUtil.cpp" />
     <ClCompile Include="..\Classes\StringUtils.cpp" />
     <ClCompile Include="..\Classes\TCPSocket.cpp" />
     <ClCompile Include="..\Classes\Timing.cpp" />
@@ -190,10 +193,11 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClInclude Include="..\Classes\Controller1.h" />
     <ClInclude Include="..\Classes\ControllerListener.h" />
     <ClInclude Include="..\Classes\CsvData.h" />
+    <ClInclude Include="..\Classes\CsvUtil.h" />
     <ClInclude Include="..\Classes\Entity.h" />
+    <ClInclude Include="..\Classes\EntityRegistry.h" />
     <ClInclude Include="..\Classes\Equipment.h" />
     <ClInclude Include="..\Classes\GameHead.h" />
-    <ClInclude Include="..\Classes\GameObjectRegistry.h" />
     <ClInclude Include="..\Classes\GameScene.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\Hero.h" />
@@ -209,6 +213,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClInclude Include="..\Classes\SocketAddress.h" />
     <ClInclude Include="..\Classes\SocketAddressFactory.h" />
     <ClInclude Include="..\Classes\SocketUtil.h" />
+    <ClInclude Include="..\Classes\StringUtil.h" />
     <ClInclude Include="..\Classes\StringUtils.h" />
     <ClInclude Include="..\Classes\TCPSocket.h" />
     <ClInclude Include="..\Classes\Timing.h" />

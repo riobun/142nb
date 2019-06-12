@@ -667,7 +667,7 @@ void NetworkManager::UpdateHighestPlayerId( uint32_t inId )
 void NetworkManager::EnterPlayingState()
 {
 	mState = NMS_Playing;
-    TollgateScene::slayer->searchFinish();
+    //TollgateScene::slayer->searchFinish();
 	//const float kCatOffset = 1.0f;
 }
 

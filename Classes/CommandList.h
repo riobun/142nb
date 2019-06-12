@@ -23,6 +23,7 @@ public:
     //uint32_t		GetSelectedNetId() { return mSelectedNetId; }
 
 	void			ProcessCommands( uint32_t inExpectedPlayerId );//当命令id是期望的id时，处理命令
+    void			ProcessCommands();//处理所有命令
 
 	void Write( OutputMemoryBitStream& inOutputStream );
 	void Read( InputMemoryBitStream& inInputStream );

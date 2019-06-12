@@ -1,67 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="win32">
-      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="resource">
-      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src">
-      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Network">
-      <UniqueIdentifier>{c7066ed6-c0a5-4f31-ae6c-e3901281159d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="实体">
-      <UniqueIdentifier>{bc1856dc-6a3b-462a-95e7-bbf8479878b1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="场景">
-      <UniqueIdentifier>{cdee3545-0ef5-4bf2-98bf-7fb9d4cff0f5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="控制器">
-      <UniqueIdentifier>{2fda4336-f827-4c15-8903-862ed56e18da}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="控制器\英雄移动控制器">
-      <UniqueIdentifier>{e7611d85-080b-4ae1-a4e6-9cbfcb7cdfd3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="实体\英雄">
-      <UniqueIdentifier>{7f0daa9a-f4c1-45c4-87ab-0c29b942f6cc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Network\底层">
-      <UniqueIdentifier>{7be405a8-d22e-4cd3-b4ce-0b9a8e954261}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Network\工具">
-      <UniqueIdentifier>{3c5e4015-5713-4a88-8842-75ffefe39b9f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Network\收发管理">
-      <UniqueIdentifier>{1894c4ab-292b-4c1c-a775-0eb07eddd7ee}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="输入管理器">
-      <UniqueIdentifier>{f912d9e0-116f-4453-acf0-d2ef2d605e28}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Network\SingleProxy">
-      <UniqueIdentifier>{319ff7d5-e701-4861-afbd-729587a5178f}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>win32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Command.cpp">
-      <Filter>Network</Filter>
-    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\BaseMap.cpp" />
+    <ClCompile Include="..\Classes\Controller1.cpp" />
+    <ClCompile Include="..\Classes\CsvData.cpp" />
+    <ClCompile Include="..\Classes\Entity.cpp" />
+    <ClCompile Include="..\Classes\Equipment.cpp" />
+    <ClCompile Include="..\Classes\GameScene.cpp" />
+    <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\Hero.cpp" />
+    <ClCompile Include="..\Classes\HeroMoveController.cpp" />
+    <ClCompile Include="..\Classes\LaneTower.cpp" />
+    <ClCompile Include="..\Classes\TollgateScene.cpp" />
+    <ClCompile Include="..\Classes\WelcomeScene.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="..\Classes\NetworkInit.cpp">
       <Filter>Network</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\MemoryBitStream.cpp">
+      <Filter>Network\底层</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Command.cpp">
+      <Filter>Network\收发管理</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CommandList.cpp">
+      <Filter>Network\收发管理</Filter>
+    </ClCompile>
     <ClCompile Include="..\Classes\NetworkManager.cpp">
-      <Filter>Network</Filter>
+      <Filter>Network\收发管理</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\WelcomeScene.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="..\Classes\RandGen.cpp">
+      <Filter>Network\工具</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\SkillButton.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="..\Classes\SingleProxy.cpp">
+      <Filter>Network\单机</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\SocketAddress.cpp">
       <Filter>Network\底层</Filter>
@@ -78,102 +51,66 @@
     <ClCompile Include="..\Classes\UDPSocket.cpp">
       <Filter>Network\底层</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\RandGen.cpp">
-      <Filter>Network\工具</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Timing.cpp">
-      <Filter>Network\工具</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\StringUtils.cpp">
       <Filter>Network\工具</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\TurnData.cpp">
       <Filter>Network\收发管理</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\MemoryBitStream.cpp">
+    <ClCompile Include="..\Classes\SkillButton.cpp" />
+    <ClCompile Include="..\Classes\CsvUtil.cpp" />
+    <ClCompile Include="..\Classes\ShopScene.cpp" />
+    <ClCompile Include="..\Classes\StringUtil.cpp">
       <Filter>Network\工具</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\BaseMap.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\AppDelegate.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Controller1.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\HeroMoveController.cpp">
-      <Filter>控制器\英雄移动控制器</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Entity.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CsvData.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\HeroMoveController.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\LaneTower.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\GameScene.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Hero.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SkillButton.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\TollgateScene.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\WelcomeScene.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\AloneOrOnline.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CommandList.cpp">
-      <Filter>Network\收发管理</Filter>
+    <ClCompile Include="..\Classes\Timing.cpp">
+      <Filter>Network\工具</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\EntityRegistry.cpp">
-      <Filter>Network</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SingleProxy.cpp">
-      <Filter>Network\SingleProxy</Filter>
-    <ClCompile Include="..\Classes\Equipment.cpp">
-      <Filter>src</Filter>
+      <Filter>Network\收发管理</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="main.h">
-      <Filter>win32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Command.h">
+    <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\Art.h" />
+    <ClInclude Include="..\Classes\BaseMap.h" />
+    <ClInclude Include="..\Classes\Controller1.h" />
+    <ClInclude Include="..\Classes\ControllerListener.h" />
+    <ClInclude Include="..\Classes\CsvData.h" />
+    <ClInclude Include="..\Classes\Entity.h" />
+    <ClInclude Include="..\Classes\Equipment.h" />
+    <ClInclude Include="..\Classes\GameHead.h" />
+    <ClInclude Include="..\Classes\GameScene.h" />
+    <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\Hero.h" />
+    <ClInclude Include="..\Classes\HeroMoveController.h" />
+    <ClInclude Include="..\Classes\LaneTower.h" />
+    <ClInclude Include="..\Classes\TollgateScene.h" />
+    <ClInclude Include="..\Classes\WelcomeScene.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="..\Classes\NetworkHead.h">
       <Filter>Network</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\NetworkInit.h">
       <Filter>Network</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\MemoryBitStream.h">
+      <Filter>Network\底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Command.h">
+      <Filter>Network\收发管理</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CommandList.h">
+      <Filter>Network\收发管理</Filter>
+    </ClInclude>
     <ClInclude Include="..\Classes\NetworkManager.h">
-      <Filter>Network</Filter>
+      <Filter>Network\收发管理</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Art.h">
-      <Filter>src</Filter>
+    <ClInclude Include="..\Classes\RandGen.h">
+      <Filter>Network\工具</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\BaseMap.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\WelcomeScene.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SkillButton.h">
-      <Filter>src</Filter>
+    <ClInclude Include="..\Classes\SingleProxy.h">
+      <Filter>Network\单机</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\SocketAddress.h">
       <Filter>Network\底层</Filter>
@@ -190,96 +127,45 @@
     <ClInclude Include="..\Classes\UDPSocket.h">
       <Filter>Network\底层</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\RandGen.h">
+    <ClInclude Include="..\Classes\WeightedTimedMovingAverage.h">
       <Filter>Network\工具</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\StringUtils.h">
       <Filter>Network\工具</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Timing.h">
-      <Filter>Network\工具</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\WeightedTimedMovingAverage.h">
-      <Filter>Network\工具</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\TurnData.h">
       <Filter>Network\收发管理</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\MemoryBitStream.h">
+    <ClInclude Include="..\Classes\SkillButton.h" />
+    <ClInclude Include="..\Classes\CsvUtil.h" />
+    <ClInclude Include="..\Classes\StringUtil.h">
       <Filter>Network\工具</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Art.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\BaseMap.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Controller1.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\ControllerListener.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\HeroMoveController.h">
-      <Filter>控制器\英雄移动控制器</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Entity.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameHead.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CsvData.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\HeroMoveController.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\LaneTower.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameScene.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Hero.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SkillButton.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\TollgateScene.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\WelcomeScene.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\AloneOrOnline.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CommandList.h">
-      <Filter>Network\收发管理</Filter>
+    <ClInclude Include="..\Classes\Timing.h">
+      <Filter>Network\工具</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\EntityRegistry.h">
-      <Filter>Network</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\NetworkHead.h">
-      <Filter>Network</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SingleProxy.h">
-      <Filter>Network\SingleProxy</Filter>
-    <ClInclude Include="..\Classes\Equipment.h">
-      <Filter>src</Filter>
+      <Filter>Network\收发管理</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="game.rc">
-      <Filter>resource</Filter>
-    </ResourceCompile>
+    <ResourceCompile Include="game.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Network">
+      <UniqueIdentifier>{e77b689c-714a-4b9b-9599-6c332e7f9cde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\底层">
+      <UniqueIdentifier>{3abee7fc-ebce-4f66-8476-647006771732}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\工具">
+      <UniqueIdentifier>{ca0a0a5c-73cf-47b6-a3aa-bbccdd5af5a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\收发管理">
+      <UniqueIdentifier>{4e0e2f58-0d01-436b-8dc3-62a3e8641b9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\单机">
+      <UniqueIdentifier>{1e4cce32-3eca-499c-9413-5ea299b34486}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
