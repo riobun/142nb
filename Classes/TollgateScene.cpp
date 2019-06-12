@@ -10,6 +10,7 @@ using namespace cocos2d;
 
 vector<Entity*> mETT_ptr;
 vector<Entity*> eETT_ptr;
+Hero* m_hero;
 
 int goldenCoin = 0;
 int power = 0;

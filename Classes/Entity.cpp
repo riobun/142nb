@@ -67,16 +67,11 @@ bool Entity::isDead() {
 	return this->m_isDead;
 }
 
-<<<<<<< HEAD
 void Entity::onDead(int i) {
 	
 	
 
 	//NetworkManager::sInstance->UnregisterGameObject(this);
-=======
-void Entity::onDead() {
-    NetworkManager::sInstance->UnregisterGameObject(this);
->>>>>>> parent of d82c000... Merge branch 'master' of https://github.com/riobun/142nb
 }
 
 void Entity::onBindSprite() {
