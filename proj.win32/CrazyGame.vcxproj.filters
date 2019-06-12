@@ -147,6 +147,7 @@
     <ClInclude Include="..\Classes\EntityRegistry.h">
       <Filter>Network\收发管理</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\ShopScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />
