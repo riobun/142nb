@@ -42,7 +42,7 @@ void Entity::hurtMe(int i,int iHurtValue) {
 		return;
 	}
 
-	//×îÐ¡ÉËº¦ÖµÎª1
+	//ï¿½ï¿½Ð¡ï¿½Ëºï¿½ÖµÎª1
 	if (iHurtValue <= getiDefense()) {
 		iHurtValue = 1;
 	}
@@ -57,7 +57,7 @@ void Entity::hurtMe(int i,int iHurtValue) {
 	}
 	else {
 		m_isDead = true;
-		//ËÀÍö
+		//ï¿½ï¿½ï¿½ï¿½
 		onDead(i);
 
 	}

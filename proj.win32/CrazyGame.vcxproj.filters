@@ -2,24 +2,51 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
-    <ClCompile Include="..\Classes\CommandList.cpp" />
-    <ClCompile Include="..\Classes\GameObjectRegistry.cpp" />
+    <ClCompile Include="..\Classes\BaseMap.cpp" />
+    <ClCompile Include="..\Classes\Controller1.cpp" />
+    <ClCompile Include="..\Classes\CsvData.cpp" />
+    <ClCompile Include="..\Classes\Entity.cpp" />
+    <ClCompile Include="..\Classes\Equipment.cpp" />
+    <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
-    <ClCompile Include="..\Classes\MemoryBitStream.cpp" />
-    <ClCompile Include="..\Classes\NetworkInit.cpp" />
-    <ClCompile Include="..\Classes\RandGen.cpp" />
-    <ClCompile Include="..\Classes\SkillButton.cpp" />
-    <ClCompile Include="..\Classes\SocketAddressFactory.cpp" />
-    <ClCompile Include="..\Classes\SocketUtil.cpp" />
-    <ClCompile Include="..\Classes\StringUtils.cpp" />
-    <ClCompile Include="..\Classes\TCPSocket.cpp" />
-    <ClCompile Include="..\Classes\Timing.cpp" />
-    <ClCompile Include="..\Classes\TurnData.cpp" />
-    <ClCompile Include="..\Classes\UDPSocket.cpp" />
+    <ClCompile Include="..\Classes\Hero.cpp" />
+    <ClCompile Include="..\Classes\HeroMoveController.cpp" />
+    <ClCompile Include="..\Classes\LaneTower.cpp" />
+    <ClCompile Include="..\Classes\TollgateScene.cpp" />
     <ClCompile Include="..\Classes\WelcomeScene.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="..\Classes\TollgateScene.cpp">
-      <Filter>场景</Filter>
+    <ClCompile Include="..\Classes\NetworkInit.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MemoryBitStream.cpp">
+      <Filter>Network\底层</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Command.cpp">
+      <Filter>Network\收发管理</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CommandList.cpp">
+      <Filter>Network\收发管理</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\NetworkManager.cpp">
+      <Filter>Network\收发管理</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\RandGen.cpp">
+      <Filter>Network\工具</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SingleProxy.cpp">
+      <Filter>Network\单机</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SocketAddress.cpp">
+      <Filter>Network\底层</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SocketAddressFactory.cpp">
+      <Filter>Network\底层</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SocketUtil.cpp">
+      <Filter>Network\底层</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TCPSocket.cpp">
+      <Filter>Network\底层</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Entity.cpp">
       <Filter>实体</Filter>

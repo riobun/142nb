@@ -58,29 +58,28 @@ using std::map;
 #include<string.h>
 #include "NetworkHead.h"
 
-
-
 #include"ControllerListener.h"
 #include"Controller1.h"
 #include"HeroMoveController.h"
 #include "MemoryBitStream.h"
 #include"Entity.h"
+#include "EntityRegistry.h"
 #include"Hero.h"
 #include"LaneTower.h"
 #include"Crystal.h"
 
-#include "GameObjectRegistry.h"
 #include "Command.h"
 #include "CommandList.h"
 
 #include "TurnData.h"
 #include "NetworkInit.h"
 #include "NetworkManager.h"
+#include "SingleProxy.h"
 
 #include"TollgateScene.h"
 #include"HelloWorldScene.h"
 
-#define PRI_SPEED 30
+#define PRI_SPEED  30
 #define SPRITE_SIZE 0.3
 #define MOUSE_SIZE 0.5
 #define Crystal_SIZE 0.6
@@ -108,18 +107,19 @@ using std::map;
 }SpriteTags;*/
 
 
+
 #endif //_GAME_HEAD_H
 
 /*
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-//音乐格式.aifc
+//锟斤拷锟街革拷式.aifc
 //#define bg_music_1   "sound/home_bg.aifc"
 
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_WP8)
-//音乐格式.wav
+//锟斤拷锟街革拷式.wav
 
 #else
-//音乐格式.mp3
+//锟斤拷锟街革拷式.mp3
 
 #endif
 */

@@ -2,6 +2,7 @@
 #include "Art.h"
 #include "GameScene.h"
 #include "SimpleAudioEngine.h"
+#include "ShopScene.h"
 
 USING_NS_CC;
 
@@ -67,7 +68,7 @@ bool TollgateScene::init()
 		this->addChild(map, -1);
 	}
 
-	auto shieldLayer = Sprite::create("shieldLayer.png");  // shieldLayerÎªÆÁ±Î²ã
+	auto shieldLayer = Sprite::create("shieldLayer.png");  // shieldLayerÎªï¿½ï¿½ï¿½Î²ï¿½
 	if (shieldLayer == nullptr)
 	{
 		problemLoading("shieldLayer.png'");
@@ -82,67 +83,50 @@ bool TollgateScene::init()
 		this->addChild(shieldLayer, 0);
 	}
 
-	//Ìí¼ÓÓ¢ÐÛ
+	//ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½ï¿½
 	addHero(map);
 	addTower(map);
 	
 
 	////////////////////////////
-	//Ìí¼Ó¼¼ÄÜÍ¼±êÓëÀäÈ´
+	//ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È´
 	auto skillItem = CCDirector::sharedDirector()->getWinSize();
-	auto menuSkillButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 2.f);  //(normal,cool,time)
+	auto menuSkillButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 10.f);  //(normal,cool,time)
 	menuSkillButton->setPosition(skillItem.width / 2, skillItem.height / 2);
 	this->addChild(menuSkillButton);
 
 
 
-	/*auto closeItem = MenuItemImage::create(
-		"CloseNormal.png",
-		"CloseSelected.png",
-		CC_CALLBACK_1(GameScene::menuCloseCallback, this));
 
-	if (closeItem == nullptr ||
-		closeItem->getContentSize().width <= 0 ||
-		closeItem->getContentSize().height <= 0)
+
+
+	auto shop = MenuItemImage::create(
+		"shopButton1.png",
+		"shopButton2.png",
+		CC_CALLBACK_1(TollgateScene::shop, this));
+
+	if (shop == nullptr ||
+		shop->getContentSize().width <= 0 ||
+		shop->getContentSize().height <= 0)
 	{
-		problemLoading("'CloseNormal.png' and 'CloseSelected.png'");
+		problemLoading("'shopButton1.png' and 'shopButton2.png'");
 	}
 	else
 	{
-		float x = origin.x + visibleSize.width - closeItem->getContentSize().width / 2;
-		float y = origin.y + closeItem->getContentSize().height / 2;
-		closeItem->setPosition(Vec2(x, y));
-	}
+		shop->setScale(0.2f);
+		shop->setAnchorPoint(Vec2(0, 0));
+		shop->setPosition(visibleSize.width / 10, visibleSize.height / 7 - 10);
 
+
+	}
 	// create menu, it's an autorelease object
-	auto menu = Menu::create(closeItem, NULL);
-	menu->setPosition(Vec2::ZERO);
-	this->addChild(menu, 1);
-
-	/////////////////////////////
-	// 3. add your codes below...
-
-	// add a label shows "Hello World"
-	// create and initialize a label
-
-	auto label = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 24);
-	label->setTag(123);
-	if (label == nullptr)
-	{
-		problemLoading("'fonts/Marker Felt.ttf'");
-	}
-	else
-	{
-		// position the label on the center of the screen
-		label->setPosition(Vec2(origin.x + visibleSize.width / 2,
-			origin.y + visibleSize.height - label->getContentSize().height));
-		label->setAnchorPoint(Vec2(1.0, 1.0));//ÐÂÌí¼ÓµÄ´úÂë£º¸ü¸Ä¡°hello world¡±µÄÎ»ÖÃ
-
-		// add the label as a child to this layer
-		this->addChild(label, 1);
-	}*/
+	auto shopMenu = Menu::create(shop, NULL);
+	shopMenu->setPosition(Vec2::ZERO);
+	this->addChild(shopMenu, 2);
 
 
+
+	
 
 	//this->scheduleUpdate();
 	//this->scheldue(schedule_selector(HelloWorld::update),1.0f/60);
@@ -163,7 +147,7 @@ void TollgateScene::update(float dt)
 
 void TollgateScene::menuCloseCallback(Ref* pSender)
 {
-	//Í£Ö¹¸üÐÂ
+	//Í£Ö¹ï¿½ï¿½ï¿½ï¿½
 	unscheduleUpdate();
 	//Close the cocos2d-x game scene and quit the application
 	Director::getInstance()->end();
@@ -193,7 +177,7 @@ void TollgateScene::addHero(Sprite* map) {
 		mHeroSprite->setScale(SPRITE_SIZE);
 		eHeroSprite->setScale(SPRITE_SIZE);
 
-		//°Ñ¾«Áé°ó¶¨µ½Ó¢ÐÛ¶ÔÏóÉÏ
+		//ï¿½Ñ¾ï¿½ï¿½ï¿½ó¶¨µï¿½Ó¢ï¿½Û¶ï¿½ï¿½ï¿½ï¿½ï¿½
 
 		Hero* mHero = Hero::create();
 		mHero->bindSprite(mHeroSprite);
@@ -201,7 +185,7 @@ void TollgateScene::addHero(Sprite* map) {
 		eHero->bindSprite(eHeroSprite);
 		eETT_ptr.push_back(eHero);
 
-		//ÉèÖÃÓ¢ÐÛ³öÉúµã
+		//ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½Û³ï¿½ï¿½ï¿½ï¿½ï¿½
 		mHero->setPosition(Point(100, visibleSize.height / 2 + 50));
 		eHero->setPosition(Point(visibleSize.width - 100, visibleSize.height / 2 + 50));
 

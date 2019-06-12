@@ -15,7 +15,7 @@ void HeroMoveController::registeMouseEvent() {
 
 	auto myMouseListener = EventListenerMouse::create();
 
-	//Êó±êÒÆ¶¯
+	//ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
 	myMouseListener->onMouseMove = [=](Event * event) {
 
 		EventMouse* eMouse = (EventMouse*)event;
