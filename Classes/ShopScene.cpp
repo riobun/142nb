@@ -25,6 +25,7 @@
 #include "ShopScene.h"
 #include "SimpleAudioEngine.h"
 #include "TollgateScene.h"
+#include "Equipment.h"
 
 
 
@@ -98,6 +99,32 @@ bool ShopScene::init()
 	auto backGameMenu = Menu::create(backGame, NULL);
 	backGameMenu->setPosition(Vec2::ZERO);
 	this->addChild(backGameMenu, 2);
+
+
+
+
+	/**
+	Ìí¼Ó×°±¸
+	*/
+	auto speedUpButton = Equipment::create("Equipment/speedUp.png",
+		"Equipment/speedUpCD.png",
+		"speedUpBuff");
+	speedUpButton->setPosition(visibleSize.width / 7, visibleSize.height / 3 * 2);
+	this->addChild(speedUpButton);
+
+
+	auto attackButton = Equipment::create("Equipment/attack.png",
+		"Equipment/attackCD.png",
+		"attackBuff");
+	attackButton->setPosition(visibleSize.width / 7+100, visibleSize.height / 3 * 2);
+	this->addChild(attackButton);
+
+
+	auto defenseButton = Equipment::create("Equipment/defense.png",
+		"Equipment/defenseCD.png",
+		"defenseBuff");
+	defenseButton->setPosition(visibleSize.width / 7+200, visibleSize.height / 3 * 2);
+	this->addChild(defenseButton);
 
 
 

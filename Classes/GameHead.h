@@ -79,7 +79,7 @@ using std::map;
 #include"TollgateScene.h"
 #include"HelloWorldScene.h"
 
-#define PRI_SPEED 30
+#define PRI_SPEED  30
 #define SPRITE_SIZE 0.3
 #define MOUSE_SIZE 0.5
 #define Cystal_SIZE 0.6
