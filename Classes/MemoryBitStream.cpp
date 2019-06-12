@@ -3,7 +3,7 @@
 //  ¸ü¸Ä£º¶ÅÃµ£¬ 2019.06.04
 
 #include "NetworkHead.h"
-//#include "cocos2d.h"
+#include "cocos2d.h"
 #include "MemoryBitStream.h"
 
 void OutputMemoryBitStream::WriteBits( uint8_t inData,

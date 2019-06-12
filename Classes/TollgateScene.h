@@ -27,6 +27,9 @@ public:
 
 	void addHero(Sprite* map, uint32_t side);
     static TollgateScene* slayer;
+	void addHero(Sprite* map);
+	void addTower(Sprite* map);
+	void TollgateScene::shop(Ref* pSender);
 private:
 	cocos2d::Size visibleSize;
 	cocos2d::Sprite *sprite;

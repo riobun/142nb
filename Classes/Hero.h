@@ -12,7 +12,7 @@ public:
     virtual void WriteForCRC(OutputMemoryBitStream& inStream);
     static	EntityPtr StaticCreate();
 
-    void run(cocos2d::Sprite* sprite);
+ 
 
 };
 #endif
