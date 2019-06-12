@@ -1,4 +1,5 @@
 // NetworkManager:  网络收发处理主要接口
+// 可以兼容5V5
 //  参考：Multiplayer game programming, Joshua Glazer, Sanjay Madhav
 //  更改：杜玫， 2019.06.05
 

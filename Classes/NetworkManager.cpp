@@ -244,7 +244,7 @@ void NetworkManager::TryAdvanceTurn()
 		}
 		else
 		{
-			//for simplicity, just kill the game if it desyncs同步化失败
+			//同步化失败
 			LOG_SU( "DESYNC: 游戏同步失败，游戏结束" );
 			//Engine::sInstance->SetShouldKeepRunning( false );//重写：中止游戏
 		}

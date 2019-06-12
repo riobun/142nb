@@ -23,7 +23,8 @@ public:
 	{
 		CM_INVALID,
 		CM_ATTACK,
-		CM_MOVE
+		CM_MOVE,
+        CM_CHOOSE
 	};
 
 	Command() :
@@ -107,4 +108,33 @@ protected:
 };
 
 typedef shared_ptr< MoveCommand > MoveCommandPtr;
+<<<<<<< Updated upstream
 */
+=======
+
+class ChooseHeroCommand : public Command
+{
+public:
+    ChooseHeroCommand()
+    {
+        mCommandType = CM_CHOOSE;
+    }
+
+    static shared_ptr< ChooseHeroCommand > StaticCreate(EntityPtr inHero);
+
+    virtual void Write(OutputMemoryBitStream& inOutputStream) override;
+
+    virtual void ProcessCommand() override;
+
+protected:
+    virtual void Read(InputMemoryBitStream& inInputStream) override;
+
+    //创建的英雄类的指针
+    EntityPtr mHero;
+    int heroClassId;
+};
+
+typedef shared_ptr< ChooseHeroCommand > ChooseHeroCommandPtr;
+
+#endif //_COMMAND_H_
+>>>>>>> Stashed changes
