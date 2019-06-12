@@ -8,6 +8,12 @@ USING_NS_CC;
 
 using namespace cocos2d;
 
+vector<Entity*> mETT_ptr;
+vector<Entity*> eETT_ptr;
+
+int goldenCoin = 0;
+int power = 0;
+
 Scene* TollgateScene::createScene() {
 	auto scene = Scene::create();
 	auto layer = TollgateScene::create();
@@ -47,6 +53,7 @@ bool TollgateScene::init()
 	// add a "close" icon to exit the progress. it's an autorelease object
 
 	auto map = Sprite::create("Map.png");
+	
 	if (map == nullptr)
 	{
 		problemLoading("Map.png'");
@@ -61,7 +68,7 @@ bool TollgateScene::init()
 		this->addChild(map, -1);
 	}
 
-	auto shieldLayer = Sprite::create("shieldLayer.png");  // shieldLayerÎªÆÁ±Î²ã
+	auto shieldLayer = Sprite::create("shieldLayer.png");  // shieldLayerÎªï¿½ï¿½ï¿½Î²ï¿½
 	if (shieldLayer == nullptr)
 	{
 		problemLoading("shieldLayer.png'");
@@ -76,13 +83,13 @@ bool TollgateScene::init()
 		this->addChild(shieldLayer, 0);
 	}
 
-	//Ìí¼ÓÓ¢ÐÛ
+	//ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½ï¿½
 	addHero(map);
 	addTower(map);
 	
 
 	////////////////////////////
-	//Ìí¼Ó¼¼ÄÜÍ¼±êÓëÀäÈ´
+	//ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È´
 	auto skillQItem = CCDirector::sharedDirector()->getWinSize();
 	auto menuSkillQButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 10.f);  //(normal,cool,time)
 	menuSkillQButton->setPosition(skillQItem.width / 2, skillQItem.height / 2);
@@ -143,11 +150,16 @@ void TollgateScene::update(float dt)
 {
 	auto label = this->getChildByTag(123);
 	label->setPosition(label->getPosition() + Vec2(2, -2));
+
+	goldenCoin += 1;
+	power += 1;
+
+
 }
 
 void TollgateScene::menuCloseCallback(Ref* pSender)
 {
-	//Í£Ö¹¸üÐÂ
+	//Í£Ö¹ï¿½ï¿½ï¿½ï¿½
 	unscheduleUpdate();
 	//Close the cocos2d-x game scene and quit the application
 	Director::getInstance()->end();
@@ -165,8 +177,9 @@ void TollgateScene::addHero(Sprite* map) {
 
 
 	Sprite* mHeroSprite = Sprite::create("AShe/Ashe1.png");
-	//Sprite* eHeroSprite = Sprite::create("AShe/Ashe1.png");
-	if (mHeroSprite == nullptr)
+	Sprite* eHeroSprite = Sprite::create("AShe/Ashe1.png");
+	
+	if (mHeroSprite == nullptr && eHeroSprite == nullptr)
 	{
 		problemLoading("'fonts/Marker Felt.ttf'");
 	}
@@ -174,22 +187,25 @@ void TollgateScene::addHero(Sprite* map) {
 	{
 
 		mHeroSprite->setScale(SPRITE_SIZE);
-		//eHeroSprite->setScale(SPRITE_SIZE);
+		eHeroSprite->setScale(SPRITE_SIZE);
 
-		//°Ñ¾«Áé°ó¶¨µ½Ó¢ÐÛ¶ÔÏóÉÏ
+		//ï¿½Ñ¾ï¿½ï¿½ï¿½ó¶¨µï¿½Ó¢ï¿½Û¶ï¿½ï¿½ï¿½ï¿½ï¿½
 
 		Hero* mHero = Hero::create();
 		mHero->bindSprite(mHeroSprite);
-		//Hero* eHero = Hero::create();
-		//eHero->bindSprite(eHeroSprite);
+		Hero* eHero = Hero::create();
+		eHero->bindSprite(eHeroSprite);
+		eETT_ptr.push_back(eHero);
+		m_hero = mHero;
 
-		//ÉèÖÃÓ¢ÐÛ³öÉúµã
+		//ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½Û³ï¿½ï¿½ï¿½ï¿½ï¿½
 		mHero->setPosition(Point(100, visibleSize.height / 2 + 50));
-		//eHero->setPosition(Point(visibleSize.width - 100, visibleSize.height / 2 + 50));
+		eHero->setPosition(Point(visibleSize.width - 100, visibleSize.height / 2 + 50));
 
 
 		this->addChild(mHero, 1);
-		//this->addChild(eHero, 1, eHero_Tag);
+		this->addChild(eHero, 1);
+		
 		
 		HeroMoveController* mHeroMoveController = HeroMoveController::create();
 		//HeroMoveController* eHeroMoveController = HeroMoveController::create();
@@ -210,14 +226,45 @@ void TollgateScene::addTower(Sprite* map) {
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
+	//build my tower
 	Sprite* mLaneTowerSprite = Sprite::create("tower.png");
 	LaneTower* mLaneTower = LaneTower::create();
 	mLaneTower->bindSprite(mLaneTowerSprite);
-	mLaneTower->setPosition(Point(visibleSize.width * 3 / 4 - 60, visibleSize.height / 2 + 15));
+	mLaneTower->setPosition(Point(visibleSize.width / 4 + 60, visibleSize.height / 2 + 15));
 	this->addChild(mLaneTower, 1);
+	mETT_ptr.push_back(mLaneTower);
+	m_laneTower = mLaneTower;
+
+	//build enemy's tower
+	Sprite* eLaneTowerSprite = Sprite::create("tower.png");
+	LaneTower* eLaneTower = LaneTower::create();
+	eLaneTower->bindSprite(eLaneTowerSprite);
+	eLaneTower->setPosition(Point(visibleSize.width * 3 / 4 - 60, visibleSize.height / 2 + 15));
+	this->addChild(eLaneTower, 1);
+	eETT_ptr.push_back(eLaneTower);
+	
+	//build my cystal
+	Sprite* mCrystalSprite = Sprite::create("crystal.png");
+	mCrystalSprite->setScale(Crystal_SIZE);
+	Crystal* mCrystal = Crystal::create();
+	mCrystal->bindSprite(mCrystalSprite);
+	mCrystal->setPosition(Point(visibleSize.width  / 5 - 15, visibleSize.height / 2 + 30));
+	this->addChild(mCrystal, 1, 1);
+	mETT_ptr.push_back(mCrystal);
+	m_crystal = mCrystal;
+
+	//build enemy's cystal
+	Sprite* eCrystalSprite = Sprite::create("crystal.png");
+	eCrystalSprite->setScale(Crystal_SIZE);
+	Crystal* eCrystal = Crystal::create();
+	eCrystal->bindSprite(eCrystalSprite);
+	eCrystal->setPosition(Point(visibleSize.width  * 4 / 5 + 15, visibleSize.height / 2 + 30));
+	this->addChild(eCrystal, 1);
+	eETT_ptr.push_back(eCrystal);
+
+
 
 }
-
 
 void TollgateScene::shop(Ref* pSender)
 {
@@ -228,3 +275,5 @@ void TollgateScene::shop(Ref* pSender)
 	Director::getInstance()->pushScene(toShopScene);
 
 }
+
+

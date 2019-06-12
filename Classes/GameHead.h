@@ -66,6 +66,7 @@ using std::map;
 #include "EntityRegistry.h"
 #include"Hero.h"
 #include"LaneTower.h"
+#include"Crystal.h"
 
 #include "Command.h"
 #include "CommandList.h"
@@ -81,10 +82,18 @@ using std::map;
 #define PRI_SPEED  30
 #define SPRITE_SIZE 0.3
 #define MOUSE_SIZE 0.5
-#define Cystal_SIZE 0.6
+#define Crystal_SIZE 0.6
+#define Ashe_attackValue 20
+#define attackScale 200
+#define Crystal_ID 77
+#define Ashe_ID 66
+#define Tower_ID 55
+#define Ashe_iHP 100
+#define Ashe_iDenfense 10
+#define Tower_iHP 150
+#define Crystal_iHP 200
 
-
-typedef enum
+/*typedef enum
 {
 	map_Tag = 99,
 	mHero_Tag = 100,
@@ -95,7 +104,8 @@ typedef enum
 	eTower_Tag = 301,
 	mDiamond_Tag = 400,
 	eDiamond_Tag = 401
-}SpriteTags;
+}SpriteTags;*/
+
 
 
 #endif //_GAME_HEAD_H

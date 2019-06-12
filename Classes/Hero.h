@@ -10,7 +10,7 @@ public:
 	void run();
 	virtual bool init();
     virtual void WriteForCRC(OutputMemoryBitStream& inStream);
-
+	int getID();
  
 
 };
