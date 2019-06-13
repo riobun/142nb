@@ -38,6 +38,7 @@ void HeroMoveController::registeMouseEvent() {
 		Vec2 cur_pos = m_controllerListener->getPosition();
 		extern vector<Entity*> eETT_ptr;
 		if (eETT_ptr.size()) {
+			CCLOG("%d", eETT_ptr.size());
 			for (auto i = 0; i < eETT_ptr.size(); i++) {
 
 				if (eETT_ptr[i] != NULL) {
@@ -46,7 +47,7 @@ void HeroMoveController::registeMouseEvent() {
 					if ((Vec2(eMouse->getCursorX(), eMouse->getCursorY()) - eETT_ptr[i]->getPosition()).length() <= isClick) {
 
 						if (distance <= attackScale) {
-							eETT_ptr[i]->hurtMe(i, Ashe_attackValue);
+							eETT_ptr[i]->hurtMe(i, Ashe_attackValue, eETT_ptr);
 							break;
 						}
 					}

@@ -35,12 +35,12 @@ public:
     cocos2d:: Sprite* getSprite();
 
 	//被攻击
-	void hurtMe(int i,int iHurtValue);
+	void hurtMe(int i,int iHurtValue, vector<Entity*> ETT_ptr);
 	//是否死亡
 	bool isDead();
 protected:
 	//实体死亡时调用
-	virtual void onDead(int i);
+	virtual void onDead(int i, vector<Entity*> ETT_ptr);
 	//绑定精灵时调用
 	virtual void onBindSprite();
 	//受伤害时调用

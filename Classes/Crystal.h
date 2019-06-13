@@ -9,6 +9,7 @@ public:
 	CREATE_FUNC(Crystal);
 	virtual bool init();
 	int getID();
+	virtual void onDead(int i, vector<Entity*> ETT_ptr);
 
 };
 

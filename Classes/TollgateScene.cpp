@@ -5,6 +5,7 @@
 #include "ShopScene.h"
 #include "TollgateDataLayer.h"
 #include "CCNotificationCenter.h"
+#include "LaneTower.h"
 
 USING_NS_CC;
 
@@ -12,6 +13,7 @@ using namespace cocos2d;
 
 vector<Entity*> mETT_ptr;
 vector<Entity*> eETT_ptr;
+Hero* m_hero;
 
 int goldenCoin = 0;
 int power = 0;
@@ -187,7 +189,7 @@ bool TollgateScene::init()
 
 	
 
-	//this->scheduleUpdate();
+	this->scheduleUpdate();
 	//this->scheldue(schedule_selector(HelloWorld::update),1.0f/60);
 
 
@@ -195,13 +197,28 @@ bool TollgateScene::init()
 }
 void TollgateScene::update(float dt)
 {
-	auto label = this->getChildByTag(123);
-	label->setPosition(label->getPosition() + Vec2(2, -2));
 
 	goldenCoin += 1;
 	power += 1;
 
+	 
+	/*if (e_laneTower&&mETT_ptr.size()) {
+		for (auto i = 0; i < mETT_ptr.size(); i++) {
 
+			if (mETT_ptr[i]) {
+				if ((mETT_ptr[i]->getPosition() - e_laneTower->getPosition()).length() <= tower_attackValue) {
+
+					mETT_ptr[i]->hurtMe(i, tower_attackValue, mETT_ptr);
+					//tower's attack is cool down
+					extern bool e_isAtkCoolDown;
+					e_isAtkCoolDown = true;
+
+					e_laneTower->scheduleOnce(schedule_selector(LaneTower::atkCoolDownEnd), 1.0f);
+				}
+			}
+		}
+	}*/
+		
 }
 
 void TollgateScene::menuCloseCallback(Ref* pSender)
@@ -289,6 +306,7 @@ void TollgateScene::addTower(Sprite* map) {
 	eLaneTower->setPosition(Point(visibleSize.width * 3 / 4 - 60, visibleSize.height / 2 + 15));
 	this->addChild(eLaneTower, 1);
 	eETT_ptr.push_back(eLaneTower);
+	e_laneTower = eLaneTower;
 	
 	//build my cystal
 	Sprite* mCrystalSprite = Sprite::create("crystal.png");
@@ -308,6 +326,7 @@ void TollgateScene::addTower(Sprite* map) {
 	eCrystal->setPosition(Point(visibleSize.width  * 4 / 5 + 15, visibleSize.height / 2 + 30));
 	this->addChild(eCrystal, 1);
 	eETT_ptr.push_back(eCrystal);
+	e_crystal = eCrystal;
 
 
 

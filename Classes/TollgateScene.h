@@ -14,7 +14,7 @@ class TollgateScene :public cocos2d::Layer {
 public:
 	friend class HeroMoveController;
 	static cocos2d::Scene* createScene();
-
+	
 	virtual bool init();
 	// a selector callback
 	void menuCloseCallback(cocos2d::Ref* pSender);
@@ -46,6 +46,8 @@ private:
 	
 	LaneTower* m_laneTower;
 	Crystal* m_crystal;
+	LaneTower* e_laneTower;
+	Crystal* e_crystal;
 
 };
 
