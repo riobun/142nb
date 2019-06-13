@@ -80,7 +80,7 @@ using std::map;
 #include"HelloWorldScene.h"
 
 #define PRI_SPEED  30
-#define SPRITE_SIZE 0.3
+#define SPRITE_SIZE 0.6
 #define MOUSE_SIZE 0.5
 #define Crystal_SIZE 0.6
 #define Ashe_attackValue 20

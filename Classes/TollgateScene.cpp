@@ -3,6 +3,9 @@
 #include "GameScene.h"
 #include "SimpleAudioEngine.h"
 #include "ShopScene.h"
+#include "cocos2d.h"
+#include "Hero.h"
+#include "HeroMoveController.h"
 
 USING_NS_CC;
 
@@ -10,6 +13,7 @@ using namespace cocos2d;
 
 vector<Entity*> mETT_ptr;
 vector<Entity*> eETT_ptr;
+Hero* m_hero;
 
 int goldenCoin = 0;
 int power = 0;
@@ -107,11 +111,6 @@ bool TollgateScene::init()
 
 
 
-
-
-
-
-
 	auto shop = MenuItemImage::create(
 		"shopButton1.png",
 		"shopButton2.png",
@@ -125,9 +124,9 @@ bool TollgateScene::init()
 	}
 	else
 	{
-		shop->setScale(0.2f);
-		shop->setAnchorPoint(Vec2(0, 0));
-		shop->setPosition(visibleSize.width / 10, visibleSize.height / 7 - 10);
+		shop->setScale(0.4f);
+		shop->setAnchorPoint(Vec2(0,0));
+		shop->setPosition(visibleSize.width -90, visibleSize.height-70);
 
 
 	}
@@ -176,8 +175,8 @@ void TollgateScene::addHero(Sprite* map) {
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
 
-	Sprite* mHeroSprite = Sprite::create("AShe/Ashe1.png");
-	Sprite* eHeroSprite = Sprite::create("AShe/Ashe1.png");
+	Sprite* mHeroSprite = Sprite::create("greenHero/greenHero1.png");
+	Sprite* eHeroSprite = Sprite::create("greenHero/greenHero1.png");
 	
 	if (mHeroSprite == nullptr && eHeroSprite == nullptr)
 	{
@@ -191,8 +190,11 @@ void TollgateScene::addHero(Sprite* map) {
 
 		//�Ѿ���󶨵�Ӣ�۶�����
 
-		Hero* mHero = Hero::create();
+		Hero* mHero = Hero::create();	
+		
 		mHero->bindSprite(mHeroSprite);
+		mHero->run();
+	
 		Hero* eHero = Hero::create();
 		eHero->bindSprite(eHeroSprite);
 		eETT_ptr.push_back(eHero);
@@ -202,9 +204,6 @@ void TollgateScene::addHero(Sprite* map) {
 		mHero->setPosition(Point(100, visibleSize.height / 2 + 50));
 		eHero->setPosition(Point(visibleSize.width - 100, visibleSize.height / 2 + 50));
 
-
-		this->addChild(mHero, 1);
-		this->addChild(eHero, 1);
 		
 		
 		HeroMoveController* mHeroMoveController = HeroMoveController::create();
@@ -212,12 +211,15 @@ void TollgateScene::addHero(Sprite* map) {
 		
 		this->addChild(mHeroMoveController);
 		//this->addChild(eHeroMoveController);
-		
+	
 		mHero->setController(mHeroMoveController);
 		//eHero->setController(eHeroMoveController);
+		this->addChild(mHero, 1);
+		this->addChild(eHero, 1);
 
 		
 	}
+
 
 	
 }
@@ -256,9 +258,13 @@ void TollgateScene::addTower(Sprite* map) {
 	//build enemy's cystal
 	Sprite* eCrystalSprite = Sprite::create("crystal.png");
 	eCrystalSprite->setScale(Crystal_SIZE);
+	
 	Crystal* eCrystal = Crystal::create();
+	
 	eCrystal->bindSprite(eCrystalSprite);
+	
 	eCrystal->setPosition(Point(visibleSize.width  * 4 / 5 + 15, visibleSize.height / 2 + 30));
+	
 	this->addChild(eCrystal, 1);
 	eETT_ptr.push_back(eCrystal);
 

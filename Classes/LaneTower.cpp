@@ -1,7 +1,7 @@
 #include"GameHead.h"
 using namespace cocos2d;
 
-bool LaneTower::init() {
+	bool LaneTower::init() {
 
 	
 	m_iHP = Tower_iHP;

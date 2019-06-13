@@ -13,7 +13,7 @@ class TollgateScene :public cocos2d::Layer {
 public:
 	friend class HeroMoveController;
 	static cocos2d::Scene* createScene();
-
+	
 	virtual bool init();
 	// a selector callback
 	void menuCloseCallback(cocos2d::Ref* pSender);
@@ -26,7 +26,7 @@ public:
 	cocos2d::Vec2 toTileCoord(cocos2d::Vec2 position);
 	cocos2d::Vec2 toScreenCoord(cocos2d::Vec2 position);
 
-	Hero* m_hero;
+	
 	void addHero(Sprite* map);
 	void addTower(Sprite* map);
 	void TollgateScene::shop(Ref* pSender);
@@ -38,6 +38,8 @@ private:
 	
 	LaneTower* m_laneTower;
 	Crystal* m_crystal;
+	LaneTower* e_laneTower;
+	Crystal* e_crystal;
 
 };
 
