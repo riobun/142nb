@@ -22,10 +22,12 @@ int LaneTower::getID(){
 
 void LaneTower::onDead(int i, vector<Entity*> ETT_ptr) {
 
-	extern int goldenCoin;
-	extern int power;
+	extern double goldenCoin;
+	extern double power;
 	goldenCoin += 60;
 	power += 60;
+	CCLOG("%f", goldenCoin);
+
 	extern vector<Entity*> eETT_ptr;
 	eETT_ptr.erase(eETT_ptr.begin() + i);
 	this->removeFromParent();

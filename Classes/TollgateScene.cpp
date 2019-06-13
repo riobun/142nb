@@ -13,8 +13,8 @@ vector<Entity*> mETT_ptr;
 vector<Entity*> eETT_ptr;
 Hero* m_hero;
 
-int goldenCoin = 0;
-int power = 0;
+double goldenCoin = 0;
+double power = 0;
 
 Scene* TollgateScene::createScene() {
 	auto scene = Scene::create();
@@ -151,8 +151,9 @@ bool TollgateScene::init()
 void TollgateScene::update(float dt)
 {
 
-	goldenCoin += 1;
-	power += 1;
+	goldenCoin += 0.02;
+	power += 0.02;
+	//CCLOG("%d"，goldenCoin);
 
 	 
 	/*if (e_laneTower&&mETT_ptr.size()) {
