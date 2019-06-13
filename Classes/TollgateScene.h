@@ -26,7 +26,7 @@ public:
 	cocos2d::Vec2 toTileCoord(cocos2d::Vec2 position);
 	cocos2d::Vec2 toScreenCoord(cocos2d::Vec2 position);
 
-	Hero* m_hero;
+	
 	void addHero(Sprite* map);
 	void addTower(Sprite* map);
 	void TollgateScene::shop(Ref* pSender);
@@ -38,6 +38,8 @@ private:
 	
 	LaneTower* m_laneTower;
 	Crystal* m_crystal;
+	LaneTower* e_laneTower;
+	Crystal* e_crystal;
 
 };
 

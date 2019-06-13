@@ -12,6 +12,8 @@ public:
     virtual void WriteForCRC(OutputMemoryBitStream& inStream);
 	int getID();
  
+protected:
+	virtual void onDead(int i,vector<Entity*> ETT_ptr);
 
 };
 #endif

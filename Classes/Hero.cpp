@@ -41,3 +41,9 @@ void Hero::run() {
 	m_sprite->runAction(action);
 	
 }
+
+void Hero::onDead(int i, vector<Entity*> ETT_ptr) {
+	extern vector<Entity*> mETT_ptr;
+	mETT_ptr.erase(mETT_ptr.begin() + i);
+	this->removeFromParent();
+}
