@@ -9,7 +9,6 @@
 #include <string>
 #include "cocos2d.h"
 
-
 inline uint32_t ConvertToFixed( float inNumber, float inMin, float inPrecision )
 {
 	return static_cast< int > ( ( inNumber - inMin ) / inPrecision );

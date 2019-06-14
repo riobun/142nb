@@ -16,14 +16,3 @@ bool Crystal::init() {
 int Crystal::getID() {
 	return Crystal_ID;
 }
-
-void Crystal::onDead(int i, vector<Entity*> ETT_ptr) {
-
-	extern int goldenCoin;
-	extern int power;
-	goldenCoin += 60;
-	power += 60;
-	extern vector<Entity*> eETT_ptr;
-	eETT_ptr.erase(eETT_ptr.begin() + i);
-	this->removeFromParent();
-}

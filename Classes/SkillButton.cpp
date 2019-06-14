@@ -1,11 +1,11 @@
 #include "SkillButton.h"
-#include "GameHead.h"
-
+#include "TollgateScene.h"
+#include "Hero.h"
 
 #define SCHEDULE_SKILL_UPDATE_TIME "SCHEDULE_SKILL_UPDATE_TIME"
 #define SKILL_UPDATE_INTERVAL 0.1
 
-
+extern Hero* m_hero;
 
 SkillButton::SkillButton()
 {
@@ -147,21 +147,6 @@ bool SkillButton::keyQPressed()
 {
 	if (_skillEnable && !_isSkillCD)
 	{
-		extern Hero* m_hero;
-
-		Animation *skillQ = Animation::create();
-		for (int i = 1; i < 7; i++)
-		{
-			__String *frameName = __String::createWithFormat("greenHero%d.png", i);
-			log("frameName=%s", frameName->getCString());
-			SpriteFrame *spriteFrame = SpriteFrameCache::getInstance()->
-				getSpriteFrameByName(frameName->getCString());
-			skillQ->addSpriteFrame(spriteFrame);
-		}
-
-		skillQ->setDelayPerUnit(0.15f);
-		skillQ->setRestoreOriginalFrame(true);
-		Animate*action = Animate::create(skillQ);
 		// 开始回调
 		if (_QPressedCallback)
 		{
@@ -409,8 +394,6 @@ void SkillButton::setupCoolImage(const std::string coolImage)
 
 void SkillButton::addQPressedCallback(const SkillButton::alSkillTouchCallback &callback)
 {
-	extern Hero* m_hero;
-
 	Animation *skillQ = Animation::create();
 	for (int i = 1; i < 7; i++)
 	{
@@ -424,8 +407,7 @@ void SkillButton::addQPressedCallback(const SkillButton::alSkillTouchCallback &c
 	skillQ->setDelayPerUnit(0.15f);
 	skillQ->setRestoreOriginalFrame(true);
 	Animate*action = Animate::create(skillQ);
-   
-	m_hero->runAction(action);
+    m_hero->runAction(action);
 
 
 	_QPressedCallback = callback;
