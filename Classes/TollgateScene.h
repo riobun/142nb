@@ -3,7 +3,7 @@
 #ifndef _TollgateScene_H_
 #define _TollgateScene_H_
 
-#include"GameHead.h"
+//#include"GameHead.h"
 
 using namespace cocos2d;
 

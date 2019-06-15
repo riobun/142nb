@@ -104,6 +104,7 @@ protected:
 
 	std::string _normalImageName;
 	std::string _coolImageName;
+	
 
 	alSkillCDEndCallback _skillCDEndCallback;
 	

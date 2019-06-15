@@ -24,9 +24,8 @@
 
 #include "ShopScene.h"
 #include "SimpleAudioEngine.h"
-#include "TollgateScene.h"
 #include "Equipment.h"
-
+#include "GameHead.h"
 
 
 

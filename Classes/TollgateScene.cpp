@@ -1,11 +1,8 @@
 #include "GameHead.h"
 #include "Art.h"
-#include "GameScene.h"
 #include "SimpleAudioEngine.h"
 #include "ShopScene.h"
-#include "cocos2d.h"
-#include "Hero.h"
-#include "HeroMoveController.h"
+#include "WelcomeScene.h"
 
 USING_NS_CC;
 
@@ -90,24 +87,43 @@ bool TollgateScene::init()
 	//����Ӣ��
 	addHero(map);
 	addTower(map);
+
+
+	auto statusBar = Sprite::create("statusBar.png");
+
+	if (statusBar == nullptr)
+	{
+		problemLoading("Map.png'");
+	}
+	else
+	{
+		statusBar->setScale(0.5f);
+		// position the sprite on the center of the screen
+		statusBar->setPosition(visibleSize.width / 2, 100);
+		statusBar->setAnchorPoint(Vec2(0.5, 0.5));
+		// add the sprite as a child to this layer
+		this->addChild(statusBar, 1);
+	}
+
 	
 
 	////////////////////////////
 	//���Ӽ���ͼ������ȴ
-	auto skillQItem = CCDirector::sharedDirector()->getWinSize();
-	auto menuSkillQButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 10.f);  //(normal,cool,time)
-	menuSkillQButton->setPosition(skillQItem.width / 2, skillQItem.height / 2);
-	this->addChild(menuSkillQButton);
+	auto skillItem = CCDirector::sharedDirector()->getWinSize();
+	auto menuSkillQButton = SkillButton::create("SkillPortrait/greenQButton.png", "SkillPortrait/greenQCD.png", 10.f);  //(normal,cool,time)
+	menuSkillQButton->setPosition(skillItem.width / 2, skillItem.height / 8+30);
+	menuSkillQButton->setScale(0.6f);
+	this->addChild(menuSkillQButton,2);
 
-	auto skillWItem = CCDirector::sharedDirector()->getWinSize();
-	auto menuSkillWButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 10.f);  //(normal,cool,time)
-	menuSkillWButton->setPosition(skillWItem.width / 2, skillWItem.height / 2);
-	this->addChild(menuSkillWButton);
+	auto menuSkillWButton = SkillButton::create("SkillPortrait/greenWButton.png", "SkillPortrait/greenWCD.png", 10.f);  //(normal,cool,time)
+	menuSkillWButton->setPosition(skillItem.width / 2+90, skillItem.height / 8+30);
+	menuSkillWButton->setScale(0.6f);
+	this->addChild(menuSkillWButton,2);
 
-	auto skillEItem = CCDirector::sharedDirector()->getWinSize();
-	auto menuSkillEButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 10.f);  //(normal,cool,time)
-	menuSkillEButton->setPosition(skillEItem.width / 2, skillEItem.height / 2);
-	this->addChild(menuSkillEButton);
+	auto menuSkillEButton = SkillButton::create("SkillPortrait/greenEButton.png", "SkillPortrait/greenECD.png", 10.f);  //(normal,cool,time)
+	menuSkillEButton->setPosition(skillItem.width / 2+180, skillItem.height / 8+30);
+	menuSkillEButton->setScale(0.6f);
+	this->addChild(menuSkillEButton,2);
 
 
 

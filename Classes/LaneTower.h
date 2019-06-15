@@ -1,8 +1,8 @@
 #ifndef _LaneTower_H_
 #define _LaneTower_H_
 
-#include "GameHead.h"
-class LaneTower :public Entity {
+//using namespace cocos2d;
+class LaneTower : public Entity {
 public:
 	void atkCoolDownEnd(float dt);
 	CREATE_FUNC(LaneTower);
