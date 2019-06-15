@@ -1,0 +1,318 @@
+{
+  "ID": "34023614-04b9-44db-a016-747c4d7fdcfd",
+  "Version": "3.10.0.0",
+  "Name": "TollgateUI",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 35,
+        "Children": [
+          {
+            "FontSize": 24,
+            "LabelText": "金钱：",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 108.0004,
+              "Y": 439.561
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.135,
+              "Y": 0.9158
+            },
+            "PreSize": {
+              "X": 0.09,
+              "Y": 0.05
+            },
+            "LeftMargin": 108.0004,
+            "RightMargin": 619.9996,
+            "TopMargin": 16.439,
+            "BottomMargin": 439.561,
+            "Tag": 36,
+            "ActionTag": -2099196417,
+            "Size": {
+              "X": 72.0,
+              "Y": 24.0
+            },
+            "Name": "Text_1",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 22,
+            "LabelText": "击杀数:",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 145.0,
+              "Y": 416.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1813,
+              "Y": 0.8667
+            },
+            "PreSize": {
+              "X": 0.0962,
+              "Y": 0.0458
+            },
+            "LeftMargin": 106.5,
+            "RightMargin": 616.5,
+            "TopMargin": 53.0,
+            "BottomMargin": 405.0,
+            "Tag": 37,
+            "ActionTag": 422974587,
+            "Size": {
+              "X": 77.0,
+              "Y": 22.0
+            },
+            "Name": "Text_2",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 22,
+            "LabelText": "死亡数：",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 152.0,
+              "Y": 375.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.19,
+              "Y": 0.7812
+            },
+            "PreSize": {
+              "X": 0.11,
+              "Y": 0.0458
+            },
+            "LeftMargin": 108.0,
+            "RightMargin": 604.0,
+            "TopMargin": 94.0,
+            "BottomMargin": 364.0,
+            "Tag": 38,
+            "ActionTag": -1072874628,
+            "Size": {
+              "X": 88.0,
+              "Y": 22.0
+            },
+            "Name": "Text_3",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 22,
+            "LabelText": "000",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 179.4151,
+              "Y": 449.2548
+            },
+            "Scale": {
+              "ScaleX": 1.1818,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2243,
+              "Y": 0.9359
+            },
+            "PreSize": {
+              "X": 0.0413,
+              "Y": 0.0458
+            },
+            "LeftMargin": 179.4151,
+            "RightMargin": 587.585,
+            "TopMargin": 19.7452,
+            "BottomMargin": 438.2548,
+            "Tag": 39,
+            "ActionTag": 1628500935,
+            "Size": {
+              "X": 33.0,
+              "Y": 22.0
+            },
+            "Name": "moneyLab",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 22,
+            "LabelText": "000",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 190.0,
+              "Y": 415.9995
+            },
+            "Scale": {
+              "ScaleX": 1.1818,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2375,
+              "Y": 0.8667
+            },
+            "PreSize": {
+              "X": 0.0413,
+              "Y": 0.0458
+            },
+            "LeftMargin": 190.0,
+            "RightMargin": 577.0,
+            "TopMargin": 53.0005,
+            "BottomMargin": 404.9995,
+            "Tag": 40,
+            "ActionTag": 1435215898,
+            "Size": {
+              "X": 33.0,
+              "Y": 22.0
+            },
+            "Name": "killLab",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 22,
+            "LabelText": "000",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 192.0,
+              "Y": 374.9997
+            },
+            "Scale": {
+              "ScaleX": 1.1818,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.24,
+              "Y": 0.7812
+            },
+            "PreSize": {
+              "X": 0.0413,
+              "Y": 0.0458
+            },
+            "LeftMargin": 192.0,
+            "RightMargin": 575.0,
+            "TopMargin": 94.0003,
+            "BottomMargin": 363.9997,
+            "Tag": 41,
+            "ActionTag": 1641002688,
+            "Size": {
+              "X": 33.0,
+              "Y": 22.0
+            },
+            "Name": "deathLab",
+            "ctype": "TextObjectData"
+          }
+        ],
+        "Size": {
+          "X": 800.0,
+          "Y": 480.0
+        },
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Scene"
+}

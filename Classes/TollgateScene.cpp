@@ -2,7 +2,8 @@
 #include "Art.h"
 #include "SimpleAudioEngine.h"
 #include "ShopScene.h"
-#include "WelcomeScene.h"
+#include "TollgateDataLayer.h"
+#include "CCNotificationCenter.h"
 
 USING_NS_CC;
 
@@ -19,6 +20,27 @@ Scene* TollgateScene::createScene() {
 	auto scene = Scene::create();
 	auto layer = TollgateScene::create();
 	scene->addChild(layer);
+TollgateScene* TollgateScene::slayer;
+int testnum = 233;
+
+Scene* TollgateScene::createScene() {
+	auto scene = Scene::create();
+	slayer = TollgateScene::create();
+	//TollgateDataLayer* dataLayer = TollgateDataLayer::create();
+
+	scene->addChild(slayer);
+	//scene->addChild(dataLayer, 5, TAG_DATA_LAYER);
+		/*
+	//初始化金钱，击杀和死亡数
+		int iMoney = 0;
+		int iKill = 0;
+		int iDeath = 0;
+
+		NOTIFY->postNotification("MoneyChange", (Ref*)iMoney);
+		NOTIFY->postNotification("KillChange", (Ref*)iKill);
+		NOTIFY->postNotification("DeathChange", (Ref*)iDeath);
+		*/
+
 	return scene;
 }
 
@@ -289,6 +311,25 @@ void TollgateScene::addTower(Sprite* map) {
 }
 
 void TollgateScene::shop(Ref* pSender)
+
+
+void TollgateScene::addNumberNode()
+{
+	ShowNumberNode * snn = ShowNumberNode::CreateShowNumberNode("score_num.png", 923, 28, 33);
+	snn->f_ShowNumber(testnum);
+	snn->setPosition(ccp(100, 100));
+	this->addChild(snn, 0, 0);
+	schedule(schedule_selector(TollgateScene::logic), 2.0f);
+
+}
+
+void TollgateScene::logic(float dt)
+{
+	ShowNumberNode*snn = (ShowNumberNode *)this->getChildByTag(0);
+	snn->f_ShowNumber(testnum);
+	testnum = testnum + 10;
+}
+void TollgateScene::searchFinish()
 {
 	MenuItem* shop = (MenuItem*)pSender;
 	log("Touch backGame %p", shop);
