@@ -26,6 +26,8 @@ public:
 	void addHero(Sprite* map);
 	void addTower(Sprite* map);
 	void TollgateScene::shop(Ref* pSender);
+	void addNumberNode();
+	void logic(float dt);
 private:
 	cocos2d::Size visibleSize;
 	cocos2d::Sprite *sprite;

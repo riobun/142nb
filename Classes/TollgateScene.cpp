@@ -81,7 +81,15 @@ bool TollgateScene::init()
 	//����Ӣ��
 	addHero(map);
 	addTower(map);
-
+	int score = 0;
+	int testnum = 233;
+	auto scoreLb = Label::createWithSystemFont(StringUtils::format("goldenCoin"), "", 32);//    
+	scoreLb->setAnchorPoint(Vec2::ZERO);
+	scoreLb->setColor(Color3B::YELLOW);
+	scoreLb->setPosition(20, Director::getInstance()->getWinSize().height - 515);
+	scoreLb->setTag(123);
+	this->addChild(scoreLb, 2);
+	addNumberNode();
 
 	auto statusBar = Sprite::create("statusBar.png");
 
@@ -280,4 +288,20 @@ void TollgateScene::shop(Ref* pSender)
 
 }
 
+void TollgateScene::addNumberNode()
+{
+	ShowNumberNode * snn = ShowNumberNode::CreateShowNumberNode("score_num.png", 10000, 28, 33);
+	snn->f_ShowNumber(goldenCoin);
+	snn->setPosition(ccp(100, 100));
+	this->addChild(snn, 0, 0);
+	schedule(schedule_selector(TollgateScene::logic), 2.0f);
 
+}
+
+void TollgateScene::logic(float dt)
+{
+	ShowNumberNode*snn = (ShowNumberNode *)this->getChildByTag(0);
+	snn->f_ShowNumber(goldenCoin);
+	goldenCoin += 1;
+	power += 1;
+}
