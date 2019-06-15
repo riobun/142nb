@@ -1,8 +1,6 @@
 #include"GameHead.h"
 using namespace cocos2d;
 
-bool e_isAtkCoolDown;
-
 bool LaneTower::init() {
 
 	
@@ -12,7 +10,6 @@ bool LaneTower::init() {
 	m_iLevel = 1;
 	mNetworkId = 0;
 	mPlayerId = 0;
-	e_isAtkCoolDown = false;
 	
 	return true;
 }
@@ -20,7 +17,7 @@ int LaneTower::getID(){
 	return Tower_ID;
 }
 
-void LaneTower::onDead(int i, vector<Entity*> ETT_ptr) {
+void LaneTower::onDead(int i) {
 
 	extern int goldenCoin;
 	extern int power;
@@ -30,8 +27,3 @@ void LaneTower::onDead(int i, vector<Entity*> ETT_ptr) {
 	eETT_ptr.erase(eETT_ptr.begin() + i);
 	this->removeFromParent();
 }
-
-void LaneTower::atkCoolDownEnd(float dt) {
-	e_isAtkCoolDown = false;
-}
-
