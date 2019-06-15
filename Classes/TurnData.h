@@ -1,4 +1,4 @@
-// TurnData：轮数据，用于同步
+// TurnData：轮数据，用于包装与同步
 //  参考：Multiplayer game programming, Joshua Glazer, Sanjay Madhav
 //  更改：杜玫，2019.06.04
 

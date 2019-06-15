@@ -2,7 +2,6 @@
 #include "Art.h"
 #include "SimpleAudioEngine.h"
 #include "ShopScene.h"
-#include "WelcomeScene.h"
 
 USING_NS_CC;
 
@@ -21,11 +20,6 @@ Scene* TollgateScene::createScene() {
 	scene->addChild(layer);
 	return scene;
 }
-
-
-
-
-
 
 static void problemLoading(const char* filename)
 {
@@ -161,6 +155,7 @@ bool TollgateScene::init()
 
 	return true;
 }
+
 void TollgateScene::update(float dt)
 {
 	auto label = this->getChildByTag(123);
@@ -191,8 +186,8 @@ void TollgateScene::addHero(Sprite* map) {
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
 
-	Sprite* mHeroSprite = Sprite::create("greenHero/greenHero1.png");
-	Sprite* eHeroSprite = Sprite::create("greenHero/greenHero1.png");
+	Sprite* mHeroSprite = Sprite::create("greenHero.png");
+	Sprite* eHeroSprite = Sprite::create("greenHero.png");
 	
 	if (mHeroSprite == nullptr && eHeroSprite == nullptr)
 	{
@@ -204,8 +199,6 @@ void TollgateScene::addHero(Sprite* map) {
 		mHeroSprite->setScale(SPRITE_SIZE);
 		eHeroSprite->setScale(SPRITE_SIZE);
 
-		//�Ѿ���󶨵�Ӣ�۶�����
-
 		Hero* mHero = Hero::create();	
 		
 		mHero->bindSprite(mHeroSprite);
@@ -214,13 +207,9 @@ void TollgateScene::addHero(Sprite* map) {
 		Hero* eHero = Hero::create();
 		eHero->bindSprite(eHeroSprite);
 		eETT_ptr.push_back(eHero);
-		m_hero = mHero;
 
-		//����Ӣ�۳�����
 		mHero->setPosition(Point(100, visibleSize.height / 2 + 50));
 		eHero->setPosition(Point(visibleSize.width - 100, visibleSize.height / 2 + 50));
-
-		
 		
 		HeroMoveController* mHeroMoveController = HeroMoveController::create();
 		//HeroMoveController* eHeroMoveController = HeroMoveController::create();
@@ -232,12 +221,7 @@ void TollgateScene::addHero(Sprite* map) {
 		//eHero->setController(eHeroMoveController);
 		this->addChild(mHero, 1);
 		this->addChild(eHero, 1);
-
-		
 	}
-
-
-	
 }
 
 void TollgateScene::addTower(Sprite* map) { 
@@ -283,8 +267,6 @@ void TollgateScene::addTower(Sprite* map) {
 	
 	this->addChild(eCrystal, 1);
 	eETT_ptr.push_back(eCrystal);
-
-
 
 }
 

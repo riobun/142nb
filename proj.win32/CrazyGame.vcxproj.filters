@@ -3,56 +3,79 @@
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\BaseMap.cpp" />
-    <ClCompile Include="..\Classes\Command.cpp" />
-    <ClCompile Include="..\Classes\CommandList.cpp" />
     <ClCompile Include="..\Classes\Controller1.cpp" />
     <ClCompile Include="..\Classes\CsvData.cpp" />
     <ClCompile Include="..\Classes\CsvUtil.cpp" />
     <ClCompile Include="..\Classes\Crystal.cpp" />
     <ClCompile Include="..\Classes\Entity.cpp" />
-    <ClCompile Include="..\Classes\EntityRegistry.cpp" />
     <ClCompile Include="..\Classes\Equipment.cpp" />
     <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\Hero.cpp" />
     <ClCompile Include="..\Classes\HeroMoveController.cpp" />
     <ClCompile Include="..\Classes\LaneTower.cpp" />
-    <ClCompile Include="..\Classes\MemoryBitStream.cpp" />
-    <ClCompile Include="..\Classes\NetworkInit.cpp" />
-    <ClCompile Include="..\Classes\NetworkManager.cpp" />
-    <ClCompile Include="..\Classes\RandGen.cpp" />
     <ClCompile Include="..\Classes\ShopScene.cpp" />
-    <ClCompile Include="..\Classes\SingleProxy.cpp" />
     <ClCompile Include="..\Classes\SkillButton.cpp" />
-    <ClCompile Include="..\Classes\SocketAddress.cpp" />
-    <ClCompile Include="..\Classes\SocketAddressFactory.cpp" />
-    <ClCompile Include="..\Classes\SocketUtil.cpp" />
-    <ClCompile Include="..\Classes\StringUtil.cpp" />
-    <ClCompile Include="..\Classes\StringUtils.cpp" />
-    <ClCompile Include="..\Classes\TCPSocket.cpp" />
-    <ClCompile Include="..\Classes\Timing.cpp" />
     <ClCompile Include="..\Classes\TollgateScene.cpp" />
-    <ClCompile Include="..\Classes\TurnData.cpp" />
-    <ClCompile Include="..\Classes\UDPSocket.cpp" />
     <ClCompile Include="..\Classes\WelcomeScene.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="TollgateDataLayer.cpp" />
-    <ClCompile Include="ShowNumberNode.cpp" />
-    <ClCompile Include="NumberSprite.cpp" />
+    <ClCompile Include="..\Classes\StringUtil.cpp" />
+    <ClCompile Include="..\Classes\Command.cpp">
+      <Filter>Network\接口</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CommandList.cpp">
+      <Filter>Network\收发管理</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\EntityRegistry.cpp">
+      <Filter>Network\收发管理</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\NetworkManager.cpp">
+      <Filter>Network\收发管理</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\RandGen.cpp">
+      <Filter>Network\工具</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MemoryBitStream.cpp">
+      <Filter>Network\底层</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SingleProxy.cpp">
+      <Filter>Network\接口</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SocketAddress.cpp">
+      <Filter>Network\底层</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SocketAddressFactory.cpp">
+      <Filter>Network\底层</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SocketUtil.cpp">
+      <Filter>Network\底层</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\StringUtils.cpp">
+      <Filter>Network\工具</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Timing.cpp">
+      <Filter>Network\工具</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TurnData.cpp">
+      <Filter>Network\收发管理</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UDPSocket.cpp">
+      <Filter>Network\底层</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\NetworkProxy.cpp">
+      <Filter>Network\接口</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\Art.h" />
     <ClInclude Include="..\Classes\BaseMap.h" />
-    <ClInclude Include="..\Classes\Command.h" />
-    <ClInclude Include="..\Classes\CommandList.h" />
     <ClInclude Include="..\Classes\Controller1.h" />
     <ClInclude Include="..\Classes\ControllerListener.h" />
     <ClInclude Include="..\Classes\CsvData.h" />
     <ClInclude Include="..\Classes\CsvUtil.h" />
     <ClInclude Include="..\Classes\Crystal.h" />
     <ClInclude Include="..\Classes\Entity.h" />
-    <ClInclude Include="..\Classes\EntityRegistry.h" />
     <ClInclude Include="..\Classes\Equipment.h" />
     <ClInclude Include="..\Classes\GameHead.h" />
     <ClInclude Include="..\Classes\GameScene.h" />
@@ -60,32 +83,83 @@
     <ClInclude Include="..\Classes\Hero.h" />
     <ClInclude Include="..\Classes\HeroMoveController.h" />
     <ClInclude Include="..\Classes\LaneTower.h" />
-    <ClInclude Include="..\Classes\MemoryBitStream.h" />
-    <ClInclude Include="..\Classes\NetworkHead.h" />
-    <ClInclude Include="..\Classes\NetworkInit.h" />
-    <ClInclude Include="..\Classes\NetworkManager.h" />
-    <ClInclude Include="..\Classes\RandGen.h" />
     <ClInclude Include="..\Classes\ShopScene.h" />
-    <ClInclude Include="..\Classes\SingleProxy.h" />
     <ClInclude Include="..\Classes\SkillButton.h" />
-    <ClInclude Include="..\Classes\SocketAddress.h" />
-    <ClInclude Include="..\Classes\SocketAddressFactory.h" />
-    <ClInclude Include="..\Classes\SocketUtil.h" />
-    <ClInclude Include="..\Classes\StringUtil.h" />
-    <ClInclude Include="..\Classes\StringUtils.h" />
-    <ClInclude Include="..\Classes\TCPSocket.h" />
-    <ClInclude Include="..\Classes\Timing.h" />
     <ClInclude Include="..\Classes\TollgateScene.h" />
-    <ClInclude Include="..\Classes\TurnData.h" />
-    <ClInclude Include="..\Classes\UDPSocket.h" />
-    <ClInclude Include="..\Classes\WeightedTimedMovingAverage.h" />
     <ClInclude Include="..\Classes\WelcomeScene.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="TollgateDataLayer.h" />
-    <ClInclude Include="ShowNumberNode.h" />
-    <ClInclude Include="NumberSprite.h" />
+    <ClInclude Include="..\Classes\resource.h" />
+    <ClInclude Include="..\Classes\StringUtil.h" />
+    <ClInclude Include="..\Classes\Command.h">
+      <Filter>Network\接口</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CommandList.h">
+      <Filter>Network\收发管理</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\EntityRegistry.h">
+      <Filter>Network\收发管理</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\NetworkHead.h">
+      <Filter>Network\接口</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\NetworkManager.h">
+      <Filter>Network\收发管理</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\RandGen.h">
+      <Filter>Network\工具</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MemoryBitStream.h">
+      <Filter>Network\底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SingleProxy.h">
+      <Filter>Network\接口</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SocketAddress.h">
+      <Filter>Network\底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SocketAddressFactory.h">
+      <Filter>Network\底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SocketUtil.h">
+      <Filter>Network\底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StringUtils.h">
+      <Filter>Network\工具</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Timing.h">
+      <Filter>Network\工具</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TurnData.h">
+      <Filter>Network\收发管理</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UDPSocket.h">
+      <Filter>Network\底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\WeightedTimedMovingAverage.h">
+      <Filter>Network\工具</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\NetworkProxy.h">
+      <Filter>Network\接口</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Network">
+      <UniqueIdentifier>{9583ff85-69c5-48ac-a45c-65c3cc2e5897}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\底层">
+      <UniqueIdentifier>{3a03de2a-c488-47e4-b48e-82dad6c183dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\工具">
+      <UniqueIdentifier>{7907a3f2-90b1-449a-8dfc-c513ad2258a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\收发管理">
+      <UniqueIdentifier>{49d10b56-7305-4e79-b7e1-20d2bcbb9d50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\接口">
+      <UniqueIdentifier>{a6f75294-8a66-4c92-971b-bf242bd48af7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

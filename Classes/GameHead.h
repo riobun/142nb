@@ -73,7 +73,7 @@ using std::map;
 #include "CommandList.h"
 
 #include "TurnData.h"
-#include "NetworkInit.h"
+#include "NetworkProxy.h"
 #include "NetworkManager.h"
 #include "SingleProxy.h"
 

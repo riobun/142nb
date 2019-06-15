@@ -21,11 +21,6 @@ public:
     //成功返回已复制字节数，失败返回-1
 	int ReceiveFrom( void* inToReceive, int inMaxLength, SocketAddress& outFromAddress );
 
-	/*
-	int SendTo( const MemoryOutputStream& inMOS, const SocketAddress& inToAddress );
-	int ReceiveFrom( MemoryInputStream& inMIS, SocketAddress& outFromAddress );
-	*/
-
     // 开启非阻塞模式
 	int SetNonBlockingMode( bool inShouldBeNonBlocking );
 

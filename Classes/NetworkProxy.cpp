@@ -1,23 +1,18 @@
-// NetworkInit:    初始化网络库
+// NetworkProxy:    网络库主要接口
 //  参考：Multiplayer game programming, Joshua Glazer, Sanjay Madhav
 //  更改：杜玫， 2019.06.05
 
 #include "GameHead.h"
 
-unique_ptr< Network > Network::sInstance;
-
 namespace NetVar
 {
-    uint16_t my_port = 45000;
-    std::string my_addr = "127.0.0.1:45000";
-    std::string my_name = "King";
-    bool wantbe_master = false;
+uint16_t my_port = 45000;
+std::string my_addr = "127.0.0.1:45000";
+std::string my_name = "King";
+bool wantbe_master = false;
 }
 
-Network::Network()
-{
-
-}
+unique_ptr< Network > Network::sInstance;
 
 bool Network::StaticInit(std::string name, bool tobe_master_peer, uint16_t inPort, std::string addr)
 {
@@ -25,8 +20,6 @@ bool Network::StaticInit(std::string name, bool tobe_master_peer, uint16_t inPor
     SocketUtil::StaticInit();
     CommandList::StaticInit();
     sInstance.reset(new Network());//唯一实例
-    //EntityRegistry::StaticInit();
-    //EntityRegistry::sInstance->RegisterCreationFunction('HERO', Hero::StaticCreate);
     if (tobe_master_peer)
     {
         NetworkManager::StaticInitAsMasterPeer(stoi(addr), name);
@@ -56,14 +49,11 @@ void Network::Update()
     if (NetworkManager::sInstance->GetState() != NetworkManager::NMS_Delay)
     {
         float delta = Timing::sInstance.GetDeltaTime();
-        //World::sInstance->Update(delta);????重写
         NetworkManager::sInstance->ProcessIncomingPackets();
         NetworkManager::sInstance->SendOutgoingPackets();
     }
     else
     {
-        //only grab the incoming packets because if I'm in delay,
-        //the only way I'm getting out is if an incoming packet saves me
         NetworkManager::sInstance->ProcessIncomingPackets();
     }
 

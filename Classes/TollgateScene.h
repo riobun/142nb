@@ -1,13 +1,9 @@
 
-
 #ifndef _TollgateScene_H_
 #define _TollgateScene_H_
 
-//#include"GameHead.h"
 
 using namespace cocos2d;
-
-
 
 class TollgateScene :public cocos2d::Layer {
 public:
@@ -42,6 +38,5 @@ private:
 	Crystal* e_crystal;
 
 };
-
 
 #endif

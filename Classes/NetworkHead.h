@@ -1,4 +1,4 @@
-// NetworkHead.h:    网络库头文件
+// NetworkHead.h:    网络库头文件，包含网络底层和工具
 //  参考：Multiplayer game programming, Joshua Glazer, Sanjay Madhav
 //  更改：杜玫， 2019.06.05
 
@@ -68,7 +68,6 @@ constexpr char* default_name = "King";
 #include "SocketAddress.h"
 #include "SocketAddressFactory.h"
 #include "UDPSocket.h"
-#include "TCPSocket.h"
 #include "SocketUtil.h"
 
 #endif // _NETWORK_HEAD_H_
