@@ -1,9 +1,10 @@
+#include "GameHead.h"
 #include "HelloWorldScene.h"
 #include "WelcomeScene.h"
 #include "SimpleAudioEngine.h"
 #include "3d/CCSprite3D.h"
 #include "GameScene.h"
-#include "TollgateScene.h"
+
 
 USING_NS_CC;
 

@@ -22,9 +22,10 @@
  THE SOFTWARE.
  ****************************************************************************/
 
+#include "GameHead.h"
 #include "ShopScene.h"
 #include "SimpleAudioEngine.h"
-#include "TollgateScene.h"
+
 #include "Equipment.h"
 
 

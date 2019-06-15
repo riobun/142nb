@@ -65,8 +65,9 @@ using std::map;
 #include"Entity.h"
 #include "EntityRegistry.h"
 #include"Hero.h"
-#include"LaneTower.h"
+
 #include"Crystal.h"
+#include"LaneTower.h"
 
 #include "Command.h"
 #include "CommandList.h"
@@ -76,13 +77,12 @@ using std::map;
 #include "NetworkManager.h"
 #include "SingleProxy.h"
 
+
 #include"TollgateScene.h"
 #include"HelloWorldScene.h"
-#include"NumberSprite.h"
-#include "ShowNumberNode.h"
 
 #define PRI_SPEED  30
-#define SPRITE_SIZE 0.3
+#define SPRITE_SIZE 0.6
 #define MOUSE_SIZE 0.5
 #define Crystal_SIZE 0.6
 #define Ashe_attackValue 20
@@ -108,9 +108,6 @@ using std::map;
 	eDiamond_Tag = 401
 }SpriteTags;*/
 
-
-
-#define NOTIFY cocos2d::NotificationCenter::getInstance();
 
 
 #endif //_GAME_HEAD_H

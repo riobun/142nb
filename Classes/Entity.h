@@ -3,8 +3,8 @@
 
 #define CLASS_IDENTIFICATION( inCode, inClass ) \
 enum { kClassId = inCode }; \
-virtual uint32_t GetClassId() const { return kClassId; } \
-static Entity* CreateInstance() { return static_cast< Entity* >( new inClass() ); } \
+virtual uint32_t GetClassId() const { return kClassId; }  \
+static Entity* CreateInstance() { return static_cast< Entity* >( new inClass() ); }   \
 
 class Hero;
 class Controller1;

@@ -56,6 +56,7 @@ void HeroMoveController::registeMouseEvent() {
 					double iTime = (cur_pos - Vec2(eMouse->getCursorX(), eMouse->getCursorY())).length() / PRI_SPEED;
 					MoveTo* moveTo = MoveTo::create(iTime, Vec2(eMouse->getCursorX(), eMouse->getCursorY()));
 					m_controllerListener->runAction(moveTo);
+					
 
 				}
 			}
