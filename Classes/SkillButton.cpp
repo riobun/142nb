@@ -171,84 +171,18 @@ bool SkillButton::keyQPressed()
 
 bool SkillButton::keyWPressed()
 {
-	if (_skillEnable && !_isSkillCD)
-	{
-		// 开始回调
-		if (_WPressedCallback)
-		{
-			_WPressedCallback(0);
-
-
-			_isSkillTouchEnd = false;
-			return true;
-		}
-	}
-
-	// 开始读冷却
-	this->startSkillCDAction();
-	_isSkillTouchEnd = true;
 	return false;
 }
 bool SkillButton::keyEPressed()
 {
-	if (_skillEnable && !_isSkillCD)
-	{
-		// 开始回调
-		if (_EPressedCallback)
-		{
-			_EPressedCallback(0);
-
-
-			_isSkillTouchEnd = false;
-			return true;
-		}
-	}
-
-	// 开始读冷却
-	this->startSkillCDAction();
-	_isSkillTouchEnd = true;
 	return false;
 }
 bool SkillButton::keyTabPressed()
 {
-	if (_skillEnable && !_isSkillCD)
-	{
-		// 开始回调
-		if (_TabPressedCallback)
-		{
-			_TabPressedCallback(0);
-
-
-			_isSkillTouchEnd = false;
-			return true;
-		}
-	}
-
-	// 开始读冷却
-	this->startSkillCDAction();
-	_isSkillTouchEnd = true;
 	return false;
 }
 bool SkillButton::keyPPressed()
 {
-	if (_skillEnable && !_isSkillCD)
-	{
-		// 开始回调
-		if (_PPressedCallback)
-		{
-			_PPressedCallback(0);
-
-
-			_isSkillTouchEnd = false;
-			return true;
-		}
-	}
-
-	// 开始读冷却
-	this->startSkillCDAction();
-
-
-	_isSkillTouchEnd = true;
 	return false;
 }
 

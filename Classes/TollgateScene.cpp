@@ -109,21 +109,19 @@ bool TollgateScene::init()
 
 	////////////////////////////
 	//���Ӽ���ͼ������ȴ
-	auto skillQItem = CCDirector::sharedDirector()->getWinSize();
+	auto skillItem = CCDirector::sharedDirector()->getWinSize();
 	auto menuSkillQButton = SkillButton::create("SkillPortrait/greenQButton.png", "SkillPortrait/greenQCD.png", 10.f);  //(normal,cool,time)
-	menuSkillQButton->setPosition(skillQItem.width / 2, skillQItem.height / 8+30);
+	menuSkillQButton->setPosition(skillItem.width / 2, skillItem.height / 8+30);
 	menuSkillQButton->setScale(0.6f);
 	this->addChild(menuSkillQButton,2);
 
-	auto skillWItem = CCDirector::sharedDirector()->getWinSize();
 	auto menuSkillWButton = SkillButton::create("SkillPortrait/greenWButton.png", "SkillPortrait/greenWCD.png", 10.f);  //(normal,cool,time)
-	menuSkillWButton->setPosition(skillWItem.width / 2+90, skillWItem.height / 8+30);
+	menuSkillWButton->setPosition(skillItem.width / 2+90, skillItem.height / 8+30);
 	menuSkillWButton->setScale(0.6f);
 	this->addChild(menuSkillWButton,2);
 
-	auto skillEItem = CCDirector::sharedDirector()->getWinSize();
 	auto menuSkillEButton = SkillButton::create("SkillPortrait/greenEButton.png", "SkillPortrait/greenECD.png", 10.f);  //(normal,cool,time)
-	menuSkillEButton->setPosition(skillEItem.width / 2+180, skillEItem.height / 8+30);
+	menuSkillEButton->setPosition(skillItem.width / 2+180, skillItem.height / 8+30);
 	menuSkillEButton->setScale(0.6f);
 	this->addChild(menuSkillEButton,2);
 
