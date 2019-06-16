@@ -89,7 +89,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>libcurl.lib;%(AdditionalDependencies);$(_COCOS_LIB_WIN32_BEGIN);$(_COCOS_LIB_WIN32_END)</AdditionalDependencies>
+      <AdditionalDependencies>libcurl.lib;%(AdditionalDependencies);libbox2d.lib;$(_COCOS_LIB_WIN32_BEGIN);$(_COCOS_LIB_WIN32_END)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories);$(_COCOS_LIB_PATH_WIN32_BEGIN);$(_COCOS_LIB_PATH_WIN32_END)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -118,7 +118,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>$(EngineRoot);$(EngineRoot)external;$(EngineRoot)cocos\audio\include;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kuron\Documents\142nb\zlib\include;C:\Users\kuron\Documents\142nb\proj.win32;C:\Users\kuron\Documents\142nb\Classes;$(EngineRoot);$(EngineRoot)external;$(EngineRoot)cocos\audio\include;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -166,10 +166,12 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClCompile Include="..\Classes\HeroMoveController.cpp" />
     <ClCompile Include="..\Classes\LaneTower.cpp" />
     <ClCompile Include="..\Classes\MemoryBitStream.cpp" />
-    <ClCompile Include="..\Classes\NetworkInit.cpp" />
+    <ClCompile Include="..\Classes\NetworkProxy.cpp" />
     <ClCompile Include="..\Classes\NetworkManager.cpp" />
+    <ClCompile Include="..\Classes\NumberSprite.cpp" />
     <ClCompile Include="..\Classes\RandGen.cpp" />
     <ClCompile Include="..\Classes\ShopScene.cpp" />
+    <ClCompile Include="..\Classes\ShowNumberNode.cpp" />
     <ClCompile Include="..\Classes\SingleProxy.cpp" />
     <ClCompile Include="..\Classes\SkillButton.cpp" />
     <ClCompile Include="..\Classes\SocketAddress.cpp" />
@@ -177,7 +179,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClCompile Include="..\Classes\SocketUtil.cpp" />
     <ClCompile Include="..\Classes\StringUtil.cpp" />
     <ClCompile Include="..\Classes\StringUtils.cpp" />
-    <ClCompile Include="..\Classes\TCPSocket.cpp" />
     <ClCompile Include="..\Classes\Timing.cpp" />
     <ClCompile Include="..\Classes\TollgateScene.cpp" />
     <ClCompile Include="..\Classes\TurnData.cpp" />
@@ -207,10 +208,13 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClInclude Include="..\Classes\LaneTower.h" />
     <ClInclude Include="..\Classes\MemoryBitStream.h" />
     <ClInclude Include="..\Classes\NetworkHead.h" />
-    <ClInclude Include="..\Classes\NetworkInit.h" />
+    <ClInclude Include="..\Classes\NetworkProxy.h" />
     <ClInclude Include="..\Classes\NetworkManager.h" />
+    <ClInclude Include="..\Classes\NumberSprite.h" />
     <ClInclude Include="..\Classes\RandGen.h" />
+    <ClInclude Include="..\Classes\resource.h" />
     <ClInclude Include="..\Classes\ShopScene.h" />
+    <ClInclude Include="..\Classes\ShowNumberNode.h" />
     <ClInclude Include="..\Classes\SingleProxy.h" />
     <ClInclude Include="..\Classes\SkillButton.h" />
     <ClInclude Include="..\Classes\SocketAddress.h" />
@@ -218,7 +222,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClInclude Include="..\Classes\SocketUtil.h" />
     <ClInclude Include="..\Classes\StringUtil.h" />
     <ClInclude Include="..\Classes\StringUtils.h" />
-    <ClInclude Include="..\Classes\TCPSocket.h" />
     <ClInclude Include="..\Classes\Timing.h" />
     <ClInclude Include="..\Classes\TollgateScene.h" />
     <ClInclude Include="..\Classes\TurnData.h" />

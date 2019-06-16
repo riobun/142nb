@@ -1,9 +1,7 @@
 #include "GameHead.h"
 #include "Art.h"
-#include "GameScene.h"
 #include "SimpleAudioEngine.h"
 #include "ShopScene.h"
-#include "LaneTower.h"
 
 USING_NS_CC;
 
@@ -24,11 +22,6 @@ Scene* TollgateScene::createScene() {
 	scene->addChild(layer);
 	return scene;
 }
-
-
-
-
-
 
 static void problemLoading(const char* filename)
 {
@@ -90,29 +83,51 @@ bool TollgateScene::init()
 	//����Ӣ��
 	addHero(map);
 	addTower(map);
+	int score = 0;
+	int testnum = 233;
+	auto scoreLb = Label::createWithSystemFont(StringUtils::format("goldenCoin"), "", 32);//    
+	scoreLb->setAnchorPoint(Vec2::ZERO);
+	scoreLb->setColor(Color3B::YELLOW);
+	scoreLb->setPosition(20, Director::getInstance()->getWinSize().height - 515);
+	scoreLb->setTag(123);
+	this->addChild(scoreLb, 2);
+	addNumberNode();
+
+	auto statusBar = Sprite::create("statusBar.png");
+
+	if (statusBar == nullptr)
+	{
+		problemLoading("Map.png'");
+	}
+	else
+	{
+		statusBar->setScale(0.5f);
+		// position the sprite on the center of the screen
+		statusBar->setPosition(visibleSize.width / 2, 100);
+		statusBar->setAnchorPoint(Vec2(0.5, 0.5));
+		// add the sprite as a child to this layer
+		this->addChild(statusBar, 1);
+	}
+
 	
 
 	////////////////////////////
 	//���Ӽ���ͼ������ȴ
-	auto skillQItem = CCDirector::sharedDirector()->getWinSize();
-	auto menuSkillQButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 10.f);  //(normal,cool,time)
-	menuSkillQButton->setPosition(skillQItem.width / 2, skillQItem.height / 2);
-	this->addChild(menuSkillQButton);
+	auto skillItem = CCDirector::sharedDirector()->getWinSize();
+	auto menuSkillQButton = SkillButton::create("SkillPortrait/greenQButton.png", "SkillPortrait/greenQCD.png", 10.f);  //(normal,cool,time)
+	menuSkillQButton->setPosition(skillItem.width / 2, skillItem.height / 8+30);
+	menuSkillQButton->setScale(0.6f);
+	this->addChild(menuSkillQButton,2);
 
-	auto skillWItem = CCDirector::sharedDirector()->getWinSize();
-	auto menuSkillWButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 10.f);  //(normal,cool,time)
-	menuSkillWButton->setPosition(skillWItem.width / 2, skillWItem.height / 2);
-	this->addChild(menuSkillWButton);
+	auto menuSkillWButton = SkillButton::create("SkillPortrait/greenWButton.png", "SkillPortrait/greenWCD.png", 10.f);  //(normal,cool,time)
+	menuSkillWButton->setPosition(skillItem.width / 2+90, skillItem.height / 8+30);
+	menuSkillWButton->setScale(0.6f);
+	this->addChild(menuSkillWButton,2);
 
-	auto skillEItem = CCDirector::sharedDirector()->getWinSize();
-	auto menuSkillEButton = SkillButton::create("SkillPortrait/Ashe.png", "SkillPortrait/Ashe3.png", 10.f);  //(normal,cool,time)
-	menuSkillEButton->setPosition(skillEItem.width / 2, skillEItem.height / 2);
-	this->addChild(menuSkillEButton);
-
-
-
-
-
+	auto menuSkillEButton = SkillButton::create("SkillPortrait/greenEButton.png", "SkillPortrait/greenECD.png", 10.f);  //(normal,cool,time)
+	menuSkillEButton->setPosition(skillItem.width / 2+180, skillItem.height / 8+30);
+	menuSkillEButton->setScale(0.6f);
+	this->addChild(menuSkillEButton,2);
 
 
 
@@ -129,9 +144,9 @@ bool TollgateScene::init()
 	}
 	else
 	{
-		shop->setScale(0.2f);
-		shop->setAnchorPoint(Vec2(0, 0));
-		shop->setPosition(visibleSize.width / 10, visibleSize.height / 7 - 10);
+		shop->setScale(0.4f);
+		shop->setAnchorPoint(Vec2(0,0));
+		shop->setPosition(visibleSize.width -90, visibleSize.height-70);
 
 
 	}
@@ -144,14 +159,17 @@ bool TollgateScene::init()
 
 	
 
-	this->scheduleUpdate();
+	//this->scheduleUpdate();
 	//this->scheldue(schedule_selector(HelloWorld::update),1.0f/60);
 
 
 	return true;
 }
+
 void TollgateScene::update(float dt)
 {
+	auto label = this->getChildByTag(123);
+	label->setPosition(label->getPosition() + Vec2(2, -2));
 
 	goldenCoin += 0.02;
 	power += 0.02;
@@ -196,8 +214,8 @@ void TollgateScene::addHero(Sprite* map) {
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
 
-	Sprite* mHeroSprite = Sprite::create("AShe/Ashe1.png");
-	Sprite* eHeroSprite = Sprite::create("AShe/Ashe1.png");
+	Sprite* mHeroSprite = Sprite::create("greenHero.png");
+	Sprite* eHeroSprite = Sprite::create("greenHero.png");
 	
 	if (mHeroSprite == nullptr && eHeroSprite == nullptr)
 	{
@@ -209,16 +227,15 @@ void TollgateScene::addHero(Sprite* map) {
 		mHeroSprite->setScale(SPRITE_SIZE);
 		eHeroSprite->setScale(SPRITE_SIZE);
 
-		//�Ѿ���󶨵�Ӣ�۶�����
-
-		Hero* mHero = Hero::create();
+		Hero* mHero = Hero::create();	
+		
 		mHero->bindSprite(mHeroSprite);
+		mHero->run();
+	
 		Hero* eHero = Hero::create();
 		eHero->bindSprite(eHeroSprite);
 		eETT_ptr.push_back(eHero);
-		m_hero = mHero;
 
-		//����Ӣ�۳�����
 		mHero->setPosition(Point(100, visibleSize.height / 2 + 50));
 		eHero->setPosition(Point(visibleSize.width - 100, visibleSize.height / 2 + 50));
 
@@ -237,14 +254,12 @@ void TollgateScene::addHero(Sprite* map) {
 		
 		this->addChild(mHeroMoveController);
 		//this->addChild(eHeroMoveController);
-		
+	
 		mHero->setController(mHeroMoveController);
 		//eHero->setController(eHeroMoveController);
-
-		
+		this->addChild(mHero, 1);
+		this->addChild(eHero, 1);
 	}
-
-	
 }
 
 void TollgateScene::addTower(Sprite* map) { 
@@ -267,7 +282,6 @@ void TollgateScene::addTower(Sprite* map) {
 	eLaneTower->setPosition(Point(visibleSize.width * 3 / 4 - 60, visibleSize.height / 2 + 15));
 	this->addChild(eLaneTower, 1);
 	eETT_ptr.push_back(eLaneTower);
-	e_laneTower = eLaneTower;
 	
 	//build my cystal
 	Sprite* mCrystalSprite = Sprite::create("crystal.png");
@@ -282,14 +296,15 @@ void TollgateScene::addTower(Sprite* map) {
 	//build enemy's cystal
 	Sprite* eCrystalSprite = Sprite::create("crystal.png");
 	eCrystalSprite->setScale(Crystal_SIZE);
+	
 	Crystal* eCrystal = Crystal::create();
+	
 	eCrystal->bindSprite(eCrystalSprite);
+	
 	eCrystal->setPosition(Point(visibleSize.width  * 4 / 5 + 15, visibleSize.height / 2 + 30));
+	
 	this->addChild(eCrystal, 1);
 	eETT_ptr.push_back(eCrystal);
-	e_crystal = eCrystal;
-
-
 
 }
 
@@ -303,4 +318,20 @@ void TollgateScene::shop(Ref* pSender)
 
 }
 
+void TollgateScene::addNumberNode()
+{
+	ShowNumberNode * snn = ShowNumberNode::CreateShowNumberNode("score_num.png", 10000, 28, 33);
+	snn->f_ShowNumber(goldenCoin);
+	snn->setPosition(ccp(100, 100));
+	this->addChild(snn, 0, 0);
+	schedule(schedule_selector(TollgateScene::logic), 2.0f);
 
+}
+
+void TollgateScene::logic(float dt)
+{
+	ShowNumberNode*snn = (ShowNumberNode *)this->getChildByTag(0);
+	snn->f_ShowNumber(goldenCoin);
+	goldenCoin += 1;
+	power += 1;
+}

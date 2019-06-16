@@ -9,7 +9,6 @@
 #include <string>
 #include "cocos2d.h"
 
-
 inline uint32_t ConvertToFixed( float inNumber, float inMin, float inPrecision )
 {
 	return static_cast< int > ( ( inNumber - inMin ) / inPrecision );
@@ -62,10 +61,7 @@ public:
 					  "Generic Write only supports primitive data types" );
 		WriteBits( &inData, inBitCount );
 	}
-	
 	void 		Write( bool inData )								{ WriteBits( &inData, 1 ); }
-	
-	//void		Write( const Quaternion& inQuat );
 
 	void Write( const std::string& inString )
 	{
@@ -137,7 +133,6 @@ public:
 	void		Read( bool& outData )									{ ReadBits( &outData, 1 ); }
 
     void Read(cocos2d::Vec2& outVector);
-	//void		Read( Quaternion& outQuat );
 
 	void		ResetToCapacity( uint32_t inByteCapacity )				{ mBitCapacity = inByteCapacity << 3; mBitHead = 0; }
 

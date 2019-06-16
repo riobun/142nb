@@ -8,6 +8,7 @@ public:
 	CREATE_FUNC(Hero);
 
 	void run();
+    //void Q();
 	virtual bool init();
     virtual void WriteForCRC(OutputMemoryBitStream& inStream);
 	int getID();

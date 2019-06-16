@@ -147,21 +147,9 @@ bool SkillButton::keyQPressed()
 {
 	if (_skillEnable && !_isSkillCD)
 	{
-		extern Hero* m_hero;
+		
+	
 
-		Animation *skillQ = Animation::create();
-		for (int i = 1; i < 7; i++)
-		{
-			__String *frameName = __String::createWithFormat("greenHero%d.png", i);
-			log("frameName=%s", frameName->getCString());
-			SpriteFrame *spriteFrame = SpriteFrameCache::getInstance()->
-				getSpriteFrameByName(frameName->getCString());
-			skillQ->addSpriteFrame(spriteFrame);
-		}
-
-		skillQ->setDelayPerUnit(0.15f);
-		skillQ->setRestoreOriginalFrame(true);
-		Animate*action = Animate::create(skillQ);
 		// 开始回调
 		if (_QPressedCallback)
 		{
@@ -183,84 +171,18 @@ bool SkillButton::keyQPressed()
 
 bool SkillButton::keyWPressed()
 {
-	if (_skillEnable && !_isSkillCD)
-	{
-		// 开始回调
-		if (_WPressedCallback)
-		{
-			_WPressedCallback(0);
-
-
-			_isSkillTouchEnd = false;
-			return true;
-		}
-	}
-
-	// 开始读冷却
-	this->startSkillCDAction();
-	_isSkillTouchEnd = true;
 	return false;
 }
 bool SkillButton::keyEPressed()
 {
-	if (_skillEnable && !_isSkillCD)
-	{
-		// 开始回调
-		if (_EPressedCallback)
-		{
-			_EPressedCallback(0);
-
-
-			_isSkillTouchEnd = false;
-			return true;
-		}
-	}
-
-	// 开始读冷却
-	this->startSkillCDAction();
-	_isSkillTouchEnd = true;
 	return false;
 }
 bool SkillButton::keyTabPressed()
 {
-	if (_skillEnable && !_isSkillCD)
-	{
-		// 开始回调
-		if (_TabPressedCallback)
-		{
-			_TabPressedCallback(0);
-
-
-			_isSkillTouchEnd = false;
-			return true;
-		}
-	}
-
-	// 开始读冷却
-	this->startSkillCDAction();
-	_isSkillTouchEnd = true;
 	return false;
 }
 bool SkillButton::keyPPressed()
 {
-	if (_skillEnable && !_isSkillCD)
-	{
-		// 开始回调
-		if (_PPressedCallback)
-		{
-			_PPressedCallback(0);
-
-
-			_isSkillTouchEnd = false;
-			return true;
-		}
-	}
-
-	// 开始读冷却
-	this->startSkillCDAction();
-
-
-	_isSkillTouchEnd = true;
 	return false;
 }
 
@@ -438,6 +360,8 @@ void SkillButton::addWPressedCallback(const SkillButton::alSkillTouchCallback &c
 
 void SkillButton::addEPressedCallback(const SkillButton::alSkillTouchCallback &callback)
 {
+	// 开始读冷却
+	this->startSkillCDAction();
 	_EPressedCallback = callback;
 }
 

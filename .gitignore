@@ -121,3 +121,5 @@ build/build/
 cocos/scripting/lua-bindings/proj.ios_mac/build/
 tests/*/runtime/
 tests/*/publish/
+proj.win32/.vs/CrazyGame/v15/Browse.VC.db
+proj.win32/.vs/CrazyGame/v15/Browse.VC.db

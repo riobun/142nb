@@ -1,13 +1,9 @@
 
-
 #ifndef _TollgateScene_H_
 #define _TollgateScene_H_
 
-#include"GameHead.h"
 
 using namespace cocos2d;
-
-
 
 class TollgateScene :public cocos2d::Layer {
 public:
@@ -26,9 +22,12 @@ public:
 	cocos2d::Vec2 toTileCoord(cocos2d::Vec2 position);
 	cocos2d::Vec2 toScreenCoord(cocos2d::Vec2 position);
 
+	
 	void addHero(Sprite* map);
 	void addTower(Sprite* map);
 	void TollgateScene::shop(Ref* pSender);
+	void addNumberNode();
+	void logic(float dt);
 private:
 	cocos2d::Size visibleSize;
 	cocos2d::Sprite *sprite;
@@ -40,6 +39,5 @@ private:
 	
 
 };
-
 
 #endif

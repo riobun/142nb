@@ -25,20 +25,23 @@ void Hero::WriteForCRC(OutputMemoryBitStream& inStream)
 }
 
 void Hero::run() {
-	Animation *moveAct = Animation::create();
+	SpriteFrameCache*frameCache = SpriteFrameCache::getInstance();
+	frameCache->addSpriteFramesWithFile("greenHero.plist", "greenHero.png");
+	SpriteFrame*frame = NULL;
+	Vector<SpriteFrame*> frameList;
+
 	for (int i = 1; i < 7; i++)
 	{
-		__String *frameName = __String::createWithFormat("greenHero%d.png", i);
-		log("frameName=%s", frameName->getCString());
-		SpriteFrame *spriteFrame = SpriteFrameCache::getInstance()->
-			getSpriteFrameByName(frameName->getCString());
-		moveAct->addSpriteFrame(spriteFrame);
+		frame = frameCache->getSpriteFrameByName(StringUtils::format("greenHero%d.png", i));
+		frameList.pushBack(frame);
 	}
 
-	moveAct->setDelayPerUnit(0.15f);
-	moveAct->setRestoreOriginalFrame(true);
-	Animate*action = Animate::create(moveAct);
-	m_sprite->runAction(action);
+	Animation* animation = Animation::createWithSpriteFrames(frameList);
+	animation->setLoops(-1);
+	animation->setDelayPerUnit(0.3f);
+	Animate*animate = Animate::create(animation);
+
+	m_sprite->runAction(animate);
 	
 }
 

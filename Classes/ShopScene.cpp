@@ -22,11 +22,11 @@
  THE SOFTWARE.
  ****************************************************************************/
 
+#include "GameHead.h"
 #include "ShopScene.h"
 #include "SimpleAudioEngine.h"
-#include "TollgateScene.h"
 #include "Equipment.h"
-
+#include "GameHead.h"
 
 
 
@@ -104,7 +104,7 @@ bool ShopScene::init()
 
 
 	/**
-	Ìí¼Ó×°±¸
+	ï¿½ï¿½ï¿½×°ï¿½ï¿½
 	*/
 	auto speedUpButton = Equipment::create("Equipment/speedUp.png",
 		"Equipment/speedUpCD.png",
