@@ -84,7 +84,7 @@ using std::map;
 #include"TollgateScene.h"
 #include"overScene.h"
 #include"HelloWorldScene.h"
-
+#include"Soilder.h"
 
 
 #define SPRITE_SIZE 0.6
@@ -97,6 +97,10 @@ using std::map;
 #define Ashe_ID 66
 #define Tower_ID 55
 #define Ashe_iHP 100
+
+#define Soilder_iHP 50
+#define Soilder_iDenfense 5
+#define Soilder_ID 44
 
 #define Tower_iHP 150
 #define Crystal_iHP 200
