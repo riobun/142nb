@@ -34,32 +34,35 @@ public:
 	
     cocos2d:: Sprite* getSprite();
 
-	//±»¹¥»÷
-	void hurtMe(int i,int iHurtValue);
-	//ÊÇ·ñËÀÍö
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	void hurtMe(int i,int iHurtValue, vector<Entity*> ETT_ptr);
+	
+	void hurtMeHero(int i, int iHurtValue, vector<Entity*> iETT_ptr);
+	//ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½
 	bool isDead();
 protected:
-	//ÊµÌåËÀÍöÊ±µ÷ÓÃ
+	//Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 	virtual void onDead(int i);
-	//°ó¶¨¾«ÁéÊ±µ÷ÓÃ
+	virtual void mHero_onDead(int i);
+	//ï¿½ó¶¨¾ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 	virtual void onBindSprite();
-	//ÊÜÉËº¦Ê±µ÷ÓÃ
+	//ï¿½ï¿½ï¿½Ëºï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 	virtual void onHurt();
 protected:
     cocos2d::Sprite* m_sprite;
 	Controller1* m_controller;
 	
-    uint32_t		mNetworkId; //Ã¿¸öÊµÌå¶¼ÓÐÎ¨Ò»µÄÍøÂçid£¬ÔÚ¸÷Íæ¼Ò´¦¶¼ÏàÍ¬
-    uint32_t		mPlayerId;      //Õâ¸öÊµÌåÊÇÊôÓÚÄÄ¸öÍæ¼ÒµÄ
+    uint32_t		mNetworkId; //Ã¿ï¿½ï¿½Êµï¿½å¶¼ï¿½ï¿½Î¨Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½idï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½Ò´ï¿½ï¿½ï¿½ï¿½ï¿½Í¬
+    uint32_t		mPlayerId;      //ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½Òµï¿½
 	
-	CC_SYNTHESIZE(int, m_ID, ID);              //ÊµÌåID
-	CC_SYNTHESIZE(int, m_iModelID, iModelID);//Ä£ÐÍID
-	CC_SYNTHESIZE(std::string, m_sName, sName);//Ãû×Ö
+	CC_SYNTHESIZE(int, m_ID, ID);              //Êµï¿½ï¿½ID
+	CC_SYNTHESIZE(int, m_iModelID, iModelID);//Ä£ï¿½ï¿½ID
+	CC_SYNTHESIZE(std::string, m_sName, sName);//ï¿½ï¿½ï¿½ï¿½
 	CC_SYNTHESIZE(int, m_iHP, iHP);            //HP
-	CC_SYNTHESIZE(int, m_iDefense, iDefense);  //·ÀÓù
-	CC_SYNTHESIZE(int, m_iSpeed, iSpeed);      //ÒÆËÙ
-	CC_SYNTHESIZE(int, m_iLevel, iLevel);      //µÈ¼¶
-	bool m_isDead;                             //±ê¼ÇÊÇ·ñËÀÍö
+	CC_SYNTHESIZE(int, m_iDefense, iDefense);  //ï¿½ï¿½ï¿½ï¿½
+	CC_SYNTHESIZE(int, m_iSpeed, iSpeed);      //ï¿½ï¿½ï¿½ï¿½
+	CC_SYNTHESIZE(int, m_iLevel, iLevel);      //ï¿½È¼ï¿½
+	bool m_isDead;                             //ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 };
 typedef std::shared_ptr< Entity > EntityPtr;

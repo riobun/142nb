@@ -10,9 +10,15 @@ using namespace cocos2d;
 vector<Entity*> mETT_ptr;
 vector<Entity*> eETT_ptr;
 Hero* m_hero;
+LaneTower* e_laneTower;
+Crystal* e_crystal;
+bool e_isAtkCoolDown;
 
-int goldenCoin = 0;
-int power = 0;
+double goldenCoin = 0;
+double power = 0;
+double Ashe_iDenfense = 10;
+double Ashe_attackValue = 20;
+double PRI_SPEED = 30;
 
 Scene* TollgateScene::createScene() {
 	auto scene = Scene::create();
@@ -169,10 +175,26 @@ void TollgateScene::update(float dt)
 	auto label = this->getChildByTag(123);
 	label->setPosition(label->getPosition() + Vec2(2, -2));
 
-	goldenCoin += 1;
-	power += 1;
+	goldenCoin += 0.02;
+	power += 0.02;
+	
+	
+	if (e_laneTower&&mETT_ptr.size()) {
+		for (auto i = 0; i < mETT_ptr.size(); i++) {
 
+			if (mETT_ptr[i]) {
+				if ((mETT_ptr[i]->getPosition() - e_laneTower->getPosition()).length() <= tower_attackValue) {
 
+					mETT_ptr[i]->hurtMeHero(i, tower_attackValue, mETT_ptr);
+					//tower's attack is cool down
+
+					//e_isAtkCoolDown = true;
+					//e_laneTower->scheduleOnce(schedule_selector(LaneTower::atkCoolDownEnd), 1.0f);
+				}
+			}
+		}
+	}
+		
 }
 
 void TollgateScene::menuCloseCallback(Ref* pSender)
@@ -211,13 +233,25 @@ void TollgateScene::addHero(Sprite* map) {
 		
 		mHero->bindSprite(mHeroSprite);
 		mHero->run();
+		mETT_ptr.push_back(mHero);
 	
 		Hero* eHero = Hero::create();
 		eHero->bindSprite(eHeroSprite);
+		eHero->run();
 		eETT_ptr.push_back(eHero);
 
 		mHero->setPosition(Point(100, visibleSize.height / 2 + 50));
 		eHero->setPosition(Point(visibleSize.width - 100, visibleSize.height / 2 + 50));
+
+
+		this->addChild(mHero, 1);
+		this->addChild(eHero, 1);
+
+		Point cur_pos = Point(visibleSize.width - 100, visibleSize.height / 2 + 50);
+		double iTime = (cur_pos - Vec2(visibleSize.width / 2, visibleSize.height / 2)).length() / PRI_SPEED;
+		MoveTo* moveTo = MoveTo::create(iTime, Vec2(visibleSize.width / 2, visibleSize.height / 2));
+		eHero->runAction(moveTo);
+		
 		
 		HeroMoveController* mHeroMoveController = HeroMoveController::create();
 		//HeroMoveController* eHeroMoveController = HeroMoveController::create();
@@ -227,8 +261,7 @@ void TollgateScene::addHero(Sprite* map) {
 	
 		mHero->setController(mHeroMoveController);
 		//eHero->setController(eHeroMoveController);
-		this->addChild(mHero, 1);
-		this->addChild(eHero, 1);
+	
 	}
 }
 
@@ -274,6 +307,7 @@ void TollgateScene::addTower(Sprite* map) {
 	eCrystal->setPosition(Point(visibleSize.width  * 4 / 5 + 15, visibleSize.height / 2 + 30));
 	
 	this->addChild(eCrystal, 1);
+	e_crystal = eCrystal;
 	eETT_ptr.push_back(eCrystal);
 
 }

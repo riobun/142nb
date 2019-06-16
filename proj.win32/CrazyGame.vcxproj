@@ -160,6 +160,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClCompile Include="..\Classes\Entity.cpp" />
     <ClCompile Include="..\Classes\EntityRegistry.cpp" />
     <ClCompile Include="..\Classes\Equipment.cpp" />
+    <ClCompile Include="..\Classes\FlowWord.cpp" />
     <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\Hero.cpp" />
@@ -168,8 +169,11 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClCompile Include="..\Classes\MemoryBitStream.cpp" />
     <ClCompile Include="..\Classes\NetworkProxy.cpp" />
     <ClCompile Include="..\Classes\NetworkManager.cpp" />
+    <ClCompile Include="..\Classes\NumberSprite.cpp" />
+    <ClCompile Include="..\Classes\overScene.cpp" />
     <ClCompile Include="..\Classes\RandGen.cpp" />
     <ClCompile Include="..\Classes\ShopScene.cpp" />
+    <ClCompile Include="..\Classes\ShowNumberNode.cpp" />
     <ClCompile Include="..\Classes\SingleProxy.cpp" />
     <ClCompile Include="..\Classes\SkillButton.cpp" />
     <ClCompile Include="..\Classes\SocketAddress.cpp" />
@@ -183,8 +187,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClCompile Include="..\Classes\UDPSocket.cpp" />
     <ClCompile Include="..\Classes\WelcomeScene.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="NumberSprite.cpp" />
-    <ClCompile Include="ShowNumberNode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -200,6 +202,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClInclude Include="..\Classes\Entity.h" />
     <ClInclude Include="..\Classes\EntityRegistry.h" />
     <ClInclude Include="..\Classes\Equipment.h" />
+    <ClInclude Include="..\Classes\FlowWord.h" />
     <ClInclude Include="..\Classes\GameHead.h" />
     <ClInclude Include="..\Classes\GameScene.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
@@ -210,9 +213,12 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClInclude Include="..\Classes\NetworkHead.h" />
     <ClInclude Include="..\Classes\NetworkProxy.h" />
     <ClInclude Include="..\Classes\NetworkManager.h" />
+    <ClInclude Include="..\Classes\NumberSprite.h" />
+    <ClInclude Include="..\Classes\overScene.h" />
     <ClInclude Include="..\Classes\RandGen.h" />
     <ClInclude Include="..\Classes\resource.h" />
     <ClInclude Include="..\Classes\ShopScene.h" />
+    <ClInclude Include="..\Classes\ShowNumberNode.h" />
     <ClInclude Include="..\Classes\SingleProxy.h" />
     <ClInclude Include="..\Classes\SkillButton.h" />
     <ClInclude Include="..\Classes\SocketAddress.h" />
@@ -227,8 +233,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClInclude Include="..\Classes\WeightedTimedMovingAverage.h" />
     <ClInclude Include="..\Classes\WelcomeScene.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="NumberSprite.h" />
-    <ClInclude Include="ShowNumberNode.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\cocos2d\cocos\2d\libcocos2d.vcxproj">

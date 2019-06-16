@@ -1,6 +1,11 @@
 #include"GameHead.h"
 using namespace cocos2d;
 
+extern double Ashe_attackValue;
+extern double PRI_SPEED;
+extern double Ashe_iDenfense;
+
+
 bool HeroMoveController::init() {
 
 	
@@ -46,7 +51,7 @@ void HeroMoveController::registeMouseEvent() {
 					if ((Vec2(eMouse->getCursorX(), eMouse->getCursorY()) - eETT_ptr[i]->getPosition()).length() <= isClick) {
 
 						if (distance <= attackScale) {
-							eETT_ptr[i]->hurtMe(i, Ashe_attackValue);
+							eETT_ptr[i]->hurtMe(i, Ashe_attackValue, eETT_ptr);
 							break;
 						}
 					}

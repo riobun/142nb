@@ -2,7 +2,6 @@
 
 #define __ShowNumberNodeTest__ShowNumberNode__
 
-#include"cocos2d.h"
 USING_NS_CC;
 
 #define SCROLLTIME 0.2f

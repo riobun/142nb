@@ -1,5 +1,8 @@
 #include"GameHead.h"
 using namespace cocos2d;
+extern double Ashe_iDenfense;
+extern double PRI_SPEED;
+
 
 bool Hero::init() {
 
@@ -45,24 +48,14 @@ void Hero::run() {
 	
 }
 
+void Hero::onDead(int i) {
+	extern vector<Entity*> eETT_ptr;
+	eETT_ptr.erase(eETT_ptr.begin() + i);
+	this->removeFromParent();
+}
 
-/*void Hero::Q() {
-	SpriteFrameCache*frameCache = SpriteFrameCache::getInstance();
-	frameCache->addSpriteFramesWithFile("greenHeroQ.plist", "greenHeroQ.png");
-	SpriteFrame*frame = NULL;
-	Vector<SpriteFrame*> frameList;
-
-	for (int i = 1; i < 5; i++)
-	{
-		frame = frameCache->getSpriteFrameByName(StringUtils::format("greenHeroQ%d.png", i));
-		frameList.pushBack(frame);
-	}
-
-	Animation* animation = Animation::createWithSpriteFrames(frameList);
-	animation->setLoops(-1);
-	animation->setDelayPerUnit(0.3f);
-	Animate*animate = Animate::create(animation);
-
-	m_sprite->runAction(animate);
-
-}*/
+void Hero::mHero_onDead(int i) {
+	extern vector<Entity*> mETT_ptr;
+	mETT_ptr.erase(mETT_ptr.begin() + i);
+	this->removeFromParent();
+}

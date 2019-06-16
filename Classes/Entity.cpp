@@ -1,6 +1,8 @@
 #include"GameHead.h"
 
 using namespace cocos2d;
+extern double PRI_SPEED;
+
 
 Entity::Entity() :
 	m_sprite(NULL),
@@ -37,7 +39,7 @@ Sprite* Entity::getSprite() {
 	return this->m_sprite;
 }
 
-void Entity::hurtMe(int i,int iHurtValue) {
+void Entity::hurtMe(int i,int iHurtValue, vector<Entity*> iETT_ptr) {
 	if (m_isDead) {
 		return;
 	}
@@ -46,7 +48,11 @@ void Entity::hurtMe(int i,int iHurtValue) {
 	if (iHurtValue <= getiDefense()) {
 		iHurtValue = 1;
 	}
-
+	FlowWord* flowWord = FlowWord::create();
+	this->addChild(flowWord);
+	flowWord->showWord("Ah~", getSprite()->getPosition());
+	
+	
 	int iCurHP = getiHP();
 	int iAfterHP = iCurHP - iHurtValue;
 		setiHP(iAfterHP);
@@ -63,6 +69,33 @@ void Entity::hurtMe(int i,int iHurtValue) {
 	}
 }
 
+void Entity::hurtMeHero(int i, int iHurtValue, vector<Entity*> iETT_ptr) {
+	if (m_isDead) {
+		return;
+	}
+
+	if (iHurtValue <= getiDefense()) {
+		iHurtValue = 1;
+	}
+
+	int iCurHP = getiHP();
+	int iAfterHP = iCurHP - iHurtValue;
+	setiHP(iAfterHP);
+
+	FlowWord* flowWord = FlowWord::create();
+	this->addChild(flowWord);
+	flowWord->showWord("Ah~", getSprite()->getPosition());
+
+	if (iAfterHP > 0) {
+	}
+	else {
+		m_isDead = true;
+		//����
+		mHero_onDead(i);
+
+	}
+}
+
 bool Entity::isDead() {
 	return this->m_isDead;
 }
@@ -72,6 +105,11 @@ void Entity::onDead(int i) {
 	
 
 	//NetworkManager::sInstance->UnregisterGameObject(this);
+}
+
+void Entity::mHero_onDead(int i) {
+
+
 }
 
 void Entity::onBindSprite() {

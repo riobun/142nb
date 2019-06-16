@@ -1,5 +1,5 @@
-#include "ShowNumberNode.h"
-#include "NumberSprite.h"
+
+#include "GameHead.h"
 
 
 ShowNumberNode*ShowNumberNode::CreateShowNumberNode(const char *path, int numberMAX, float showwidth, float showheight)
