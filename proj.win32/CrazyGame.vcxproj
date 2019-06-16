@@ -170,6 +170,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClCompile Include="..\Classes\NetworkProxy.cpp" />
     <ClCompile Include="..\Classes\NetworkManager.cpp" />
     <ClCompile Include="..\Classes\NumberSprite.cpp" />
+    <ClCompile Include="..\Classes\overScene.cpp" />
     <ClCompile Include="..\Classes\RandGen.cpp" />
     <ClCompile Include="..\Classes\ShopScene.cpp" />
     <ClCompile Include="..\Classes\ShowNumberNode.cpp" />
@@ -213,6 +214,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClInclude Include="..\Classes\NetworkProxy.h" />
     <ClInclude Include="..\Classes\NetworkManager.h" />
     <ClInclude Include="..\Classes\NumberSprite.h" />
+    <ClInclude Include="..\Classes\overScene.h" />
     <ClInclude Include="..\Classes\RandGen.h" />
     <ClInclude Include="..\Classes\resource.h" />
     <ClInclude Include="..\Classes\ShopScene.h" />

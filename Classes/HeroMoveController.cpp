@@ -1,6 +1,11 @@
 #include"GameHead.h"
 using namespace cocos2d;
 
+extern double Ashe_attackValue;
+extern double PRI_SPEED;
+extern double Ashe_iDenfense;
+
+
 bool HeroMoveController::init() {
 
 	

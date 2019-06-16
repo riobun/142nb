@@ -7,7 +7,6 @@ using namespace cocos2d;
 	
 	m_iHP = Tower_iHP;
 	m_isDead = false;
-	m_iSpeed = PRI_SPEED;
 	m_iLevel = 1;
 	mNetworkId = 0;
 	mPlayerId = 0;

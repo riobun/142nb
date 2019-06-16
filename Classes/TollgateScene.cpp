@@ -16,6 +16,9 @@ bool e_isAtkCoolDown;
 
 double goldenCoin = 0;
 double power = 0;
+double Ashe_iDenfense = 10;
+double Ashe_attackValue = 20;
+double PRI_SPEED = 30;
 
 Scene* TollgateScene::createScene() {
 	auto scene = Scene::create();
@@ -174,7 +177,7 @@ void TollgateScene::update(float dt)
 
 	goldenCoin += 0.02;
 	power += 0.02;
-
+	
 	
 	if (e_laneTower&&mETT_ptr.size()) {
 		for (auto i = 0; i < mETT_ptr.size(); i++) {
@@ -304,6 +307,7 @@ void TollgateScene::addTower(Sprite* map) {
 	eCrystal->setPosition(Point(visibleSize.width  * 4 / 5 + 15, visibleSize.height / 2 + 30));
 	
 	this->addChild(eCrystal, 1);
+	e_crystal = eCrystal;
 	eETT_ptr.push_back(eCrystal);
 
 }

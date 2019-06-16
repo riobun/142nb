@@ -82,21 +82,22 @@ using std::map;
 #include "ShowNumberNode.h"
 
 #include"TollgateScene.h"
+#include"overScene.h"
 #include"HelloWorldScene.h"
 
 
-#define PRI_SPEED  30
+
 #define SPRITE_SIZE 0.6
 #define MOUSE_SIZE 0.5
 #define Crystal_SIZE 0.6
-#define Ashe_attackValue 20
+
 #define tower_attackValue 50
 #define attackScale 200
 #define Crystal_ID 77
 #define Ashe_ID 66
 #define Tower_ID 55
 #define Ashe_iHP 100
-#define Ashe_iDenfense 10
+
 #define Tower_iHP 150
 #define Crystal_iHP 200
 

@@ -1,6 +1,8 @@
 #include"GameHead.h"
 
 using namespace cocos2d;
+extern double PRI_SPEED;
+
 
 Entity::Entity() :
 	m_sprite(NULL),

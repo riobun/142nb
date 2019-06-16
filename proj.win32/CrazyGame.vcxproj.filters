@@ -88,6 +88,7 @@
     <ClCompile Include="..\Classes\FlowWord.cpp">
       <Filter>实体</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\overScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -189,6 +190,7 @@
     <ClInclude Include="..\Classes\FlowWord.h">
       <Filter>实体</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\overScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />

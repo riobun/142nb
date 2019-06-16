@@ -1,5 +1,8 @@
 #include"GameHead.h"
 using namespace cocos2d;
+extern double Ashe_iDenfense;
+extern double PRI_SPEED;
+
 
 bool Hero::init() {
 

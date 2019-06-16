@@ -2,13 +2,12 @@
 #include "ShopScene.h"
 #include "GameHead.h"
 
+extern double goldenCoin;
+
 
 
 Equipment::Equipment()
 {
-	_pSkill = nullptr;
-	_pProgressCD = nullptr;
-
 
 	_skillEnable = true;
 	_skillCoolTime = 0;
@@ -119,17 +118,27 @@ void Equipment::menuHandler(std::string buffType)
 bool Equipment::speedUpBuff()
 {
 	log("speedUpBuff");
-//	PRI_SPEED = PRI_SPEED+10;
+	extern double PRI_SPEED;
+	PRI_SPEED = PRI_SPEED+10;
+	goldenCoin = goldenCoin - 20;
 
 	return true;
 }
 bool Equipment::attackBuff()
 {
 	log("attackBuff");
+	extern double Ashe_attackValue;
+	Ashe_attackValue = Ashe_attackValue + 10;
+	goldenCoin = goldenCoin - 20;
+
 	return true;
 } 
 bool Equipment::defenseBuff()
 {
+	log("defenseBuff");
+	extern double Ashe_iDenfense;
+	Ashe_iDenfense = Ashe_iDenfense + 10;
+	goldenCoin = goldenCoin - 20;
 	return true;
 }
 
