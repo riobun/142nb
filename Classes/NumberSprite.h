@@ -2,8 +2,6 @@
 
 #define __ShowNumberNodeTest__NumberSprite__
 
-#include"cocos2d.h"
-
 USING_NS_CC;
 class NumberSprite:public CCSprite
 {

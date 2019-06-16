@@ -77,11 +77,12 @@ using std::map;
 #include "NetworkManager.h"
 #include "SingleProxy.h"
 
+#include "NumberSprite.h"
+#include "ShowNumberNode.h"
 
 #include"TollgateScene.h"
 #include"HelloWorldScene.h"
-#include "ShowNumberNode.h"
-#include "NumberSprite.h"
+
 
 #define PRI_SPEED  30
 #define SPRITE_SIZE 0.6

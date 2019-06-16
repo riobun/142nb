@@ -1,4 +1,4 @@
-#include "NumberSprite.h"
+#include "GameHead.h"
 
 bool NumberSprite::myInit(float width, float length)
 {
