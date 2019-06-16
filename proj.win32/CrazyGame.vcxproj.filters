@@ -2,22 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
-    <ClCompile Include="..\Classes\BaseMap.cpp" />
-    <ClCompile Include="..\Classes\Controller1.cpp" />
-    <ClCompile Include="..\Classes\CsvData.cpp" />
-    <ClCompile Include="..\Classes\CsvUtil.cpp" />
-    <ClCompile Include="..\Classes\Crystal.cpp" />
-    <ClCompile Include="..\Classes\Entity.cpp" />
-    <ClCompile Include="..\Classes\Equipment.cpp" />
-    <ClCompile Include="..\Classes\GameScene.cpp" />
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
-    <ClCompile Include="..\Classes\Hero.cpp" />
-    <ClCompile Include="..\Classes\HeroMoveController.cpp" />
-    <ClCompile Include="..\Classes\LaneTower.cpp" />
-    <ClCompile Include="..\Classes\ShopScene.cpp" />
-    <ClCompile Include="..\Classes\SkillButton.cpp" />
-    <ClCompile Include="..\Classes\TollgateScene.cpp" />
-    <ClCompile Include="..\Classes\WelcomeScene.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="..\Classes\StringUtil.cpp" />
     <ClCompile Include="..\Classes\Command.cpp">
@@ -65,30 +49,68 @@
     <ClCompile Include="..\Classes\NetworkProxy.cpp">
       <Filter>Network\接口</Filter>
     </ClCompile>
-    <ClCompile Include="NumberSprite.cpp" />
-    <ClCompile Include="ShowNumberNode.cpp" />
+    <ClCompile Include="..\Classes\Hero.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entity.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Soilder.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TollgateScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\WelcomeScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CsvData.cpp">
+      <Filter>CSV</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CsvUtil.cpp">
+      <Filter>CSV</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Controller1.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HeroMoveController.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BaseMap.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Crystal.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowNumberNode.cpp">
+      <Filter>ShowNumber</Filter>
+    </ClCompile>
+    <ClCompile Include="NumberSprite.cpp">
+      <Filter>ShowNumber</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LaneTower.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SkillButton.cpp">
+      <Filter>Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ShopScene.cpp">
+      <Filter>Shop</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Equipment.cpp">
+      <Filter>Shop</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\Art.h" />
-    <ClInclude Include="..\Classes\BaseMap.h" />
-    <ClInclude Include="..\Classes\Controller1.h" />
-    <ClInclude Include="..\Classes\ControllerListener.h" />
-    <ClInclude Include="..\Classes\CsvData.h" />
-    <ClInclude Include="..\Classes\CsvUtil.h" />
-    <ClInclude Include="..\Classes\Crystal.h" />
-    <ClInclude Include="..\Classes\Entity.h" />
-    <ClInclude Include="..\Classes\Equipment.h" />
     <ClInclude Include="..\Classes\GameHead.h" />
-    <ClInclude Include="..\Classes\GameScene.h" />
-    <ClInclude Include="..\Classes\HelloWorldScene.h" />
-    <ClInclude Include="..\Classes\Hero.h" />
-    <ClInclude Include="..\Classes\HeroMoveController.h" />
-    <ClInclude Include="..\Classes\LaneTower.h" />
-    <ClInclude Include="..\Classes\ShopScene.h" />
-    <ClInclude Include="..\Classes\SkillButton.h" />
-    <ClInclude Include="..\Classes\TollgateScene.h" />
-    <ClInclude Include="..\Classes\WelcomeScene.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="..\Classes\resource.h" />
     <ClInclude Include="..\Classes\StringUtil.h" />
@@ -143,8 +165,66 @@
     <ClInclude Include="..\Classes\NetworkProxy.h">
       <Filter>Network\接口</Filter>
     </ClInclude>
-    <ClInclude Include="NumberSprite.h" />
-    <ClInclude Include="ShowNumberNode.h" />
+    <ClInclude Include="..\Classes\Hero.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entity.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Soilder.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HelloWorldScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TollgateScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\WelcomeScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CsvData.h">
+      <Filter>CSV</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CsvUtil.h">
+      <Filter>CSV</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Controller1.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ControllerListener.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HeroMoveController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BaseMap.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Crystal.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LaneTower.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowNumberNode.h">
+      <Filter>ShowNumber</Filter>
+    </ClInclude>
+    <ClInclude Include="NumberSprite.h">
+      <Filter>ShowNumber</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SkillButton.h">
+      <Filter>Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ShopScene.h">
+      <Filter>Shop</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Equipment.h">
+      <Filter>Shop</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />
@@ -164,6 +244,30 @@
     </Filter>
     <Filter Include="Network\接口">
       <UniqueIdentifier>{a6f75294-8a66-4c92-971b-bf242bd48af7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entity">
+      <UniqueIdentifier>{12ab7563-4190-480a-8188-e472212f66bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{b40a218e-4c90-4bc1-b7bd-e733b46e5256}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CSV">
+      <UniqueIdentifier>{d9e5b610-9375-49a3-ac54-cbd96d4344ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controller">
+      <UniqueIdentifier>{0483234c-0f06-47e2-b723-8a9d44399b0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{9d1750b3-df7c-44f7-96a8-223e43c4c3d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ShowNumber">
+      <UniqueIdentifier>{c910832c-55b6-426f-95e1-15d974b1797e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Skill">
+      <UniqueIdentifier>{7ffedcf8-bfb6-4383-8de3-a5f690e9771a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shop">
+      <UniqueIdentifier>{e90d33b6-cfd5-4fea-8c07-7d91ab9be015}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
