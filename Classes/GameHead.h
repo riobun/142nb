@@ -57,6 +57,7 @@ using std::map;
 
 #include<string.h>
 #include "NetworkHead.h"
+#include"FlowWord.h"
 
 #include"ControllerListener.h"
 #include"Controller1.h"

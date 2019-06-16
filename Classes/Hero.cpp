@@ -45,13 +45,13 @@ void Hero::run() {
 	
 }
 
-void Hero::onDead(int i, vector<Entity*> ETT_ptr) {
+void Hero::onDead(int i) {
 	extern vector<Entity*> eETT_ptr;
 	eETT_ptr.erase(eETT_ptr.begin() + i);
 	this->removeFromParent();
 }
 
-void Hero::mHero_onDead(int i, vector<Entity*> ETT_ptr) {
+void Hero::mHero_onDead(int i) {
 	extern vector<Entity*> mETT_ptr;
 	mETT_ptr.erase(mETT_ptr.begin() + i);
 	this->removeFromParent();

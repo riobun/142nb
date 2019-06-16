@@ -135,9 +135,8 @@ void ShopScene::backGame(Ref* pSender)
 {
 	MenuItem* backGame = (MenuItem*)pSender;
 	log("Touch backGame %p", backGame);
-	auto backTollgateScene = TollgateScene::createScene();
 
-	Director::getInstance()->pushScene(backTollgateScene);
+	Director::getInstance()->popScene();
 
 }
 

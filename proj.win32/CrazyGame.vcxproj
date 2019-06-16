@@ -160,6 +160,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClCompile Include="..\Classes\Entity.cpp" />
     <ClCompile Include="..\Classes\EntityRegistry.cpp" />
     <ClCompile Include="..\Classes\Equipment.cpp" />
+    <ClCompile Include="..\Classes\FlowWord.cpp" />
     <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\Hero.cpp" />
@@ -200,6 +201,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClInclude Include="..\Classes\Entity.h" />
     <ClInclude Include="..\Classes\EntityRegistry.h" />
     <ClInclude Include="..\Classes\Equipment.h" />
+    <ClInclude Include="..\Classes\FlowWord.h" />
     <ClInclude Include="..\Classes\GameHead.h" />
     <ClInclude Include="..\Classes\GameScene.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />

@@ -46,7 +46,11 @@ void Entity::hurtMe(int i,int iHurtValue, vector<Entity*> iETT_ptr) {
 	if (iHurtValue <= getiDefense()) {
 		iHurtValue = 1;
 	}
-
+	FlowWord* flowWord = FlowWord::create();
+	this->addChild(flowWord);
+	flowWord->showWord("Ah~", getSprite()->getPosition());
+	
+	
 	int iCurHP = getiHP();
 	int iAfterHP = iCurHP - iHurtValue;
 		setiHP(iAfterHP);
@@ -76,14 +80,16 @@ void Entity::hurtMeHero(int i, int iHurtValue, vector<Entity*> iETT_ptr) {
 	int iAfterHP = iCurHP - iHurtValue;
 	setiHP(iAfterHP);
 
-
+	FlowWord* flowWord = FlowWord::create();
+	this->addChild(flowWord);
+	flowWord->showWord("Ah~", getSprite()->getPosition());
 
 	if (iAfterHP > 0) {
 	}
 	else {
 		m_isDead = true;
 		//����
-		mHero_onDead(i, iETT_ptr);
+		mHero_onDead(i);
 
 	}
 }
@@ -99,7 +105,7 @@ void Entity::onDead(int i) {
 	//NetworkManager::sInstance->UnregisterGameObject(this);
 }
 
-void Entity::mHero_onDead(int i, vector<Entity*> iETT_ptr) {
+void Entity::mHero_onDead(int i) {
 
 
 }

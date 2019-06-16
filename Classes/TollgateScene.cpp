@@ -174,20 +174,18 @@ void TollgateScene::update(float dt)
 
 	goldenCoin += 0.02;
 	power += 0.02;
-	//CCLOG("%d"，goldenCoin);
 
 	
 	if (e_laneTower&&mETT_ptr.size()) {
 		for (auto i = 0; i < mETT_ptr.size(); i++) {
 
-			if (!e_isAtkCoolDown && mETT_ptr[i]) {
+			if (mETT_ptr[i]) {
 				if ((mETT_ptr[i]->getPosition() - e_laneTower->getPosition()).length() <= tower_attackValue) {
 
 					mETT_ptr[i]->hurtMeHero(i, tower_attackValue, mETT_ptr);
 					//tower's attack is cool down
-					
-					//e_isAtkCoolDown = true;
 
+					//e_isAtkCoolDown = true;
 					//e_laneTower->scheduleOnce(schedule_selector(LaneTower::atkCoolDownEnd), 1.0f);
 				}
 			}
@@ -232,6 +230,7 @@ void TollgateScene::addHero(Sprite* map) {
 		
 		mHero->bindSprite(mHeroSprite);
 		mHero->run();
+		mETT_ptr.push_back(mHero);
 	
 		Hero* eHero = Hero::create();
 		eHero->bindSprite(eHeroSprite);

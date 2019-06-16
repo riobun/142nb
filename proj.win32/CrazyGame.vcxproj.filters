@@ -85,6 +85,9 @@
     <ClCompile Include="..\Classes\HeroMoveController.cpp">
       <Filter>控制器</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\FlowWord.cpp">
+      <Filter>实体</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -182,6 +185,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\HeroMoveController.h">
       <Filter>控制器</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FlowWord.h">
+      <Filter>实体</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

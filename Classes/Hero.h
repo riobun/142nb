@@ -14,8 +14,8 @@ public:
 	int getID();
  
 protected:
-	virtual void onDead(int i,vector<Entity*> ETT_ptr);
-	virtual void mHero_onDead(int i, vector<Entity*> ETT_ptr);
+	virtual void onDead(int i);
+	virtual void mHero_onDead(int i);
 
 };
 #endif
