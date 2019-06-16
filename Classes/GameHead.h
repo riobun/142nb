@@ -84,7 +84,7 @@ using std::map;
 #include"TollgateScene.h"
 #include"overScene.h"
 #include"HelloWorldScene.h"
-#include"Soilder.h"
+//#include"Soilder.h"
 
 
 #define SPRITE_SIZE 0.6

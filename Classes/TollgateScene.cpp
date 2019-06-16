@@ -88,7 +88,7 @@ bool TollgateScene::init()
 	//����Ӣ��
 	addHero(map);
 	addTower(map);
-	addSoilder(map);
+	//addSoilder(map);
 	int score = 0;
 	int testnum = 233;
 	auto scoreLb = Label::createWithSystemFont(StringUtils::format("goldenCoin"), "", 32);//    
@@ -266,7 +266,7 @@ void TollgateScene::addHero(Sprite* map) {
 	
 	}
 }
-
+/*
 void TollgateScene::addSoilder(Sprite* map) {
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
@@ -306,7 +306,7 @@ void TollgateScene::addSoilder(Sprite* map) {
 		//this->addChild(eHeroMoveController);
 
 		mHero->setController(mHeroMoveController);
-		//eHero->setController(eHeroMoveController);*/
+		//eHero->setController(eHeroMoveController);
 		this->addChild(mSoilder, 1);
 		this->addChild(eSoilder, 1);
 		CCPointArray * esoilderpoints = CCPointArray::create(12);
@@ -344,7 +344,7 @@ void TollgateScene::addSoilder(Sprite* map) {
 		CCActionInterval * msoilderlineTo = CCCardinalSplineTo::create(18, msoilderpoints, 0);
 		mSoilder->runAction(msoilderlineTo);
 	}
-}
+}*/
 void TollgateScene::addTower(Sprite* map) { 
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();

@@ -89,7 +89,6 @@
       <Filter>实体</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\overScene.cpp" />
-    <ClCompile Include="Soilder.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -192,7 +191,6 @@
       <Filter>实体</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\overScene.h" />
-    <ClInclude Include="Soilder.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />
