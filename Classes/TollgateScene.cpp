@@ -16,6 +16,7 @@ bool e_isAtkCoolDown;
 
 double goldenCoin = 0;
 double power = 0;
+double Kill = 0;
 double Ashe_iDenfense = 10;
 double Ashe_attackValue = 20;
 double PRI_SPEED = 30;
@@ -179,7 +180,6 @@ void TollgateScene::update(float dt)
 	snn->f_ShowNumber(goldenCoin);
 	goldenCoin += 1;
 	power += 1;
-	
 	
 	if (e_laneTower&&mETT_ptr.size()) {
 		for (auto i = 0; i < mETT_ptr.size(); i++) {
@@ -409,8 +409,8 @@ void TollgateScene::addNumberNode()
 	snn->setPosition(ccp(100, 100));
 	this->addChild(snn, 0, 0);
 	schedule(schedule_selector(TollgateScene::update), 2.0f);
-
 }
+
 
 void TollgateScene::logic(float dt)
 {

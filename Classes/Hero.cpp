@@ -49,6 +49,12 @@ void Hero::run() {
 }
 
 void Hero::onDead(int i) {
+	extern double goldenCoin;
+	extern double power;
+	goldenCoin += 40;
+	power += 40;
+	extern double Kill;
+	Kill += 1;
 	extern vector<Entity*> eETT_ptr;
 	eETT_ptr.erase(eETT_ptr.begin() + i);
 	this->removeFromParent();

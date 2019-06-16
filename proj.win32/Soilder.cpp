@@ -25,10 +25,12 @@ void Soilder::WriteForCRC(OutputMemoryBitStream& inStream)
 
 void Soilder::onDead(int i) {
 
-	/*extern int goldenCoin;
-	extern int power;
+	extern double goldenCoin;
+	extern double power;
 	goldenCoin += 5;
-	power += 5;*/
+	power += 5;
+	extern double Kill;
+	Kill += 1;
 	extern vector<Entity*> eETT_ptr;
 	eETT_ptr.erase(eETT_ptr.begin() + i);
 	this->removeFromParent();
