@@ -14,6 +14,7 @@ public:
  
 protected:
 	virtual void onDead(int i,vector<Entity*> ETT_ptr);
+	virtual void mHero_onDead(int i, vector<Entity*> ETT_ptr);
 
 };
 #endif

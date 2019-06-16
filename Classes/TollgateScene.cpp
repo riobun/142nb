@@ -12,6 +12,8 @@ using namespace cocos2d;
 vector<Entity*> mETT_ptr;
 vector<Entity*> eETT_ptr;
 Hero* m_hero;
+LaneTower* e_laneTower;
+Crystal* e_crystal;
 
 double goldenCoin = 0;
 double power = 0;
@@ -155,23 +157,23 @@ void TollgateScene::update(float dt)
 	power += 0.02;
 	//CCLOG("%d"，goldenCoin);
 
-	 
-	/*if (e_laneTower&&mETT_ptr.size()) {
+	extern bool e_isAtkCoolDown;
+	if (e_laneTower&&mETT_ptr.size()) {
 		for (auto i = 0; i < mETT_ptr.size(); i++) {
 
-			if (mETT_ptr[i]) {
+			if (!e_isAtkCoolDown && mETT_ptr[i]) {
 				if ((mETT_ptr[i]->getPosition() - e_laneTower->getPosition()).length() <= tower_attackValue) {
 
-					mETT_ptr[i]->hurtMe(i, tower_attackValue, mETT_ptr);
+					mETT_ptr[i]->hurtMeHero(i, tower_attackValue, mETT_ptr);
 					//tower's attack is cool down
-					extern bool e_isAtkCoolDown;
-					e_isAtkCoolDown = true;
+					
+					//e_isAtkCoolDown = true;
 
-					e_laneTower->scheduleOnce(schedule_selector(LaneTower::atkCoolDownEnd), 1.0f);
+					//e_laneTower->scheduleOnce(schedule_selector(LaneTower::atkCoolDownEnd), 1.0f);
 				}
 			}
 		}
-	}*/
+	}
 		
 }
 
@@ -223,6 +225,11 @@ void TollgateScene::addHero(Sprite* map) {
 
 		this->addChild(mHero, 1);
 		this->addChild(eHero, 1);
+
+		Point cur_pos = Point(visibleSize.width - 100, visibleSize.height / 2 + 50);
+		double iTime = (cur_pos - Vec2(visibleSize.width / 2, visibleSize.height / 2)).length() / PRI_SPEED;
+		MoveTo* moveTo = MoveTo::create(iTime, Vec2(visibleSize.width / 2, visibleSize.height / 2));
+		eHero->runAction(moveTo);
 		
 		
 		HeroMoveController* mHeroMoveController = HeroMoveController::create();

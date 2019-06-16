@@ -63,6 +63,31 @@ void Entity::hurtMe(int i,int iHurtValue, vector<Entity*> iETT_ptr) {
 	}
 }
 
+void Entity::hurtMeHero(int i, int iHurtValue, vector<Entity*> iETT_ptr) {
+	if (m_isDead) {
+		return;
+	}
+
+	if (iHurtValue <= getiDefense()) {
+		iHurtValue = 1;
+	}
+
+	int iCurHP = getiHP();
+	int iAfterHP = iCurHP - iHurtValue;
+	setiHP(iAfterHP);
+
+
+
+	if (iAfterHP > 0) {
+	}
+	else {
+		m_isDead = true;
+		//����
+		mHero_onDead(i, iETT_ptr);
+
+	}
+}
+
 bool Entity::isDead() {
 	return this->m_isDead;
 }
@@ -72,6 +97,11 @@ void Entity::onDead(int i, vector<Entity*> iETT_ptr) {
 	
 
 	//NetworkManager::sInstance->UnregisterGameObject(this);
+}
+
+void Entity::mHero_onDead(int i, vector<Entity*> iETT_ptr) {
+
+
 }
 
 void Entity::onBindSprite() {

@@ -31,6 +31,8 @@ void LaneTower::onDead(int i, vector<Entity*> ETT_ptr) {
 	extern vector<Entity*> eETT_ptr;
 	eETT_ptr.erase(eETT_ptr.begin() + i);
 	this->removeFromParent();
+	extern LaneTower* e_laneTower;
+	e_laneTower = nullptr;
 }
 
 void LaneTower::atkCoolDownEnd(float dt) {

@@ -36,11 +36,14 @@ public:
 
 	//被攻击
 	void hurtMe(int i,int iHurtValue, vector<Entity*> ETT_ptr);
+	
+	void hurtMeHero(int i, int iHurtValue, vector<Entity*> iETT_ptr);
 	//是否死亡
 	bool isDead();
 protected:
 	//实体死亡时调用
 	virtual void onDead(int i, vector<Entity*> ETT_ptr);
+	virtual void mHero_onDead(int i, vector<Entity*> ETT_ptr);
 	//绑定精灵时调用
 	virtual void onBindSprite();
 	//受伤害时调用

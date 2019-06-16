@@ -37,8 +37,7 @@ private:
 	
 	LaneTower* m_laneTower;
 	Crystal* m_crystal;
-	LaneTower* e_laneTower;
-	Crystal* e_crystal;
+	
 
 };
 
