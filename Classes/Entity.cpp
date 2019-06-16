@@ -37,7 +37,7 @@ Sprite* Entity::getSprite() {
 	return this->m_sprite;
 }
 
-void Entity::hurtMe(int i,int iHurtValue) {
+void Entity::hurtMe(int i,int iHurtValue, vector<Entity*> iETT_ptr) {
 	if (m_isDead) {
 		return;
 	}

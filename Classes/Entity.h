@@ -42,7 +42,7 @@ public:
 	bool isDead();
 protected:
 	//ʵ������ʱ����
-	virtual void onDead(int i, vector<Entity*> ETT_ptr);
+	virtual void onDead(int i);
 	virtual void mHero_onDead(int i, vector<Entity*> ETT_ptr);
 	//�󶨾���ʱ����
 	virtual void onBindSprite();

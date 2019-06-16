@@ -12,6 +12,7 @@ vector<Entity*> eETT_ptr;
 Hero* m_hero;
 LaneTower* e_laneTower;
 Crystal* e_crystal;
+bool e_isAtkCoolDown;
 
 double goldenCoin = 0;
 double power = 0;
@@ -175,7 +176,7 @@ void TollgateScene::update(float dt)
 	power += 0.02;
 	//CCLOG("%d"，goldenCoin);
 
-	extern bool e_isAtkCoolDown;
+	
 	if (e_laneTower&&mETT_ptr.size()) {
 		for (auto i = 0; i < mETT_ptr.size(); i++) {
 
@@ -234,6 +235,7 @@ void TollgateScene::addHero(Sprite* map) {
 	
 		Hero* eHero = Hero::create();
 		eHero->bindSprite(eHeroSprite);
+		eHero->run();
 		eETT_ptr.push_back(eHero);
 
 		mHero->setPosition(Point(100, visibleSize.height / 2 + 50));
@@ -257,8 +259,7 @@ void TollgateScene::addHero(Sprite* map) {
 	
 		mHero->setController(mHeroMoveController);
 		//eHero->setController(eHeroMoveController);
-		this->addChild(mHero, 1);
-		this->addChild(eHero, 1);
+	
 	}
 }
 

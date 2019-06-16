@@ -8,8 +8,10 @@ public:
 	CREATE_FUNC(LaneTower);
 	virtual bool init();
 	int getID();
+	
 protected:
 	virtual void onDead(int i);
+
 
 };
 #endif // !_LaneTower_H_

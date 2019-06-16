@@ -17,7 +17,7 @@ int Crystal::getID() {
 	return Crystal_ID;
 }
 
-void Crystal::onDead(int i, vector<Entity*> ETT_ptr) {
+void Crystal::onDead(int i) {
 
 	extern double goldenCoin;
 	extern double power;

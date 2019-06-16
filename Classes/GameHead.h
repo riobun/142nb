@@ -89,6 +89,7 @@ using std::map;
 #define MOUSE_SIZE 0.5
 #define Crystal_SIZE 0.6
 #define Ashe_attackValue 20
+#define tower_attackValue 50
 #define attackScale 200
 #define Crystal_ID 77
 #define Ashe_ID 66

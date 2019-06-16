@@ -9,6 +9,8 @@ public:
 	CREATE_FUNC(Crystal);
 	virtual bool init();
 	int getID();
+protected:
+	void Crystal::onDead(int i);
 
 };
 

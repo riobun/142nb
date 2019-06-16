@@ -34,6 +34,7 @@ void LaneTower::onDead(int i) {
 }
 
 void LaneTower::atkCoolDownEnd(float dt) {
+	extern bool e_isAtkCoolDown;
 	e_isAtkCoolDown = false;
 }
 
