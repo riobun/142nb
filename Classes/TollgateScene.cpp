@@ -81,7 +81,6 @@ bool TollgateScene::init()
 	//����Ӣ��
 	addHero(map);
 	addTower(map);
-	addSoilder(map);
 	int score = 0;
 	int testnum = 233;
 	auto scoreLb = Label::createWithSystemFont(StringUtils::format("goldenCoin"), "", 32);//    
@@ -167,10 +166,9 @@ bool TollgateScene::init()
 
 void TollgateScene::update(float dt)
 {
-	//auto label = this->getChildByTag(123);
-	//label->setPosition(label->getPosition() + Vec2(2, -2));
-	ShowNumberNode*snn = (ShowNumberNode *)this->getChildByTag(0);
-	snn->f_ShowNumber(goldenCoin);
+	auto label = this->getChildByTag(123);
+	label->setPosition(label->getPosition() + Vec2(2, -2));
+
 	goldenCoin += 1;
 	power += 1;
 
@@ -232,85 +230,6 @@ void TollgateScene::addHero(Sprite* map) {
 		this->addChild(mHero, 1);
 		this->addChild(eHero, 1);
 	}
-}
-
-void TollgateScene::addSoilder(Sprite* map) {
-	Size visibleSize = Director::getInstance()->getVisibleSize();
-	Vec2 origin = Director::getInstance()->getVisibleOrigin();
-
-
-	Sprite* mSoilderSprite = Sprite::create("soilder.png");
-	Sprite* eSoilderSprite = Sprite::create("soilder2.png");
-
-	if (mSoilderSprite == nullptr && eSoilderSprite == nullptr)
-	{
-		problemLoading("'fonts/Marker Felt.ttf'");
-	}
-	else
-	{
-
-		mSoilderSprite->setScale(SPRITE_SIZE);
-		eSoilderSprite->setScale(SPRITE_SIZE);
-
-		Soilder* mSoilder = Soilder::create();
-
-		mSoilder->bindSprite(mSoilderSprite);
-		mSoilder->setScale(0.8f);
-		//mSoilder->run();
-
-		Soilder* eSoilder = Soilder::create();
-		eSoilder->setScale(0.8f);
-		eSoilder->bindSprite(eSoilderSprite);
-		eETT_ptr.push_back(eSoilder);
-
-		mSoilder->setPosition(Point(420, visibleSize.height / 2 + 50));
-		eSoilder->setPosition(Point(visibleSize.width - 420, visibleSize.height / 2 + 50));
-
-		/*HeroMoveController* mHeroMoveController = HeroMoveController::create();
-		//HeroMoveController* eHeroMoveController = HeroMoveController::create();
-
-		this->addChild(mHeroMoveController);
-		//this->addChild(eHeroMoveController);
-
-		mHero->setController(mHeroMoveController);
-		//eHero->setController(eHeroMoveController);*/
-		this->addChild(mSoilder, 1);
-		this->addChild(eSoilder, 1);
-		CCPointArray * esoilderpoints = CCPointArray::create(12);
-		esoilderpoints->addControlPoint(ccp(visibleSize.width - 440, visibleSize.height / 2 - 50));
-		esoilderpoints->addControlPoint(ccp(visibleSize.width - 480, visibleSize.height / 2 - 60));
-		esoilderpoints->addControlPoint(ccp(visibleSize.width - 520, visibleSize.height / 2 - 70));
-		esoilderpoints->addControlPoint(ccp(visibleSize.width - 560, visibleSize.height / 2 - 80));
-		esoilderpoints->addControlPoint(ccp(visibleSize.width - 600, visibleSize.height / 2 - 80));
-		esoilderpoints->addControlPoint(ccp(visibleSize.width - 640, visibleSize.height / 2 - 70));
-		esoilderpoints->addControlPoint(ccp(visibleSize.width - 680, visibleSize.height / 2 - 60));
-		esoilderpoints->addControlPoint(ccp(visibleSize.width - 710, visibleSize.height / 2 - 50));
-		esoilderpoints->addControlPoint(ccp(visibleSize.width -720, visibleSize.height / 2 - 45));
-		esoilderpoints->addControlPoint(ccp(visibleSize.width / 4 + 85, visibleSize.height / 2 - 30));
-		esoilderpoints->addControlPoint(ccp(visibleSize.width / 4 + 85, visibleSize.height / 2 - 20));
-		esoilderpoints->addControlPoint(ccp(visibleSize.width / 4 + 75, visibleSize.height / 2 - 15));
-		//根据坐标组创建一个轨迹 三个参数是 移动一轮的时间,坐标组,浮张力(惯性)
-
-		CCActionInterval * esoilderlineTo = CCCardinalSplineTo::create(18, esoilderpoints, 0);
-
-		eSoilder->runAction(esoilderlineTo);
-
-		CCPointArray * msoilderpoints = CCPointArray::create(12);
-		msoilderpoints->addControlPoint(ccp(420, visibleSize.height / 2 + 80));
-		msoilderpoints->addControlPoint(ccp(455, visibleSize.height / 2 + 100));
-		msoilderpoints->addControlPoint(ccp(490, visibleSize.height / 2 + 110));
-		msoilderpoints->addControlPoint(ccp(525, visibleSize.height / 2 + 120));
-		msoilderpoints->addControlPoint(ccp(540, visibleSize.height / 2 + 130));
-		msoilderpoints->addControlPoint(ccp(580, visibleSize.height / 2 + 130));
-		msoilderpoints->addControlPoint(ccp(620, visibleSize.height / 2 + 120));
-		msoilderpoints->addControlPoint(ccp(660, visibleSize.height / 2 + 110));
-		msoilderpoints->addControlPoint(ccp(700, visibleSize.height / 2 + 100));
-		msoilderpoints->addControlPoint(ccp(720, visibleSize.height / 2 + 80));
-		msoilderpoints->addControlPoint(ccp(740, visibleSize.height / 2 + 60));
-		msoilderpoints->addControlPoint(ccp(visibleSize.width * 3 / 4 - 90, visibleSize.height / 2 + 55));
-		CCActionInterval * msoilderlineTo = CCCardinalSplineTo::create(18, msoilderpoints, 0);
-		mSoilder->runAction(msoilderlineTo);
-}
 }
 
 void TollgateScene::addTower(Sprite* map) { 
@@ -375,7 +294,8 @@ void TollgateScene::addNumberNode()
 	snn->f_ShowNumber(goldenCoin);
 	snn->setPosition(ccp(100, 100));
 	this->addChild(snn, 0, 0);
-	schedule(schedule_selector(TollgateScene::update), 2.0f);
+	schedule(schedule_selector(TollgateScene::logic), 2.0f);
+
 }
 
 void TollgateScene::logic(float dt)

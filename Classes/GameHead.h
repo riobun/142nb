@@ -82,7 +82,6 @@ using std::map;
 #include"HelloWorldScene.h"
 #include "ShowNumberNode.h"
 #include "NumberSprite.h"
-#include "Soilder.h"
 
 #define PRI_SPEED  30
 #define SPRITE_SIZE 0.6
@@ -97,9 +96,6 @@ using std::map;
 #define Ashe_iDenfense 10
 #define Tower_iHP 150
 #define Crystal_iHP 200
-#define Soilder_iHP 50
-#define Soilder_iDenfense 5
-#define Soilder_ID 44
 
 /*typedef enum
 {

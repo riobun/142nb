@@ -24,7 +24,6 @@ public:
 
 	
 	void addHero(Sprite* map);
-	void addSoilder(Sprite* map);
 	void addTower(Sprite* map);
 	void TollgateScene::shop(Ref* pSender);
 	void addNumberNode();

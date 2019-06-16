@@ -7,7 +7,6 @@ virtual uint32_t GetClassId() const { return kClassId; }  \
 static Entity* CreateInstance() { return static_cast< Entity* >( new inClass() ); }   \
 
 class Hero;
-class Soilder;
 class Controller1;
 class OutputMemoryBitStream;
 //class ControllerListener;
