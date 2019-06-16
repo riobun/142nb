@@ -55,6 +55,9 @@
     <ClCompile Include="..\Classes\Entity.cpp">
       <Filter>Entity</Filter>
     </ClCompile>
+    <ClCompile Include="Soilder.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
     <ClCompile Include="..\Classes\GameScene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
@@ -85,6 +88,12 @@
     <ClCompile Include="..\Classes\Crystal.cpp">
       <Filter>Map</Filter>
     </ClCompile>
+    <ClCompile Include="ShowNumberNode.cpp">
+      <Filter>ShowNumber</Filter>
+    </ClCompile>
+    <ClCompile Include="NumberSprite.cpp">
+      <Filter>ShowNumber</Filter>
+    </ClCompile>
     <ClCompile Include="..\Classes\LaneTower.cpp">
       <Filter>Map</Filter>
     </ClCompile>
@@ -96,15 +105,6 @@
     </ClCompile>
     <ClCompile Include="..\Classes\Equipment.cpp">
       <Filter>Shop</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Soilder.cpp">
-      <Filter>Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\ShowNumberNode.cpp">
-      <Filter>ShowNumber</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\NumberSprite.cpp">
-      <Filter>ShowNumber</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +171,9 @@
     <ClInclude Include="..\Classes\Entity.h">
       <Filter>Entity</Filter>
     </ClInclude>
+    <ClInclude Include="Soilder.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
     <ClInclude Include="..\Classes\GameScene.h">
       <Filter>Scene</Filter>
     </ClInclude>
@@ -207,6 +210,12 @@
     <ClInclude Include="..\Classes\LaneTower.h">
       <Filter>Map</Filter>
     </ClInclude>
+    <ClInclude Include="ShowNumberNode.h">
+      <Filter>ShowNumber</Filter>
+    </ClInclude>
+    <ClInclude Include="NumberSprite.h">
+      <Filter>ShowNumber</Filter>
+    </ClInclude>
     <ClInclude Include="..\Classes\SkillButton.h">
       <Filter>Skill</Filter>
     </ClInclude>
@@ -215,15 +224,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Equipment.h">
       <Filter>Shop</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Soilder.h">
-      <Filter>Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\ShowNumberNode.h">
-      <Filter>ShowNumber</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\NumberSprite.h">
-      <Filter>ShowNumber</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
